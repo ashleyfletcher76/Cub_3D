@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/17 12:38:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:50:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 {
 	t_cube cube;
 
-	check_args(argc, argv);
+	check_args(argc, argv, &cube);
 	init_mlx(&cube);
 	mlx_loop_hook(cube.mlx, hook, &cube);
 	mlx_loop(cube.mlx);
