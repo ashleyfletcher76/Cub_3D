@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube.c                                             :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/17 12:38:35 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/17 10:39:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
 #include "structs.h"
+#include "cube3d.h"
 
-void	leaks(void)
+void	hook(void *param)
 {
-	system("leaks Cube3D");
-}
+	t_cube	*cube;
 
-int	main(int argc, char **argv)
-{
-	t_cube cube;
-
-	check_args(argc, argv);
-	init_mlx(&cube);
-	mlx_loop_hook(cube.mlx, hook, &cube);
-	mlx_loop(cube.mlx);
-	mlx_terminate(cube.mlx);
-	atexit(leaks);
-	return (EXIT_SUCCESS);
+	cube = (t_cube *)param;
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(cube->mlx);
 }

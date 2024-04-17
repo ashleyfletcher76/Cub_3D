@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/17 09:54:49 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/17 12:39:37 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,14 @@ COLOUR_END = \033[0m
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
-SRCS = cube.c
+SRCS = cube.c init/init.c hooks/hooks.c parsing/map_validity.c parsing/map_parsing.c \
+	utils/check_arg.c utils/print_msg.c
 OBJ_DIR = obj
 SRC_DIR = src/
 INCLUDES = -I$(MLX42_DIR)/include -I header -I libft
 LDINCLUDES = -L$(MLX42_DIR)/build -lmlx42 -L$(LIBFT_DIR) -lft -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
-DEPS = $(addprefix $(SRC_DIR)/, $(SRCS)) ./includes/cube3d.h
+DEPS = $(addprefix $(SRC_DIR)/, $(SRCS)) ./includes/cube3d.h ./includes/structs.h
 
 NAME = Cube3D
 
@@ -49,14 +50,13 @@ $(MLX42_DIR) :
 $(MLX42_LIB): $(MLX42_DIR)
 			cd $(MLX42_DIR) && cmake -B build && cmake --build build
 
-$(NAME): $(LIBFT_LIB) $(MLX42_LIB) $(OBJ_DIR) $(OBJ)
+$(NAME): $(LIBFT_LIB) $(MLX42_LIB) $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) $(LDINCLUDES) -o $(NAME)
 	echo "$(COLOUR_GREEN)$(NAME) compiled successfully!$(COLOUR_END)"
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
 $(OBJ_DIR)/%.o: $(SRC_DIR)%.c $(DEPS)
-	$(CC) $(CFLAGS) -c $< -o $@
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(RM) -rf $(OBJ_DIR)

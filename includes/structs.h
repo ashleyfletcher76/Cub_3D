@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube.c                                             :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/17 12:38:35 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/17 10:32:28 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
-#include "structs.h"
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
-void	leaks(void)
+#include "../MLX42/include/MLX42/MLX42.h"
+
+typedef struct s_cube
 {
-	system("leaks Cube3D");
-}
+	mlx_t		*mlx;
+	mlx_image_t	*image;
+}	t_cube;
 
-int	main(int argc, char **argv)
-{
-	t_cube cube;
 
-	check_args(argc, argv);
-	init_mlx(&cube);
-	mlx_loop_hook(cube.mlx, hook, &cube);
-	mlx_loop(cube.mlx);
-	mlx_terminate(cube.mlx);
-	atexit(leaks);
-	return (EXIT_SUCCESS);
-}
+#endif

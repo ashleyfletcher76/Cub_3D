@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/17 10:08:11 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/17 11:13:56 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-	echo "$(COLOUR_GREEN)Libft compiled successfully!$(COLOUR_END)"
+	# echo "$(COLOUR_GREEN)Libft compiled successfully!$(COLOUR_END)"
 
 $(OBJ_DIR)/%.o: %.c
 	mkdir -p $(dir $@)
@@ -67,15 +67,15 @@ $(OBJ_DIR)/%.o: %.c
 
 bonus: $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-	echo "$(COLOUR_GREEN)Libft with bonus compiled successfully!$(COLOUR_END)"
+	# echo "$(COLOUR_GREEN)Libft with bonus compiled successfully!$(COLOUR_END)"
 
 clean:
 	$(RM) -r $(OBJ_DIR)
-	echo "$(COLOUR_MAGENTA)Libft objects removed successfully..$(COLOUR_END)"
+	# echo "$(COLOUR_MAGENTA)Libft objects removed successfully..$(COLOUR_END)"
 
 fclean: clean
 	$(RM) $(NAME)
-	echo "$(COLOUR_MAGENTA)Libft cleaned successfully!$(COLOUR_END)"
+	# echo "$(COLOUR_MAGENTA)Libft cleaned successfully!$(COLOUR_END)"
 
 re: fclean all
 

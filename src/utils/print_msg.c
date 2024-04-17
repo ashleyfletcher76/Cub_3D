@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube.c                                             :+:      :+:    :+:   */
+/*   print_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/17 12:38:35 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/17 12:36:16 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
 #include "structs.h"
+#include "cube3d.h"
 
-void	leaks(void)
+void	print_error(int flag)
 {
-	system("leaks Cube3D");
-}
-
-int	main(int argc, char **argv)
-{
-	t_cube cube;
-
-	check_args(argc, argv);
-	init_mlx(&cube);
-	mlx_loop_hook(cube.mlx, hook, &cube);
-	mlx_loop(cube.mlx);
-	mlx_terminate(cube.mlx);
-	atexit(leaks);
-	return (EXIT_SUCCESS);
+	if (flag == 0)
+		ft_putendl_fd("Incorrect arguments.", 2);
+	else if (flag == 1)
+		ft_putendl_fd("Invalid map.", 2);
+	exit(EXIT_FAILURE);
 }
