@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 11:27:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:59:35 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 t_cube	check_args(int argc, char **argv)
 {
-	t_cube cube;
+	t_cube temp_cube;
 
 	if (argc != 2 || ft_strnstr(argv[1], ".cub", ft_strlen(argv[1])) == NULL)
 		print_error_exit(0);
-	cube.max_height = 0;
-	cube.max_width = 0;
-	cube = check_map(argv[1], &cube);
-	return (cube);
+	temp_cube.max_height = 0;
+	temp_cube.max_width = 0;
+	temp_cube = check_map(argv[1], &temp_cube);
+	return (temp_cube);
 }
 
-t_cube	check_map(char *map, t_cube *cube)
+t_cube	check_map(char *map, t_cube *temp_cube)
 {
 	int		fd;
 	char	*line;
@@ -40,14 +40,14 @@ t_cube	check_map(char *map, t_cube *cube)
 	while (line != NULL)
 	{
 		check_invalid_chars(line);
-		cube->max_height++;
-		find_map_width(line, cube);
+		temp_cube->max_height++;
+		find_map_width(line, temp_cube);
 		free (line);
 		line = get_next_line(fd);
 	}
 	free (line);
 	close (fd);
-	return (*cube);
+	return (*temp_cube);
 }
 
 static int	correct_chars(char c)
