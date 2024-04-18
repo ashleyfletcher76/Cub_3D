@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 11:57:54 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:23:03 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	print_error_exit(int flag)
 		ft_putendl_fd("Cube creation failed", 2);
 	else if (flag == 4)
 		ft_putendl_fd("Structure is NULL", 2);
+	else if (flag == 5)
+		perror("Failed to open map file");
 	exit(EXIT_FAILURE);
 }
 

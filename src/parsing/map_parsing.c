@@ -6,11 +6,39 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 11:44:36 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:51:40 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cube3d.h"
 
+t_cube	fill_map(t_cube *cube, char *map)
+{
+	int		fd;
+	int		y;
+	char	*line;
 
+	fd = open(map, O_RDONLY);
+	if (fd < 0)
+		print_error_exit(5);
+	line = get_next_line(fd);
+	y = -1;
+	while (line != NULL && ++y < cube->max_height)
+	{
+		add_map_conditions(cube, line, y);
+		free (line);
+		line = get_next_line(fd);
+	}
+	close (fd);
+	return (*cube);
+}
+
+void	add_map_conditions(t_cube *cube, char *line, int row)
+{
+	int	x;
+
+	x = -1;
+	while (++x < cube->max_width && line[x] != '\0' && line[x] != '\n')
+		cube->map->map[row][x] = line[x];
+}

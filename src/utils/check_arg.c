@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 12:59:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:55:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
-	{
-		perror("Failed to open map file");
-		exit(EXIT_FAILURE);
-	}
+		print_error_exit(5);
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
@@ -74,3 +71,19 @@ void	check_invalid_chars(char *line)
 	}
 }
 
+void	find_map_width(char *line, t_cube *cube)
+{
+	int	i;
+	int	current_width;
+
+	i = 0;
+	current_width = 0;
+	while (line[i] != '\n' && line[i] != '\0')
+	{
+		if (line[i] != ' ')
+			current_width++;
+		if (current_width > cube->max_width)
+			cube->max_width = current_width;
+		i++;
+	}
+}

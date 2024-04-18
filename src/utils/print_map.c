@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube.c                                             :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 13:58:28 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/18 13:41:28 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/18 13:47:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
 #include "structs.h"
+#include "cube3d.h"
 
-void	leaks(void)
+void	print_map(t_cube *cube)
 {
-	system("leaks Cube3D");
-}
+	int	y;
+	int	x;
 
-int	main(int argc, char **argv)
-{
-	t_cube	temp_cube;
-	t_cube	*cube;
-
-	temp_cube = check_args(argc, argv);
-	init_cube(&cube, &temp_cube);
-	init_map(cube);
-	fill_map(cube, argv[1]);
-	print_map(cube);
-	init_mlx(cube);
-	mlx_loop_hook(cube->mlx, hook, cube);
-	mlx_loop(cube->mlx);
-	mlx_terminate(cube->mlx);
-	atexit(leaks);
-	final_free(cube);
-	return (EXIT_SUCCESS);
+	y = -1;
+	while (++y < cube->max_height)
+	{
+		x = -1;
+		while (++x < cube->max_width)
+			printf("%d ", cube->map->map[y][x]);
+		printf("\n");
+	}
 }

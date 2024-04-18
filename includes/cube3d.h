@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 12:59:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:45:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int		check_map_perimeter(char *line);
 //get map details
 void	find_map_width(char *line, t_cube *cube);
 
+//map parsing
+t_cube	fill_map(t_cube *cube, char *map);
+void	add_map_conditions(t_cube *cube, char *line, int row);
+
 //initialization
 int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
@@ -43,5 +47,6 @@ void	hook(void *param);
 void	print_error_exit(int flag);
 void	free_print_exit(t_cube *cube, int flag, int i);
 void	final_free(t_cube *cube);
+void	print_map(t_cube *cube);
 
 #endif
