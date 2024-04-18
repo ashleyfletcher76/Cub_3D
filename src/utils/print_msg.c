@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 13:23:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:13:22 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ void	free_print_exit(t_cube *cube, int flag, int i)
 		free (cube->map->map);
 		free (cube->map);
 		ft_putendl_fd("Map creation failed", 2);
+	}
+	else if (flag == 2)
+	{
+		ft_putendl_fd("Invalid map.", 2);
+		final_free(cube);
 	}
 	exit(EXIT_FAILURE);
 }
