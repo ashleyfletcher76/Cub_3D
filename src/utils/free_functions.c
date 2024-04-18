@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 11:25:14 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/18 12:39:35 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#include "structs.h"
+#include "cube3d.h"
 
-#include "../MLX42/include/MLX42/MLX42.h"
-
-typedef struct s_map
+void	final_free(t_cube *cube)
 {
-	char	**map;
-}	t_map;
+	int	x;
 
-typedef struct s_cube
-{
-	mlx_t		*mlx;
-	mlx_image_t	*image;
-	t_map		*map;
-	int			max_width;
-	int			max_height;
-}	t_cube;
-
-#endif
+	if (cube != NULL)
+	{
+		if (cube->map != NULL && cube->map->map != NULL)
+		{
+			x = -1;
+			while (++x < cube->max_height)
+				free (cube->map->map[x]);
+		}
+		free (cube->map->map);
+	}
+	free (cube->map);
+	free (cube);
+}

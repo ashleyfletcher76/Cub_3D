@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/17 15:38:55 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:40:23 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <unistd.h>
 #include "structs.h"
 #include "../libft/includes/libft.h"
 #include "../MLX42/include/MLX42/MLX42.h"
@@ -27,11 +28,20 @@
 t_cube	check_args(int argc, char **argv);
 t_cube	check_map(char *map, t_cube *cube);
 void	check_invalid_chars(char *line);
-void	print_error(int flag);
+int		check_map_perimeter(char *line);
+
+//get map details
 void	find_map_width(char *line, t_cube *cube);
 
 //initialization
 int32_t	init_mlx(t_cube *cube);
+void	init_cube(t_cube **cube, t_cube *temp_cube);
+void	init_map(t_cube *cube);
 void	hook(void *param);
+
+//utils
+void	print_error_exit(int flag);
+void	free_print_exit(t_cube *cube, int flag, int i);
+void	final_free(t_cube *cube);
 
 #endif

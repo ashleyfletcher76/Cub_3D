@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/17 15:45:50 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:27:21 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_cube	check_args(int argc, char **argv)
 	t_cube cube;
 
 	if (argc != 2 || ft_strnstr(argv[1], ".cub", ft_strlen(argv[1])) == NULL)
-		print_error(0);
+		print_error_exit(0);
 	cube.max_height = 0;
 	cube.max_width = 0;
 	cube = check_map(argv[1], &cube);
@@ -68,7 +68,7 @@ void	check_invalid_chars(char *line)
 		if (correct_chars(line[i]) == -1)
 		{
 			free (line);
-			print_error(1);
+			print_error_exit(1);
 		}
 		i++;
 	}
