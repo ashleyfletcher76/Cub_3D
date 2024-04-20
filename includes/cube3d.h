@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 17:15:50 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:10:33 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # define WIDTH 1920
 # define HEIGHT 1080
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <unistd.h>
-#include "structs.h"
-#include "../libft/includes/libft.h"
-#include "../MLX42/include/MLX42/MLX42.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <unistd.h>
+# include "structs.h"
+# include "../libft/includes/libft.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 
 //check args
 t_cube	check_args(int argc, char **argv);
@@ -42,6 +42,10 @@ int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
 void	hook(void *param);
+
+//drawing processes
+void	draw_pixel(t_cube *cube);
+int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 
 //utils
 void	print_error_exit(int flag);

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 15:42:50 by asfletch          #+#    #+#             */
-/*   Updated: 2024/03/09 11:44:09 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:09:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static size_t	get_len(const char *str, char delim)
 
 char	*word(char *str, int len)
 {
-	char *word;
-	int	i;
+	char	*word;
+	int		i;
 
 	i = 0;
 	word = (char *)malloc(sizeof(char) * (len + 1));
@@ -60,10 +60,10 @@ static char	**split_helper(char **result, char *str, int len, int i)
 
 char	**ft_split(char *str, char delim)
 {
-	char **result;
-	int	len;
-	int	i;
-	int	num_words;
+	char	**result;
+	int		len;
+	int		i;
+	int		num_words;
 
 	i = 0;
 	num_words = count_words(str, delim);

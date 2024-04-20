@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 10:08:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:59:02 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ int	main(int argc, char **argv)
 	init_map(cube);
 	fill_map(cube, argv[1]);
 	check_map_perimeter(cube);
-	print_map(cube);
+	//print_map(cube);
 	init_mlx(cube);
 	mlx_loop_hook(cube->mlx, hook, cube);
 	mlx_loop(cube->mlx);
+	draw_pixel(cube);
 	mlx_terminate(cube->mlx);
 	final_free(cube);
 	return (EXIT_SUCCESS);

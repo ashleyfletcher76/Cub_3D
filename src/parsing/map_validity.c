@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 09:17:23 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:13:19 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	check_rows_right(t_cube *cube, int row)
 	{
 		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
 			&& cube->map->map[row][x] != '\n')
-				c = cube->map->map[row][x];
+			c = cube->map->map[row][x];
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
@@ -41,7 +41,7 @@ static void	check_cols_down(t_cube *cube, int col)
 	{
 		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
 			&& cube->map->map[y][col] != '\n')
-				c = cube->map->map[y][col];
+			c = cube->map->map[y][col];
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
@@ -58,12 +58,11 @@ static void	check_rows_left(t_cube *cube, int row)
 	{
 		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
 			&& cube->map->map[row][x] != '\n')
-				c = cube->map->map[row][x];
+			c = cube->map->map[row][x];
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
 }
-
 
 static void	check_cols_up(t_cube *cube, int col)
 {
@@ -76,7 +75,7 @@ static void	check_cols_up(t_cube *cube, int col)
 	{
 		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
 			&& cube->map->map[y][col] != '\n')
-				c = cube->map->map[y][col];
+			c = cube->map->map[y][col];
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
@@ -90,13 +89,13 @@ void	check_map_perimeter(t_cube *cube)
 	curr_row = -1;
 	curr_col = -1;
 	while (++curr_row < cube->max_height - 1)
-			check_rows_right(cube, curr_row);
+		check_rows_right(cube, curr_row);
 	while (++curr_col < cube->max_width)
-			check_cols_down(cube, curr_col);
+		check_cols_down(cube, curr_col);
 	curr_row = cube->max_height;
 	curr_col = cube->max_width;
 	while (--curr_row >= 0)
-			check_rows_left(cube, curr_row);
+		check_rows_left(cube, curr_row);
 	while (--curr_col >= 0)
-			check_cols_up(cube, curr_col);
+		check_cols_up(cube, curr_col);
 }

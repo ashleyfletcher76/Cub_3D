@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 13:55:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:12:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 t_cube	check_args(int argc, char **argv)
 {
-	t_cube temp_cube;
+	t_cube	temp_cube;
 
 	if (argc != 2 || ft_strnstr(argv[1], ".cub", ft_strlen(argv[1])) == NULL)
 		print_error_exit(0);
@@ -51,7 +51,7 @@ static int	correct_chars(char c)
 {
 	if (c == '0' || c == '1' || c == 'N'
 		|| c == 'S' || c == 'E' || c == 'W' || c == ' ')
-			return (1);
+		return (1);
 	return (-1);
 }
 
