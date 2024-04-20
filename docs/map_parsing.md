@@ -2,7 +2,7 @@ Key points
 
 * Now we have a map intialized to zero, we want to add the values inside the map coordinates. The map will be a 2D array.
 
-* Once the correct values have been placed into the map, we will make one final check to make the sure the map parameters have been met i.e. the outside walls are all correctly '1', siginifying they are walls.
+* Once the correct values have been placed into the map, we will make one final check to make the sure the map parameters have been met i.e. the outside walls are all correctly '1', siginifying they are walls. See check_arg doc.
 
 * Similarly to the previous check_args functions, we will again use get_next_line to read line by line and then assign to corresponding value into the correct coordinate position.
 

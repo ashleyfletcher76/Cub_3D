@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 17:19:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 09:22:13 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ int	main(int argc, char **argv)
 	t_cube	temp_cube;
 	t_cube	*cube;
 
+	atexit(leaks);
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, &temp_cube);
 	init_map(cube);
 	fill_map(cube, argv[1]);
 	check_map_perimeter(cube);
-	print_map(cube);
+	//print_map(cube);
 	init_mlx(cube);
 	mlx_loop_hook(cube->mlx, hook, cube);
 	mlx_loop(cube->mlx);
 	mlx_terminate(cube->mlx);
-	atexit(leaks);
 	final_free(cube);
 	return (EXIT_SUCCESS);
 }
