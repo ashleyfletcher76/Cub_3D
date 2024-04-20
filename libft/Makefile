@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 11:42:13 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/17 11:13:56 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/20 15:07:32 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS = strings/ft_substr.c strings/ft_strncmp.c strings/ft_strrchr.c \
 		strings/ft_striteri.c strings/ft_strjoin.c strings/ft_strlcpy.c \
 		strings/ft_strnstr.c strings/ft_strtrim.c strings/ft_strchr.c strings/ft_strlcat.c\
 		strings/ft_strdup.c strings/ft_split.c strings/ft_strlen.c strings/ft_strmapi.c \
-		strings/split_utils.c \
+		strings/split_utils.c strings/ft_char_join.c strings/ft_strcpy.c \
 		mem_manip/ft_memchr.c mem_manip/ft_memcpy.c mem_manip/ft_memcmp.c \
 		mem_manip/ft_memmove.c mem_manip/ft_memset.c \
 		numbers/ft_atoi.c numbers/ft_isalnum.c numbers/ft_isdigit.c \

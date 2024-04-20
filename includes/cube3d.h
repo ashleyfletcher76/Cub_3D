@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 11:10:33 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:13:37 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,20 @@ void	hook(void *param);
 //drawing processes
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
+void	draw_grid_basic(t_cube *cube);
+void	user_input(void *param);
 
 //utils
 void	print_error_exit(int flag);
 void	free_print_exit(t_cube *cube, int flag, int i);
 void	final_free(t_cube *cube);
 void	print_map(t_cube *cube);
+
+
+
+
+void	background(void *param);
+
+
 
 #endif

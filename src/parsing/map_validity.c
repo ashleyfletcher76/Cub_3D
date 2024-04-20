@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 11:13:19 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:37:16 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,22 @@ static void	check_rows_right(t_cube *cube, int row)
 	int		x;
 	char	c;
 
-	x = -1;
-	c = 'X';
-	while (++x < cube->max_width)
+	x = 0;
+	c = '1';
+	while (cube->map->map[row][x])
 	{
+		printf("i = %d y = %d x = %d\n", cube->map->map[row][x], row, x);
 		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
 			&& cube->map->map[row][x] != '\n')
 			c = cube->map->map[row][x];
+		x++;
 	}
+	printf("c = %d\n", c);
 	if (c != '1')
+	{
+		printf("here\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_cols_down(t_cube *cube, int col)
@@ -35,14 +41,16 @@ static void	check_cols_down(t_cube *cube, int col)
 	int		y;
 	char	c;
 
-	y = -1;
-	c = 'X';
-	while (++y < cube->max_height)
+	y = 0;
+	c = '1';
+	while (y < cube->max_height)
 	{
 		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
 			&& cube->map->map[y][col] != '\n')
-			c = cube->map->map[y][col];
+				c = cube->map->map[y][col];
+		y++;
 	}
+	printf("c = %d\n", c);
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
 }
@@ -53,7 +61,7 @@ static void	check_rows_left(t_cube *cube, int row)
 	char	c;
 
 	x = cube->max_width;
-	c = 'X';
+	c = '1';
 	while (--x >= 0)
 	{
 		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
@@ -70,7 +78,7 @@ static void	check_cols_up(t_cube *cube, int col)
 	char	c;
 
 	y = cube->max_height;
-	c = 'X';
+	c = '1';
 	while (--y >= 0)
 	{
 		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
@@ -88,7 +96,7 @@ void	check_map_perimeter(t_cube *cube)
 
 	curr_row = -1;
 	curr_col = -1;
-	while (++curr_row < cube->max_height - 1)
+	while (++curr_row < cube->max_height)
 		check_rows_right(cube, curr_row);
 	while (++curr_col < cube->max_width)
 		check_cols_down(cube, curr_col);

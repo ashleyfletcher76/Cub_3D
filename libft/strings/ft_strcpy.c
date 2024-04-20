@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 13:16:14 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/20 15:07:00 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/20 15:07:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#include "../includes/libft.h"
 
-# include "../MLX42/include/MLX42/MLX42.h"
-
-typedef struct s_player
+char	*ft_strcpy(char *s1, const char *s2)
 {
-	int	px;
-	int	py;
-}	t_player;
+	int	i;
 
-typedef struct s_map
-{
-	char	**map;
-	int		grid_size;
-}	t_map;
-
-typedef struct s_cube
-{
-	mlx_t		*mlx;
-	mlx_image_t	*image;
-	t_map		*map;
-	t_player	player;
-	int			max_width;
-	int			max_height;
-}	t_cube;
-
-#endif
+	i = 0;
+	while (s2[i])
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = s2[i];
+	return (s1);
+}

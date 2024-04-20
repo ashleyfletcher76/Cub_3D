@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:00:17 by asfletch          #+#    #+#             */
-/*   Updated: 2024/03/09 11:41:10 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 15:07:18 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 void	ft_freearr(char **arr);
 size_t	count_words(const char *str, char delim);
 void	free_allocated(char **arr, size_t n);
+char	*ft_char_join(char *s1, char c);
+char	*ft_strcpy(char *s1, const char *s2);
 
 #endif
