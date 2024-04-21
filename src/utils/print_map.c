@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:41:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 13:47:25 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:53:33 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_map(t_cube *cube)
 	{
 		x = -1;
 		while (++x < cube->max_width)
-			printf("%d ", cube->map->map[y][x]);
+			printf("%c ", cube->map->map[y][x]);
 		printf("\n");
 	}
 }
