@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 09:52:33 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:11:47 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	check_map_perimeter(t_cube *cube)
 
 	curr_row = -1;
 	curr_col = -1;
+	multiple_start_pos(cube);
 	while (++curr_row < cube->max_height)
 		check_rows_right(cube, curr_row);
 	while (++curr_col < cube->max_width)

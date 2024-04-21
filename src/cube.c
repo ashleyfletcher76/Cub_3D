@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 08:41:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:07:20 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	init_cube(&cube, &temp_cube);
 	init_map(cube);
 	fill_map(cube, argv[1]);
-	print_map(cube);
+	//print_map(cube);
 	check_map_perimeter(cube);
 	init_mlx(cube);
 	draw_pixel(cube);

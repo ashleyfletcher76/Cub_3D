@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 13:16:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:32:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_cube
 	t_player	player;
 	int			max_width;
 	int			max_height;
+	int			width_nospace;
 }	t_cube;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 09:51:19 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:14:56 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_cube	check_args(int argc, char **argv);
 t_cube	check_map(char *map, t_cube *temp_cube);
 void	check_invalid_chars(char *line);
 void	check_map_perimeter(t_cube *cube);
+void	multiple_start_pos(t_cube *cube);
 
 //get map details
 void	find_map_width(char *line, t_cube *cube);
