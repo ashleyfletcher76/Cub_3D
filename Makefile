@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/20 10:54:52 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/21 12:58:28 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,13 @@ COLOUR_END = \033[0m
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
-SRCS = cube.c init/init.c init/init_player.c \
+SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	hooks/hooks.c \
-	parsing/map_parsing.c parsing/map_validity.c \
-	utils/check_arg.c utils/print_msg.c utils/free_functions.c utils/print_map.c
+	parsing/map_parsing.c parsing/map_validity.c parsing/check_arg.c  \
+	parsing/check_start.c \
+	drawing/draw_grid.c \
+	utils/print_msg.c utils/free_functions.c utils/print_map.c \
+	utils/check_chars.c
 OBJ_DIR = obj
 SRC_DIR = src/
 INCLUDES = -I$(MLX42_DIR)/include -I header -I libft

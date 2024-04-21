@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/18 14:13:22 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:46:14 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,19 @@ void	free_print_exit(t_cube *cube, int flag, int i)
 		ft_putendl_fd("Invalid map.", 2);
 		final_free(cube);
 	}
+	else if (flag == 3)
+	{
+		perror("Failed to open map file");
+		final_free(cube);
+	}
 	exit(EXIT_FAILURE);
+}
+
+void	free_print_exit_two(t_cube *cube, int flag)
+{
+	if (flag == 0)
+	{
+		ft_putendl_fd("Failed to input line to map data", 2);
+		final_free(cube);
+	}
 }

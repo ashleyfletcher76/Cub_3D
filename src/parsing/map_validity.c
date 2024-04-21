@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 13:45:05 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:42:57 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static void	check_rows_right(t_cube *cube, int row)
 	char	c;
 
 	x = -1;
-	c = 'X';
+	c = '1';
 	while (++x < cube->max_width)
 	{
-		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
-			&& cube->map->map[row][x] != '\n')
+		if (map_valid_chars(cube->map->map[row][x]) == 0
+			&& edge_conditions(cube->map->map[row][x]) == 1)
 			c = cube->map->map[row][x];
 	}
 	if (c != '1')
@@ -36,12 +36,12 @@ static void	check_cols_down(t_cube *cube, int col)
 	char	c;
 
 	y = -1;
-	c = 'X';
+	c = '1';
 	while (++y < cube->max_height)
 	{
-		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
-			&& cube->map->map[y][col] != '\n')
-			c = cube->map->map[y][col];
+		if (map_valid_chars(cube->map->map[y][col]) == 0
+			&& edge_conditions(cube->map->map[y][col]) == 1)
+				c = cube->map->map[y][col];
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
@@ -53,11 +53,11 @@ static void	check_rows_left(t_cube *cube, int row)
 	char	c;
 
 	x = cube->max_width;
-	c = 'X';
+	c = '1';
 	while (--x >= 0)
 	{
-		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
-			&& cube->map->map[row][x] != '\n')
+		if (map_valid_chars(cube->map->map[row][x]) == 0
+			&& edge_conditions(cube->map->map[row][x]) == 1)
 			c = cube->map->map[row][x];
 	}
 	if (c != '1')
@@ -70,11 +70,11 @@ static void	check_cols_up(t_cube *cube, int col)
 	char	c;
 
 	y = cube->max_height;
-	c = 'X';
+	c = '1';
 	while (--y >= 0)
 	{
-		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
-			&& cube->map->map[y][col] != '\n')
+		if (map_valid_chars(cube->map->map[y][col]) == 0
+			&& edge_conditions(cube->map->map[y][col]) == 1)
 			c = cube->map->map[y][col];
 	}
 	if (c != '1')
@@ -88,7 +88,8 @@ void	check_map_perimeter(t_cube *cube)
 
 	curr_row = -1;
 	curr_col = -1;
-	while (++curr_row < cube->max_height - 1)
+	multiple_start_pos(cube);
+	while (++curr_row < cube->max_height)
 		check_rows_right(cube, curr_row);
 	while (++curr_col < cube->max_width)
 		check_cols_down(cube, curr_col);

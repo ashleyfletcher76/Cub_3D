@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 13:40:12 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:36:40 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	find_pl_pos(t_cube *cube)
 		{
 			if (find_pos(cube, map[i][j]))
 			{
-				cube->player.px = j;
-				cube->player.py = i;
+				cube->player.px = j * cube->map_size;
+				cube->player.py = i * cube->map_size;
 				return ;
 			}
 			j++;
@@ -71,20 +71,21 @@ void	find_pl_pos(t_cube *cube)
 
 void	draw_pixel(t_cube *cube)
 {
-	find_pl_pos(cube);
-	cube->player.p_img = mlx_new_image(cube->mlx, 120, 120);
-	if (cube->player.p_img == NULL)
+	int	x;
+	int	y;
+	y = 0;
+	x = 0;
+
+	while (++x < 10)
 	{
-		printf("error\n");
-		exit(1);
+		y = 0;
+		while (++y < 10)
+			mlx_put_pixel(cube->image, cube->player.px + x, cube->player.py + y,
+				pixel(255, 2555, 0, 255));
 	}
-	mlx_put_pixel(cube->image, 120 , 120, 120);
-		//pixel(255, 2555, 255, 128));
-	mlx_image_to_window(cube->mlx, cube->image ,cube->player.px , cube->player.py);
 }
 
 void	init_player(t_cube *cube)
 {
-	cube->player.px = 300;
-	cube->player.py = 300;
+	find_pl_pos(cube);
 }

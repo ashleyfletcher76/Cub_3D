@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 13:00:41 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:32:21 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,13 @@ int	main(int argc, char **argv)
 	init_map(cube);
 	fill_map(cube, argv[1]);
 	print_map(cube);
-	//check_map_perimeter(cube);
+	check_map_perimeter(cube);
 	init_mlx(cube);
+	init_player(cube);
 	draw_pixel(cube);
+	draw_grid_basic(cube);
 	mlx_loop_hook(cube->mlx, hook, cube);
+	mlx_loop_hook(cube->mlx, user_input, cube);;
 	mlx_loop(cube->mlx);
 	mlx_terminate(cube->mlx);
 	final_free(cube);
