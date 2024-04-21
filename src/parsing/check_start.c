@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 12:49:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 13:15:48 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 13:22:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ static int	check_multiple(char *line)
 		}
 		i++;
 	}
-	if (checker > 0)
-		return(checker);
-	else
-		return (0);
+	return (checker);
 }
 
 void	multiple_start_pos(t_cube *cube)
