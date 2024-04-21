@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:10:35 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 14:47:16 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/21 14:47:41 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	background(void *param)
 		y = 0;
 		while (y < cube->image->height)
 		{
-			if (cube->map->map[y + 1 / cube->map_size][x + 1 / cube->map_size] == '1')
+			if (cube->map->map[y / cube->map_size][x / cube->map_size] == '1')
 				mlx_put_pixel(cube->image, x, y, pixel(255, 255, 255, 255));
 			else
 				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
