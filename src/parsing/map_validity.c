@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 16:37:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:05:58 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,16 @@ static void	check_rows_right(t_cube *cube, int row)
 	int		x;
 	char	c;
 
-	x = 0;
+	x = -1;
 	c = '1';
-	while (cube->map->map[row][x])
+	while (++x < cube->max_width)
 	{
-		printf("i = %d y = %d x = %d\n", cube->map->map[row][x], row, x);
 		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
 			&& cube->map->map[row][x] != '\n')
 			c = cube->map->map[row][x];
-		x++;
 	}
-	printf("c = %d\n", c);
 	if (c != '1')
-	{
-		printf("here\n");
 		free_print_exit(cube, 2, 0);
-	}
 }
 
 static void	check_cols_down(t_cube *cube, int col)
@@ -41,16 +35,14 @@ static void	check_cols_down(t_cube *cube, int col)
 	int		y;
 	char	c;
 
-	y = 0;
+	y = -1;
 	c = '1';
-	while (y < cube->max_height)
+	while (++y < cube->max_height)
 	{
 		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
 			&& cube->map->map[y][col] != '\n')
 				c = cube->map->map[y][col];
-		y++;
 	}
-	printf("c = %d\n", c);
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
 }

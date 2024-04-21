@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 16:40:05 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 08:29:54 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,11 @@ void	add_map_conditions(t_cube *cube, char *line, int row)
 
 	x = -1;
 	newline = create_new_string(line);
-	//newline = line;
+	x = -1;
 	if (newline)
 	{
 		while (++x < cube->max_width && line[x] != '\0' && line[x] != '\n')
-			cube->map->map[row][x] = newline[x];
-		free (newline);
+			cube->map->map[row][x] = line[x];
+		//free (newline);
 	}
 }
