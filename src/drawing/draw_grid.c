@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 13:24:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:17:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	draw_grid_basic(t_cube *cube)
 
 	x = 40;
 	grid_size = 50;
-	printf("here\n");
 	while (x <= cube->max_width)
 	{
 		y = 40;

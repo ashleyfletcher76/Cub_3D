@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 13:13:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:51:19 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,16 @@ void	user_input(void *param);
 //utils
 void	print_error_exit(int flag);
 void	free_print_exit(t_cube *cube, int flag, int i);
+void	free_print_exit_two(t_cube *cube, int flag);
 void	final_free(t_cube *cube);
 void	print_map(t_cube *cube);
 
-
+//char checkers
+int		correct_chars(char c);
+int		map_valid_chars(char c);
+int		edge_conditions(char c);
 
 
 void	background(void *param);
-
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 09:05:58 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:52:33 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	check_rows_right(t_cube *cube, int row)
 	c = '1';
 	while (++x < cube->max_width)
 	{
-		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
-			&& cube->map->map[row][x] != '\n')
+		if (map_valid_chars(cube->map->map[row][x]) == 0
+			&& edge_conditions(cube->map->map[row][x]) == 1)
 			c = cube->map->map[row][x];
 	}
 	if (c != '1')
@@ -39,8 +39,8 @@ static void	check_cols_down(t_cube *cube, int col)
 	c = '1';
 	while (++y < cube->max_height)
 	{
-		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
-			&& cube->map->map[y][col] != '\n')
+		if (map_valid_chars(cube->map->map[y][col]) == 0
+			&& edge_conditions(cube->map->map[y][col]) == 1)
 				c = cube->map->map[y][col];
 	}
 	if (c != '1')
@@ -56,8 +56,8 @@ static void	check_rows_left(t_cube *cube, int row)
 	c = '1';
 	while (--x >= 0)
 	{
-		if (cube->map->map[row][x] != ' ' && cube->map->map[row][x] != '\0'
-			&& cube->map->map[row][x] != '\n')
+		if (map_valid_chars(cube->map->map[row][x]) == 0
+			&& edge_conditions(cube->map->map[row][x]) == 1)
 			c = cube->map->map[row][x];
 	}
 	if (c != '1')
@@ -73,8 +73,8 @@ static void	check_cols_up(t_cube *cube, int col)
 	c = '1';
 	while (--y >= 0)
 	{
-		if (cube->map->map[y][col] != ' ' && cube->map->map[y][col] != '\0'
-			&& cube->map->map[y][col] != '\n')
+		if (map_valid_chars(cube->map->map[y][col]) == 0
+			&& edge_conditions(cube->map->map[y][col]) == 1)
 			c = cube->map->map[y][col];
 	}
 	if (c != '1')

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 16:07:36 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 09:49:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,6 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 	return (*temp_cube);
 }
 
-static int	correct_chars(char c)
-{
-	if (c == '0' || c == '1' || c == 'N'
-		|| c == 'S' || c == 'E' || c == 'W' || c == ' ')
-		return (1);
-	return (-1);
-}
-
 void	check_invalid_chars(char *line)
 {
 	int		i;
@@ -65,6 +57,7 @@ void	check_invalid_chars(char *line)
 		if (correct_chars(line[i]) == -1)
 		{
 			free (line);
+			printf("char = %d\n", line[i]);
 			print_error_exit(1);
 		}
 		i++;
@@ -80,8 +73,8 @@ void	find_map_width(char *line, t_cube *cube)
 	current_width = 0;
 	while (line[i] != '\n' && line[i] != '\0')
 	{
-		if (line[i] != ' ')
-			current_width++;
+		//if (line[i] != ' ')
+		current_width++;
 		if (current_width > cube->max_width)
 			cube->max_width = current_width;
 		i++;
