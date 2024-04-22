@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 14:35:53 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/21 15:00:40 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@
 
 typedef struct s_player
 {
-	int			px;
-	int			py;
-	char		d;
+	float			px;
+	float			py;
+	float			pdx;
+	float			pdy;
+	float			pa;
+	char			d;
 	mlx_image_t	*p_img;
 }	t_player;
 
