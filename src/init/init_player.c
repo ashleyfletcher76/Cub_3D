@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:29:07 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:09:30 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a)
 	return (r << 24 | g << 16 | b << 8 | a);
 }
 
-int find_pos(t_cube *cube, char c)
+int	find_pos(t_cube *cube, char c)
 {
 	if (c == 'N')
 	{
@@ -66,23 +66,9 @@ void	find_pl_pos(t_cube *cube)
 	}
 }
 
-void	draw_pixel(t_cube *cube)
-{
-	int	x;
-	int	y;
-	y = 0;
-	x = 0;
-
-	while (++x < 10)
-	{
-		y = 0;
-		while (++y < 10)
-			mlx_put_pixel(cube->image, cube->player.px + x, cube->player.py + y,
-				pixel(255, 255, 0, 255));
-	}
-}
-
 void	init_player(t_cube *cube)
 {
 	find_pl_pos(cube);
+	cube->player.pdx = cos(cube->player.pa) * 5;
+	cube->player.pdy = sin(cube->player.pa) * 5;
 }
