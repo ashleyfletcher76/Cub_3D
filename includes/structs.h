@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:55:58 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:35:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ typedef struct s_player
 	float			pdx;
 	float			pdy;
 	float			pa;
+	float			beginX;
+	float			beginY;
+	float			endX;
+	float			endY;
+	float			color;
 	char			d;
 	mlx_image_t	*p_img;
 }	t_player;

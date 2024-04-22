@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:10:35 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:27:28 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:47:11 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, int i)
 		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
 }
 
-void background(void *param)
+void	background(void *param)
 {
 	uint32_t	y;
 	uint32_t	x;
