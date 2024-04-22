@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 10:45:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:10:22 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static int	draw_line(mlx_image_t *image, t_cube *cube)
 	float	pixelX;
 	float	pixelY;
 
-	deltaX = cube->player.endX - cube->player.beginX;
-	deltaY = cube->player.endY - cube->player.beginY;
+	deltaX = cube->line.endX - cube->line.beginX;
+	deltaY = cube->line.endY - cube->line.beginY;
 	pixels = sqrt((deltaX * deltaX) + (deltaY * deltaY));
-	pixelX = cube->player.beginX;
-	pixelY = cube->player.beginY;
+	pixelX = cube->line.beginX;
+	pixelY = cube->line.beginY;
 	deltaX /= pixels;
 	deltaY /= pixels;
 	while (pixels--)
@@ -62,10 +62,10 @@ void draw_player(t_cube *cube)
 
 static void	init_line(t_cube *cube)
 {
-	cube->player.beginX = cube->player.px;
-	cube->player.beginY = cube->player.py;
-	cube->player.endX = cube->player.px + cube->player.pdx * 5;
-	cube->player.endY = cube->player.py + cube->player.pdy * 5;
+	cube->line.beginX = cube->player.px;
+	cube->line.beginY = cube->player.py;
+	cube->line.endX = cube->player.px + cube->player.pdx * 5;
+	cube->line.endY = cube->player.py + cube->player.pdy * 5;
 	cube->player.color = pixel(255, 255, 0, 255);
 }
 
