@@ -6,20 +6,25 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:10:35 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 10:47:11 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:17:46 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cube3d.h"
 
+static char	map_condition(t_cube *cube, uint32_t x, uint32_t y, int i)
+{
+	return (cube->map->map[y / i][x / i]);
+}
+
 static void	non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, int i)
 {
-	if (cube->map->map[y / i][x / i] == '1')
+	if (map_condition(cube, x, y, i) == '1')
 		mlx_put_pixel(cube->image, x, y, pixel(255, 255, 255, 255));
-	else if (cube->map->map[y / i][x / i] == '0')
+	else if (map_condition(cube, x, y, i) == '0')
 		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
-	else if (cube->map->map[y / i][x / i] == ' ')
+	else if (map_condition(cube, x, y, i) == ' ')
 		mlx_put_pixel(cube->image, x, y, pixel(128, 128, 128, 255));
 	else
 		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));

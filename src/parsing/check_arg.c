@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 12:59:01 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:19:31 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@ t_cube	check_args(int argc, char **argv)
 	return (temp_cube);
 }
 
+int	check_empty_line(t_cube *cube, char *line)
+{
+	int		x;
+
+	x = -1;
+	while (++x < cube->max_width && line[x] != '\0' && line[x] != '\n')
+	{
+		if (map_valid_chars(line[x]))
+			return (1);
+	}
+	return (-1);
+}
+
 t_cube	check_map(char *map, t_cube *temp_cube)
 {
 	int			fd;
@@ -38,8 +51,9 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 	while (line != NULL)
 	{
 		check_invalid_chars(line);
-		temp_cube->max_height++;
 		find_map_width(line, temp_cube);
+		if (check_empty_line(temp_cube, line) != -1)
+			temp_cube->max_height++;
 		free (line);
 		line = get_next_line(fd);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:07:23 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:50:35 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ t_cube	check_map(char *map, t_cube *temp_cube);
 void	check_invalid_chars(char *line);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
+int		check_empty_line(t_cube *cube, char *line);
 
 //get map details
 void	find_map_width(char *line, t_cube *cube);
 
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
-void	add_map_conditions(t_cube *cube, char *line, int row);
+int		add_map_conditions(t_cube *cube, char *line, int row);
 
 //initialization
 int32_t	init_mlx(t_cube *cube);

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 11:44:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:00:42 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ static int	draw_line(mlx_image_t *image, t_cube *cube)
 	float	pixel_x;
 	float	pixel_y;
 
-	delta_x = cube->line.end_x - cube->line.beginX;
-	delta_x = cube->line.end_y - cube->line.begin_y;
-	pixels = sqrt((deltaX * deltaX) + (deltaY * deltaY));
-	pixel_x = cube->line.beginX;
-	pixel_y = cube->line.beginY;
+	delta_x = cube->line.end_x - cube->line.begin_x;
+	delta_y = cube->line.end_y - cube->line.begin_y;
+	pixels = sqrt((delta_x * delta_x) + (delta_y * delta_y));
+	pixel_x = cube->line.begin_x;
+	pixel_y = cube->line.begin_y;
 	delta_x /= pixels;
 	delta_y /= pixels;
 	while (pixels--)
 	{
-		if (pixelX >= 0 && pixelX < image->width && pixelY >= 0
-			&& pixelY < image->height)
-			mlx_put_pixel(image, pixelX, pixelY, cube->player.color);
+		if (pixel_x >= 0 && pixel_x < image->width && pixel_y >= 0
+			&& pixel_y < image->height)
+			mlx_put_pixel(image, pixel_x, pixel_y, cube->player.color);
 		pixel_x += delta_x;
 		pixel_y += delta_y;
 	}
@@ -54,7 +54,7 @@ void	draw_player(t_cube *cube)
 		{
 			draw_x = cube->player.px + x;
 			draw_y = cube->player.py + y;
-			if (drawX >= 0 && draw_x < WIDTH && draw_y >= 0 && drawY < HEIGHT)
+			if (draw_x >= 0 && draw_x < WIDTH && draw_y >= 0 && draw_y < HEIGHT)
 				mlx_put_pixel(cube->image, draw_x, draw_y,
 					pixel(255, 255, 0, 255));
 		}
