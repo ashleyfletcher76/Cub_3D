@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 14:57:45 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:07:23 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 
 # define PI 3.1415926535
+# define MAPSIZE 64
 
 //check args
 t_cube	check_args(int argc, char **argv);
