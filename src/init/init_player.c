@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 14:36:40 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:29:07 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,33 +27,34 @@ int find_pos(t_cube *cube, char c)
 	}
 	else if (c == 'S')
 	{
-		cube->player.d = 'N';
+		cube->player.d = 'S';
 		return (true);
 	}
 	else if (c == 'E')
 	{
-		cube->player.d = 'N';
+		cube->player.d = 'E';
 		return (true);
 	}
 	else if (c == 'W')
 	{
-		cube->player.d = 'N';
+		cube->player.d = 'W';
 		return (true);
 	}
 	return (false);
 }
 
-
 void	find_pl_pos(t_cube *cube)
 {
-	int i = 0;
-	int j = 0;
-	char **map = cube->map->map;
+	int		i;
+	int		j;
+	char	**map;
 
-	while (i < cube->max_height)
+	i = -1;
+	map = cube->map->map;
+	while (++i < cube->max_height)
 	{
-		j = 0;
-		while(j < cube->max_width)
+		j = -1;
+		while(++j < cube->max_width)
 		{
 			if (find_pos(cube, map[i][j]))
 			{
@@ -61,13 +62,9 @@ void	find_pl_pos(t_cube *cube)
 				cube->player.py = i * cube->map_size;
 				return ;
 			}
-			j++;
 		}
-		i++;
 	}
 }
-
-
 
 void	draw_pixel(t_cube *cube)
 {
@@ -81,7 +78,7 @@ void	draw_pixel(t_cube *cube)
 		y = 0;
 		while (++y < 10)
 			mlx_put_pixel(cube->image, cube->player.px + x, cube->player.py + y,
-				pixel(255, 2555, 0, 255));
+				pixel(255, 255, 0, 255));
 	}
 }
 

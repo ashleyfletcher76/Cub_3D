@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:14:15 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 14:36:53 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 08:20:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int32_t	init_mlx(t_cube *cube)
 		return (EXIT_FAILURE);
 	printf("w = %d\n", cube->max_width * cube->map_size);
 	printf("h = %d\n", cube->max_height * cube->map_size);
-	cube->image = mlx_new_image(cube->mlx, cube->max_width * cube->map_size, cube->max_height * cube->map_size);
+	cube->image = mlx_new_image(cube->mlx, cube->max_width
+		* cube->map_size, cube->max_height * cube->map_size);
 	if (!cube->image)
 	{
 		mlx_delete_image(cube->mlx, cube->image);
@@ -71,6 +72,6 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->max_height = temp_cube->max_height;
 	(*cube)->max_width = temp_cube->max_width;
 	(*cube)->width_nospace = temp_cube->width_nospace;
-	(*cube)->map_size = 64;
+	(*cube)->map_size = 24;
 	(*cube)->map = NULL;
 }

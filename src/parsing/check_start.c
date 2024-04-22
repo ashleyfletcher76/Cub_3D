@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_start.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 12:49:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 13:22:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:45:37 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,11 @@ static int	check_multiple(char *line)
 
 void	multiple_start_pos(t_cube *cube)
 {
-	int			y;
+	int	y;
 	int	checker;
-	const char	*str;
 
 	y = -1;
 	checker = 0;
-	str = "NSEW";
 	while (++y < cube->max_height)
 	{
 		checker += check_multiple(cube->map->map[y]);
