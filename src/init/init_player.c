@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 10:15:01 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:43:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	find_pl_pos(t_cube *cube)
 	while (++i < cube->max_height)
 	{
 		j = -1;
-		while(++j < cube->max_width)
+		while (++j < cube->max_width)
 		{
 			if (find_pos(cube, map[i][j]))
 			{

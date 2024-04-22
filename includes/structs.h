@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 11:08:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:41:37 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 typedef struct s_line
 {
-	float	beginX;
-	float	beginY;
-	float	endX;
-	float	endY;
+	float	begin_x;
+	float	begin_y;
+	float	end_x;
+	float	end_y;
 }	t_line;
 
 typedef struct s_player

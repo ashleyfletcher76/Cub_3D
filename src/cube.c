@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 10:46:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:42:07 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int argc, char **argv)
 	init_mlx(cube);
 	init_player(cube);
 	draw_pixel(cube);
-	mlx_loop_hook (cube->mlx, hook, cube);
-	mlx_loop_hook (cube->mlx, user_input, cube);;
+	mlx_loop_hook(cube->mlx, hook, cube);
+	mlx_loop_hook(cube->mlx, user_input, cube);
 	mlx_loop(cube->mlx);
 	mlx_terminate(cube->mlx);
 	final_free(cube);
