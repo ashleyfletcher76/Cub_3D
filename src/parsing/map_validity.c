@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:21:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:34:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	check_rows_right(t_cube *cube, int row)
 	}
 }
 
-static void	check_cols_down(t_cube *cube, int col)
+void	check_cols_down(t_cube *cube, int col)
 {
 	int		y;
 	char	c;
@@ -79,7 +79,7 @@ static void	check_rows_left(t_cube *cube, int row)
 	}
 }
 
-static void	check_cols_up(t_cube *cube, int col)
+void	check_cols_up(t_cube *cube, int col)
 {
 	int		y;
 	char	c;

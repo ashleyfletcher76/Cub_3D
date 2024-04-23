@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/23 15:28:27 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/23 15:35:54 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
 SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	hooks/hooks.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/check_arg.c  \
-	parsing/check_start.c \
+	parsing/check_start.c parsing/remove_space.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c\
 	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \

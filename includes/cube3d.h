@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:28:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:35:26 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ void	find_map_width(char *line, t_cube *cube);
 
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
-int		check_empty_col(t_cube *cube);
 void	new_map(t_cube *cube, int index);
+void	check_cols_down(t_cube *cube, int col);
+void	check_cols_up(t_cube *cube, int col);
 int		add_map_conditions(t_cube *cube, char *line, int row);
 
 //initialization
@@ -57,13 +58,11 @@ void	reset_players_values(t_cube *cube);
 void	hook(void *param);
 
 //drawing processes
-void	draw_rays(t_cube *cube);
 void	draw_ray(t_cube *cube);
 int		draw_line(mlx_image_t *image, t_line line, float color);
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
-void	draw_rays(t_cube *cube);
 
 //gameplay
 int		is_wall(t_cube *cube, int x, int y);
