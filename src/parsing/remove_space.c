@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:13:09 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 16:53:10 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:11:07 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,26 @@ static void	new_map_helper(t_cube *cube, char **new_map, int row, int col)
 	}
 }
 
+static void	add_walls_to_space(t_cube *cube)
+{
+	int	row;
+	int	col;
+
+	row = -1;
+	while (++row < cube->max_height)
+	{
+		col = -1;
+		while (++col < cube->max_width)
+		{
+			while (cube->map->map[row][col] != '1')
+			{
+				printf("char = %d row = %d col = %d\n", cube->map->map[row][col], row, col);
+				cube->map->map[row][col] = '1';
+			}
+		}
+	}
+}
+
 void	new_map(t_cube *cube, int col)
 {
 	char	**new_map;
@@ -65,4 +85,5 @@ void	new_map(t_cube *cube, int col)
 	free_old_map(cube);
 	cube->max_width -= 1;
 	cube->map->map = new_map;
+	add_walls_to_space(cube);
 }
