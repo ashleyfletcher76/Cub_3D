@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 12:05:49 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:10:01 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,14 @@ int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
 void	init_player(t_cube *cube);
+t_line	init_line(float beginx, float beginy, float endx, float endy);
 void	init_default_player(t_cube *cube);
 void	reset_players_values(t_cube *cube);
 void	hook(void *param);
 
 //drawing processes
+void	draw_rays(t_cube *cube);
+int		draw_line(mlx_image_t *image, t_line line, float color);
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
