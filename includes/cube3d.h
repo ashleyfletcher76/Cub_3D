@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 14:50:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:40:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,14 @@ int		add_map_conditions(t_cube *cube, char *line, int row);
 int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
+void	init_player(t_cube *cube);
+void	init_default_player(t_cube *cube);
+void	reset_players_values(t_cube *cube);
 void	hook(void *param);
 
 //drawing processes
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
-void	draw_grid_basic(t_cube *cube);
 void	user_input(void *param);
 
 //utils
@@ -67,8 +69,6 @@ int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
 
-
-void	init_player(t_cube *cube);
 void	background(void *param);
 
 #endif

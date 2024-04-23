@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_background.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:10:35 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 13:17:46 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:57:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, int i)
 		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
 	else if (map_condition(cube, x, y, i) == ' ')
 		mlx_put_pixel(cube->image, x, y, pixel(128, 128, 128, 255));
+	else if (map_condition(cube, x, y, i) == cube->player.d)
+		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
 	else
 		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
 }

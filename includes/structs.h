@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 11:41:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:53:21 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # define STRUCTS_H
 
 # include "../MLX42/include/MLX42/MLX42.h"
+
+typedef struct s_default
+{
+	float	px;
+	float	py;
+	float	pdx;
+	float	pdy;
+}	t_default;
 
 typedef struct s_line
 {
@@ -50,6 +58,7 @@ typedef struct s_cube
 	t_map		*map;
 	t_player	player;
 	t_line		line;
+	t_default	player_default;
 	int			map_size;
 	int			max_width;
 	int			max_height;
