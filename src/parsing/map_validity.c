@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 17:09:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:35:49 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static void	check_cols_down(t_cube *cube, int col)
 		if (map_valid_chars(current) && edge_conditions(current))
 			c = current;
 	}
-	printf("c = %d\n", c);
 	if (c == 'X')
 		new_map(cube, col);
 	else if (c != '1')

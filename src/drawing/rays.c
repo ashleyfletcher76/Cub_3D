@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/23 17:07:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:44:01 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_ray	init_ray(float pa, float px, float py)
 	ray.ry = py;
 	ray.xo = 0;
 	ray.yo = 0;
-	ray.ra = pa - (DR * MAPSIZE / 2);
+	ray.ra = pa - (DR * FPOV / 2);
 	ray.mx = ray.rx / MAPSIZE;
 	ray.my = ray.ry / MAPSIZE;
 	return (ray);
