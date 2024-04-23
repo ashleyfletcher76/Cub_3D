@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:09:30 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:52:19 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	find_pl_pos(t_cube *cube)
 	while (++i < cube->max_height)
 	{
 		j = -1;
-		while(++j < cube->max_width)
+		while (++j < cube->max_width)
 		{
 			if (find_pos(cube, map[i][j]))
 			{
@@ -66,9 +66,18 @@ void	find_pl_pos(t_cube *cube)
 	}
 }
 
+void	init_default_player(t_cube *cube)
+{
+	cube->player_default.px = cube->player.px;
+	cube->player_default.py = cube->player.py;
+	cube->player_default.pdx = cube->player.pdx;
+	cube->player_default.pdy = cube->player.pdy;
+}
+
 void	init_player(t_cube *cube)
 {
 	find_pl_pos(cube);
 	cube->player.pdx = cos(cube->player.pa) * 5;
 	cube->player.pdy = sin(cube->player.pa) * 5;
+	init_default_player(cube);
 }

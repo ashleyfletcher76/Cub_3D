@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/22 13:04:16 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:57:30 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	draw_rays(t_cube *cube)
 	int		r,mx,my,dof;
 	float	rx,ry,ra,xo,yo;
 	float	aTan;
-	float	line[4];
 
 	ra = cube->player.pa;
 	r = 0;
@@ -60,10 +59,7 @@ void	draw_rays(t_cube *cube)
 				dof +=1; // next line 
 			}
 		}
-		line[0] = cube->player.px;
-		line[1] = cube->player.py;
-		line[2] = rx;
-		line[3] = ry;
+		t_line line = init_line (cube->player.px, cube->player.py, rx, ry);
 		draw_line(cube->image, line, pixel(255, 0 , 255 , 0));
 		r++;
 	}

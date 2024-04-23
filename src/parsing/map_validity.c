@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validity.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/21 13:42:57 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:45:05 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	check_cols_down(t_cube *cube, int col)
 	{
 		if (map_valid_chars(cube->map->map[y][col]) == 0
 			&& edge_conditions(cube->map->map[y][col]) == 1)
-				c = cube->map->map[y][col];
+			c = cube->map->map[y][col];
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);

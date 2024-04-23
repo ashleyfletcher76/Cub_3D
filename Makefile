@@ -6,7 +6,7 @@
 #    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/22 10:53:53 by muhakose         ###   ########.fr        #
+#    Updated: 2024/04/23 12:59:18 by muhakose         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	hooks/hooks.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/check_arg.c  \
 	parsing/check_start.c \
-	drawing/draw_grid.c drawing/rays.c\
+	drawing/draw_player.c drawing/reset_player.c \
+	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
 	utils/check_chars.c
 OBJ_DIR = obj

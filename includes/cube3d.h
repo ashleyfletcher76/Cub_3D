@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 13:02:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:48:05 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,34 @@ t_cube	check_map(char *map, t_cube *temp_cube);
 void	check_invalid_chars(char *line);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
+int		check_empty_line(t_cube *cube, char *line);
 
 //get map details
 void	find_map_width(char *line, t_cube *cube);
 
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
-void	add_map_conditions(t_cube *cube, char *line, int row);
+int		add_map_conditions(t_cube *cube, char *line, int row);
 
 //initialization
 int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
+void	init_player(t_cube *cube);
+t_line	init_line(float beginx, float beginy, float endx, float endy);
+void	init_default_player(t_cube *cube);
+void	reset_players_values(t_cube *cube);
 void	hook(void *param);
 
 //drawing processes
 void	draw_rays(t_cube *cube);
-int		draw_line(mlx_image_t *image, float line[4], float color);
+int		draw_line(mlx_image_t *image, t_line line, float color);
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
-void	draw_grid_basic(t_cube *cube);
 void	user_input(void *param);
+
+//gameplay
+int		is_wall(t_cube *cube, int x, int y);
 
 //utils
 void	print_error_exit(int flag);
@@ -68,8 +75,6 @@ int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
 
-
-void	init_player(t_cube *cube);
 void	background(void *param);
 
 #endif

@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 10:14:15 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 10:50:07 by muhakose         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2024/04/23 12:56:21 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "cube3d.h"
 #include "structs.h"
@@ -18,7 +19,8 @@ int32_t	init_mlx(t_cube *cube)
 	cube->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
 	if (!cube->mlx)
 		return (EXIT_FAILURE);
-	cube->image = mlx_new_image(cube->mlx, cube->max_width * cube->map_size, cube->max_height * cube->map_size);
+	cube->image = mlx_new_image(cube->mlx, cube->max_width
+			* cube->map_size, cube->max_height * cube->map_size);
 	if (!cube->image)
 	{
 		mlx_delete_image(cube->mlx, cube->image);

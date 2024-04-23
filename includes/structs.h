@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:55:58 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 09:53:21 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 
 # include "../MLX42/include/MLX42/MLX42.h"
 
+typedef struct s_default
+{
+	float	px;
+	float	py;
+	float	pdx;
+	float	pdy;
+}	t_default;
+
+typedef struct s_line
+{
+	float	begin_x;
+	float	begin_y;
+	float	end_x;
+	float	end_y;
+}	t_line;
+
 typedef struct s_player
 {
 	float			px;
@@ -22,6 +38,7 @@ typedef struct s_player
 	float			pdx;
 	float			pdy;
 	float			pa;
+	float			color;
 	char			d;
 	mlx_image_t	*p_img;
 }	t_player;
@@ -40,6 +57,8 @@ typedef struct s_cube
 	mlx_image_t	*image;
 	t_map		*map;
 	t_player	player;
+	t_line		line;
+	t_default	player_default;
 	int			map_size;
 	int			max_width;
 	int			max_height;
