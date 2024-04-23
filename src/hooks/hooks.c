@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 09:40:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:39:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,43 @@ static void	left_right_keys(t_cube *cube)
 	}
 }
 
+static void	collision_conditions(t_cube *cube, double next_px, double next_py, int flag)
+{
+	if (flag == 0)
+	{
+		next_px = cube->player.px + cube->player.pdx;
+		next_py = cube->player.py + cube->player.pdy;
+		if (!is_wall(cube, next_px, next_py))
+		{
+			cube->player.px = next_px;
+			cube->player.py = next_py;
+		}
+	}
+	else if (flag == 1)
+	{
+		next_px = cube->player.px - cube->player.pdx;
+		next_py = cube->player.py - cube->player.pdy;
+		if (!is_wall(cube, next_px, next_py))
+		{
+			cube->player.px = next_px;
+			cube->player.py = next_py;
+		}
+	}
+}
+
 void	user_input(void *param)
 {
 	t_cube	*cube;
+	double	next_px;
+	double	next_py;
 
 	cube = (t_cube *)param;
+	next_px = 0.0;
+	next_py = 0.0;
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_UP) || mlx_is_key_down(cube->mlx, MLX_KEY_W))
-	{
-		cube->player.px += cube->player.pdx;
-		cube->player.py += cube->player.pdy;
-	}
+		collision_conditions(cube, next_px, next_py, 0);
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_DOWN) || mlx_is_key_down(cube->mlx, MLX_KEY_S))
-	{
-		cube->player.px -= cube->player.pdx;
-		cube->player.py -= cube->player.pdy;
-	}
+		collision_conditions(cube, next_px, next_py, 1);
 	left_right_keys(cube);
 	player_reset(cube);
 	background(cube);
