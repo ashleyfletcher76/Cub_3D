@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:14:14 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:23:52 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	find_map_width(char *line, t_cube *cube);
 
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
+int		check_empty_col(t_cube *cube);
 int		add_map_conditions(t_cube *cube, char *line, int row);
 
 //initialization

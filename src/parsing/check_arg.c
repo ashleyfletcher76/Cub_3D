@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 15:19:31 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:29:32 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ int	check_empty_line(t_cube *cube, char *line)
 
 	x = -1;
 	while (++x < cube->max_width && line[x] != '\0' && line[x] != '\n')
+	{
+		if (map_valid_chars(line[x]))
+			return (1);
+	}
+	x = -1;
+	while (++x < cube->max_height && line[x] != '\0' && line[x] != '\n')
 	{
 		if (map_valid_chars(line[x]))
 			return (1);

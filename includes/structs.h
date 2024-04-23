@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:20:26 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:24:09 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**map;
+	int		empty_col;
 	int		start_x;
 	int		start_y;
 	int		grid_size;
