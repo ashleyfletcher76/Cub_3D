@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/23 15:16:23 by muhakose         ###   ########.fr       */
+/*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/23 17:10:02 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "cube3d.h"
 #include "structs.h"
+#include "cube3d.h"
 
 int32_t	init_mlx(t_cube *cube)
 {

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 10:39:29 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:08:46 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static void	player_reset(t_cube *cube)
 
 static void	left_right_keys(t_cube *cube)
 {
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_LEFT) || mlx_is_key_down(cube->mlx, MLX_KEY_A))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_LEFT)
+		|| mlx_is_key_down(cube->mlx, MLX_KEY_A))
 	{
 		cube->player.pa -= 0.1;
 		if (cube->player.pa < 0)
@@ -42,7 +43,8 @@ static void	left_right_keys(t_cube *cube)
 		cube->player.pdx = cos(cube->player.pa) * 5;
 		cube->player.pdy = sin(cube->player.pa) * 5;
 	}
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_RIGHT) || mlx_is_key_down(cube->mlx, MLX_KEY_D))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_RIGHT)
+		|| mlx_is_key_down(cube->mlx, MLX_KEY_D))
 	{
 		cube->player.pa += 0.1;
 		if (cube->player.pa < 0)
@@ -52,7 +54,8 @@ static void	left_right_keys(t_cube *cube)
 	}
 }
 
-static void	collision_conditions(t_cube *cube, double next_px, double next_py, int flag)
+static void	collision_conditions(t_cube *cube, double next_px
+	, double next_py, int flag)
 {
 	if (flag == 0)
 	{
@@ -85,9 +88,11 @@ void	user_input(void *param)
 	cube = (t_cube *)param;
 	next_px = 0.0;
 	next_py = 0.0;
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_UP) || mlx_is_key_down(cube->mlx, MLX_KEY_W))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_UP)
+		|| mlx_is_key_down(cube->mlx, MLX_KEY_W))
 		collision_conditions(cube, next_px, next_py, 0);
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_DOWN) || mlx_is_key_down(cube->mlx, MLX_KEY_S))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_DOWN)
+		|| mlx_is_key_down(cube->mlx, MLX_KEY_S))
 		collision_conditions(cube, next_px, next_py, 1);
 	left_right_keys(cube);
 	player_reset(cube);

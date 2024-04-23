@@ -10,6 +10,10 @@ Key points
 
 * Using a second function to read line by line and not do them in the previous check_arg functions, is to prevent malloc'ing when the intial checks were done. This is better to prevent unneccesary mallocing, but is admitedly not the great doing multiple read line checks.
 
-* The purpose of this final check being after malloc'ing, we can then check the index of the line above or below. If the line index above or below is a space then the current value must be a '1'. Omnidirectional.
+* We check omnidirectionally to see if the last value that is not space, \0 or \n and if yes, then we know the perimeter is secure. Otherwise we exit.
+
+* We also check the columns and if they are also just spaces we then make changes to the map data. We take the old map and give the new_map the correct values up till the space column and then proceed to skip this column and finish until the end of the line. Then find this column for each row. This process is repeated for any following space columns.
+
+* Finally the old map is freed and then given the new_maps value after. Map width is then subtracted by one to ensure an accurate map.
 
 * Another check is for the multiple start positions. This has been implemented in this stage after the map has been initialized. Now we use a checker to see if "NSEW" has been found multiple times, if yes, invalid map.

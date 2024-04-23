@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   init_background.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/23 12:56:14 by muhakose         ###   ########.fr       */
+/*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/23 17:10:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "structs.h"
 #include "cube3d.h"

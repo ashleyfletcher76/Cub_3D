@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:36:56 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:47:03 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@
 
 # define PI 3.1415926535
 # define MAPSIZE 64
-# define FPOV 1
+# define FPOV 90
+# define DR 0.0174533
 
 //check args
 t_cube	check_args(int argc, char **argv);
