@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:35:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:36:56 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	find_map_width(char *line, t_cube *cube);
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
 void	new_map(t_cube *cube, int index);
-void	check_cols_down(t_cube *cube, int col);
-void	check_cols_up(t_cube *cube, int col);
+// void	check_cols_down(t_cube *cube, int col);
+// void	check_cols_up(t_cube *cube, int col);
 int		add_map_conditions(t_cube *cube, char *line, int row);
 
 //initialization

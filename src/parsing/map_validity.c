@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:34:25 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:38:33 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@ static void	check_rows_right(t_cube *cube, int row)
 				c = current;
 	}
 	if (c != '1')
-	{
-		printf("row right\n");
 		free_print_exit(cube, 2, 0);
-	}
 }
 
-void	check_cols_down(t_cube *cube, int col)
+static void	check_cols_down(t_cube *cube, int col)
 {
 	int		y;
 	char	c;
@@ -52,10 +49,7 @@ void	check_cols_down(t_cube *cube, int col)
 	if (c == 'X')
 		new_map(cube, col);
 	else if (c != '1')
-	{
-		printf("cols down\n");
 		free_print_exit(cube, 2, 0);
-	}
 }
 
 static void	check_rows_left(t_cube *cube, int row)
@@ -73,13 +67,10 @@ static void	check_rows_left(t_cube *cube, int row)
 			c = current;
 	}
 	if (c != '1')
-	{
-		printf("row left\n");
 		free_print_exit(cube, 2, 0);
-	}
 }
 
-void	check_cols_up(t_cube *cube, int col)
+static void	check_cols_up(t_cube *cube, int col)
 {
 	int		y;
 	char	c;
@@ -96,10 +87,7 @@ void	check_cols_up(t_cube *cube, int col)
 	if (c == 'X')
 		new_map(cube, col);
 	else if (c != '1')
-	{
-		printf("cols up\n");
 		free_print_exit(cube, 2, 0);
-	}
 }
 
 void	check_map_perimeter(t_cube *cube)

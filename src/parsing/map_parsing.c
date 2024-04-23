@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 14:44:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:36:35 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,6 @@ t_cube	fill_map(t_cube *cube, char *map)
 	close (fd);
 	return (*cube);
 }
-
-// static int	check_empty_helper(t_cube *cube, char *line, int col)
-// {
-// 	int	row;
-
-// 	row = -1;
-// 	while (++row < cube->max_height)
-// 	{
-// 		if (cube->map->map[row][col] != ' ')
-// 			return (0);
-// 	}
-// 	return (1);
-// }
-
-// int	check_empty_col(t_cube *cube, char *line)
-// {
-// 	int	col;
-
-// 	col = -1;
-// 	while (++col < cube->max_width)
-// 	{
-// 		if (check_empty_helper(cube, col))
-// 			return (col);
-// 	}
-// 	return (-1);
-// }
 
 int	add_map_conditions(t_cube *cube, char *line, int row)
 {

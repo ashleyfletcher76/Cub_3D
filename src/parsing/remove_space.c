@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:13:09 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:06:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:38:39 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	new_map(t_cube *cube, int col)
 		}
 	}
 	free_old_map(cube);
-	printf("width = %d\n", cube->max_width);
 	cube->max_width -= 1;
 	cube->map->map = new_map;
 }
