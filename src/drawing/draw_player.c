@@ -6,38 +6,13 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 12:54:39 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:17:32 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cube3d.h"
 
-/*static int	draw_line(mlx_image_t *image, t_cube *cube)
-{
-	double	delta_x;
-	double	delta_y;
-	int		pixels;
-	float	pixel_x;
-	float	pixel_y;
-
-	delta_x = cube->line.end_x - cube->line.begin_x;
-	delta_y = cube->line.end_y - cube->line.begin_y;
-	pixels = sqrt((delta_x * delta_x) + (delta_y * delta_y));
-	pixel_x = cube->line.begin_x;
-	pixel_y = cube->line.begin_y;
-	delta_x /= pixels;
-	delta_y /= pixels;
-	while (pixels--)
-	{
-		if (pixel_x >= 0 && pixel_x < image->width && pixel_y >= 0
-			&& pixel_y < image->height)
-			mlx_put_pixel(image, pixel_x, pixel_y, cube->player.color);
-		pixel_x += delta_x;
-		pixel_y += delta_y;
-	}
-	return (true);
-}*/
 
 int	draw_line(mlx_image_t *image, t_line line, float color)
 {
@@ -64,6 +39,17 @@ int	draw_line(mlx_image_t *image, t_line line, float color)
 	return (true);
 }
 
+t_line	init_line(float beginx, float beginy, float endx, float endy)
+{
+	t_line line;
+
+	line.begin_x = beginx;
+	line.begin_y = beginy;
+	line.end_x = endx;
+	line.end_y = endy;
+	return (line);
+}
+
 void	draw_player(t_cube *cube)
 {
 	int	x;
@@ -86,16 +72,6 @@ void	draw_player(t_cube *cube)
 	}
 }
 
-t_line	init_line(float beginx, float beginy, float endx, float endy)
-{
-	t_line line;
-
-	line.begin_x = beginx;
-	line.begin_y = beginy;
-	line.end_x = endx;
-	line.end_y = endy;
-	return (line);
-}
 
 void	draw_pixel(t_cube *cube)
 {
@@ -104,4 +80,5 @@ void	draw_pixel(t_cube *cube)
 	line = init_line(cube->player.px, cube->player.py, cube->player.px + cube->player.pdx * 5, cube->player.py + cube->player.pdy * 5);
 	draw_player(cube);
 	draw_line(cube->image, line, pixel(255, 255, 0, 255));
+	draw_ray(cube);
 }
