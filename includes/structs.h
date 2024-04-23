@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 09:53:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:05:09 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**map;
+	int		empty_col;
 	int		start_x;
 	int		start_y;
 	int		grid_size;

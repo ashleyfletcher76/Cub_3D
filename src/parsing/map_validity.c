@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validity.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 11:45:05 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:34:24 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,18 @@ static void	check_rows_right(t_cube *cube, int row)
 {
 	int		x;
 	char	c;
+	char	current;
 
 	x = -1;
-	c = '1';
+	c = 'X';
 	while (++x < cube->max_width)
 	{
-		if (map_valid_chars(cube->map->map[row][x]) == 0
-			&& edge_conditions(cube->map->map[row][x]) == 1)
-			c = cube->map->map[row][x];
+		current = cube->map->map[row][x];
+		if (map_valid_chars(current) && edge_conditions(current))
+			{
+				printf("c = %d map c = %d x = %d y = %d\n", c, cube->map->map[row][x], x, row);
+				c = current;
+			}
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
@@ -34,31 +38,36 @@ static void	check_cols_down(t_cube *cube, int col)
 {
 	int		y;
 	char	c;
+	char	current;
 
 	y = -1;
-	c = '1';
+	c = 'X';
 	while (++y < cube->max_height)
 	{
-		if (map_valid_chars(cube->map->map[y][col]) == 0
-			&& edge_conditions(cube->map->map[y][col]) == 1)
-			c = cube->map->map[y][col];
+		current = cube->map->map[y][col];
+		if (map_valid_chars(current) && edge_conditions(current))
+			c = current;
 	}
 	if (c != '1')
+	{
+		printf("here\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_rows_left(t_cube *cube, int row)
 {
 	int		x;
 	char	c;
+	char	current;
 
 	x = cube->max_width;
-	c = '1';
+	c = 'X';
 	while (--x >= 0)
 	{
-		if (map_valid_chars(cube->map->map[row][x]) == 0
-			&& edge_conditions(cube->map->map[row][x]) == 1)
-			c = cube->map->map[row][x];
+		current = cube->map->map[row][x];
+		if (map_valid_chars(current) && edge_conditions(current))
+			c = current;
 	}
 	if (c != '1')
 		free_print_exit(cube, 2, 0);
@@ -68,17 +77,21 @@ static void	check_cols_up(t_cube *cube, int col)
 {
 	int		y;
 	char	c;
+	char	current;
 
 	y = cube->max_height;
-	c = '1';
+	c = 'X';
 	while (--y >= 0)
 	{
-		if (map_valid_chars(cube->map->map[y][col]) == 0
-			&& edge_conditions(cube->map->map[y][col]) == 1)
-			c = cube->map->map[y][col];
+		current = cube->map->map[y][col];
+		if (map_valid_chars(current) && edge_conditions(current))
+			c = current;
 	}
 	if (c != '1')
+	{
+		printf("here\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 void	check_map_perimeter(t_cube *cube)
