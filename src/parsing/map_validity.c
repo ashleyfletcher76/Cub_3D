@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 12:34:24 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:21:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ static void	check_rows_right(t_cube *cube, int row)
 	{
 		current = cube->map->map[row][x];
 		if (map_valid_chars(current) && edge_conditions(current))
-			{
-				printf("c = %d map c = %d x = %d y = %d\n", c, cube->map->map[row][x], x, row);
 				c = current;
-			}
 	}
 	if (c != '1')
+	{
+		printf("row right\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_cols_down(t_cube *cube, int col)
@@ -48,9 +48,12 @@ static void	check_cols_down(t_cube *cube, int col)
 		if (map_valid_chars(current) && edge_conditions(current))
 			c = current;
 	}
-	if (c != '1')
+	printf("c = %d\n", c);
+	if (c == 'X')
+		new_map(cube, col);
+	else if (c != '1')
 	{
-		printf("here\n");
+		printf("cols down\n");
 		free_print_exit(cube, 2, 0);
 	}
 }
@@ -70,7 +73,10 @@ static void	check_rows_left(t_cube *cube, int row)
 			c = current;
 	}
 	if (c != '1')
+	{
+		printf("row left\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_cols_up(t_cube *cube, int col)
@@ -87,9 +93,11 @@ static void	check_cols_up(t_cube *cube, int col)
 		if (map_valid_chars(current) && edge_conditions(current))
 			c = current;
 	}
-	if (c != '1')
+	if (c == 'X')
+		new_map(cube, col);
+	else if (c != '1')
 	{
-		printf("here\n");
+		printf("cols up\n");
 		free_print_exit(cube, 2, 0);
 	}
 }

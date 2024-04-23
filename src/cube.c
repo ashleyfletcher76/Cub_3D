@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 11:19:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:16:10 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	fill_map(cube, argv[1]);
 	print_map(cube);
 	check_map_perimeter(cube);
+	print_map(cube);
 	init_mlx(cube);
 	init_player(cube);
 	draw_pixel(cube);

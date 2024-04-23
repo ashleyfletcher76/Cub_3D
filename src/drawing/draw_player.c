@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 12:54:39 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:17:13 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	draw_line(mlx_image_t *image, t_line line, float color)
 	deltay /= pixels;
 	while (pixels)
 	{
+		if (pixelx >= 0 && pixelx < image->width && pixely >= 0
+			&& pixely < image->height)
 		mlx_put_pixel(image, pixelx, pixely, color);
 		pixelx += deltax;
 		pixely += deltay;
