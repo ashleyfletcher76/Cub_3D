@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:14:15 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:54:51 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:50:07 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->max_height = temp_cube->max_height;
 	(*cube)->max_width = temp_cube->max_width;
 	(*cube)->width_nospace = temp_cube->width_nospace;
-	(*cube)->map_size = 24;
+	(*cube)->map_size = 64;
 	(*cube)->map = NULL;
 }

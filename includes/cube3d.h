@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:07:23 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:02:43 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	init_map(t_cube *cube);
 void	hook(void *param);
 
 //drawing processes
+void	draw_rays(t_cube *cube);
+int		draw_line(mlx_image_t *image, float line[4], float color);
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	draw_grid_basic(t_cube *cube);

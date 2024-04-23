@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 09:43:22 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:25:35 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,35 @@ void	draw_grid_basic(t_cube *cube)
 	}
 }
 
-int	draw_line(mlx_image_t *image, float beginX, float beginY, float endX, float endY, float color)
+// draw_line function takes a float array of size 4
+// first 2 value are the x and y coordinates that line starting form
+// line[0] = beginX
+// line[1] = beginY
+// last 2 values are the x0 and y0 that are the
+// cordinates for the ending coordintes for the line.
+// line[2] = endX
+// line[3] = endY
+
+int	draw_line(mlx_image_t *image, float line[4], float color)
 {
-	double	deltaX = endX - beginX;
-	double	deltaY = endY - beginY;
+	double	deltax;
+	double	deltay;
+	int		pixels;
+	float	pixelx;
+	float	pixely;
 
-	int pixels = sqrt((deltaX * deltaX) + (deltaY * deltaY));
-	float	pixelX = beginX;
-	float	pixelY = beginY;
-
-	deltaX /= pixels;
-	deltaY /= pixels;
+	deltay = line[3] - line[1];
+	deltax = line[2] - line[0];
+	pixels = sqrt((deltax * deltax) + (deltay * deltay));
+	pixelx = line[0];
+	pixely = line[1];
+	deltax /= pixels;
+	deltay /= pixels;
 	while (pixels)
 	{
-		mlx_put_pixel(image, pixelX, pixelY, color);
-		pixelX += deltaX;
-		pixelY += deltaY;
+		mlx_put_pixel(image, pixelx, pixely, color);
+		pixelx += deltax;
+		pixely += deltay;
 		--pixels;
 	}
 	return (true);
@@ -67,8 +80,9 @@ int	draw_line(mlx_image_t *image, float beginX, float beginY, float endX, float 
 
 void	draw_player(t_cube *cube)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
+	float	line[4];
 
 	x = -5;
 	while (++x < 5)
@@ -78,12 +92,16 @@ void	draw_player(t_cube *cube)
 			mlx_put_pixel(cube->image, cube->player.px + x, cube->player.py + y,
 				pixel(255, 255, 0, 255));
 	}
+	line[0] = cube->player.px;
+	line[1] = cube->player.py;
+	line[2] = cube->player.px + cube->player.pdx * 5;
+	line[3] = cube->player.py + cube->player.pdy * 5;
+	draw_line(cube->image, line, pixel(255, 255, 0, 255));
 }
-
 
 void	draw_pixel(t_cube *cube)
 {
 	draw_player(cube);
-	draw_line(cube->image, cube->player.px, cube->player.py, cube->player.px + cube->player.pdx * 5, cube->player.py + cube->player.pdy * 5 , pixel(255, 255, 0, 255));
-
 }
+
+	//draw_rays(cube);
