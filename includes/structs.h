@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 12:05:09 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:24:09 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@ typedef struct s_line
 	float	end_y;
 }	t_line;
 
+typedef struct s_ray
+{
+	float	rx;
+	float	ry;
+	float	ra;
+	float	xo;
+	float	yo;
+	int		mx;
+	int		my;
+}	t_ray;
+
+
 typedef struct s_player
 {
 	float			px;
@@ -40,7 +52,7 @@ typedef struct s_player
 	float			pa;
 	float			color;
 	char			d;
-	mlx_image_t	*p_img;
+	mlx_image_t		*p_img;
 }	t_player;
 
 typedef struct s_map

@@ -6,15 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 14:44:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:28:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE3D_H
 # define CUBE3D_H
-
-# define WIDTH 1920
-# define HEIGHT 1080
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -25,8 +22,12 @@
 # include "../libft/includes/libft.h"
 # include "../MLX42/include/MLX42/MLX42.h"
 
+# define WIDTH 1920
+# define HEIGHT 1080
+
 # define PI 3.1415926535
 # define MAPSIZE 64
+# define FPOV 1
 
 //check args
 t_cube	check_args(int argc, char **argv);
@@ -57,10 +58,12 @@ void	hook(void *param);
 
 //drawing processes
 void	draw_rays(t_cube *cube);
+void	draw_ray(t_cube *cube);
 int		draw_line(mlx_image_t *image, t_line line, float color);
 void	draw_pixel(t_cube *cube);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
+void	draw_rays(t_cube *cube);
 
 //gameplay
 int		is_wall(t_cube *cube, int x, int y);
