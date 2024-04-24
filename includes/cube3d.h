@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 17:44:43 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:52:03 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,8 @@ int		map_valid_chars(char c);
 int		edge_conditions(char c);
 
 void	background(void *param);
+
+void	flood_fill(char **tab, t_cube *cube, t_point begin);
+void	fill(char **tab, t_cube *cube, t_point curr, char to_fill);
 
 #endif
