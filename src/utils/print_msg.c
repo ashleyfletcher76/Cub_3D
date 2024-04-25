@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 14:43:49 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:08:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ void	free_print_exit_two(t_cube *cube, int flag)
 	if (flag == 0)
 	{
 		ft_putendl_fd("Failed to input line to map data", 2);
+		final_free(cube);
+	}
+	if (flag == 1)
+	{
+		ft_putendl_fd("Failed flood fill", 2);
 		final_free(cube);
 	}
 }
