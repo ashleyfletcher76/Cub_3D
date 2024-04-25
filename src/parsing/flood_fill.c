@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:28:27 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 12:00:40 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:26:49 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 void	flood_fill(char **map, t_cube *cube, int x, int y)
 {
 	if (x < 0 || y < 0)
-		return ;
+	{
+		printf("Fill 1\n");
+		free_print_exit(cube, 2, 0);
+	}
 	if (x >= cube->max_width || y >= cube->max_height)
 	{
-		printf("Boundary breach attempt at x = %d, y = %d, width = %d, height = %d\n", x, y, cube->max_width, cube->max_height);
-		return ;
+		printf("Fill 2\n");
+		free_print_exit(cube, 2, 0);
 	}
 	if (map[y][x] == '1' || map[y][x] == 'V')
 		return ;

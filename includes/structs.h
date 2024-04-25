@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 10:10:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:57:01 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ typedef struct s_player
 {
 	float			px;
 	float			py;
-	float			opx;
-	float			opy;
+	float			opx; // original pos
+	float			opy; // original pos
 	float			pdx;
 	float			pdy;
 	float			pa;

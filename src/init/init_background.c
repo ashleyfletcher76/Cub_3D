@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 17:43:34 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:54:31 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static void	non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, int i)
 	else if (map_condition(cube, x, y, i) == ' ')
 		mlx_put_pixel(cube->image, x, y, pixel(128, 128, 128, 255));
 	else if (map_condition(cube, x, y, i) == cube->player.d)
+		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
+	else if (map_condition(cube, x, y, i) == 'V')
 		mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
 	else
 		mlx_put_pixel(cube->image, x, y, pixel(128, 128, 128, 255));
