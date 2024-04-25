@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 14:08:49 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:40:42 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ t_cube	fill_map(t_cube *cube, char *map)
 		free (line);
 		line = get_next_line(fd);
 	}
-	check_map_perimeter(cube);
-	find_pl_pos(cube);
-	flood_fill(cube->map->map, cube, cube->player.opx, cube->player.opy);
 	close (fd);
 	return (*cube);
 }
@@ -45,7 +42,7 @@ int	add_map_conditions(t_cube *cube, char *line, int row)
 
 	x = -1;
 	if (!line)
-		free_print_exit_two(cube, 0);
+		free_print_exit_two(cube, NULL, 0);
 	if (check_empty_line(cube, line) == -1)
 		return (-1);
 	while (++x < cube->max_width && line[x] != '\0' && line[x] != '\n')

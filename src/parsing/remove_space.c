@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   remove_space.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:13:09 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 14:47:28 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:13:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	new_map_helper(t_cube *cube, char **new_map, int row, int col)
 	if (!new_map[row])
 	{
 		free_new_map(new_map, row);
-		free_print_exit_two(cube, 0);
+		free_print_exit_two(cube, NULL, 0);
 	}
 	x = 0;
 	new_x = 0;
@@ -65,5 +65,4 @@ void	new_map(t_cube *cube, int col)
 	free_old_map(cube);
 	cube->max_width -= 1;
 	cube->map->map = new_map;
-	//add_walls_to_space(cube);
 }

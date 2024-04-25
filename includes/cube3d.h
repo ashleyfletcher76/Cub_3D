@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 09:59:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:29:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ void	find_map_width(char *line, t_cube *cube);
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
 void	new_map(t_cube *cube, int index);
-// void	check_cols_down(t_cube *cube, int col);
-// void	check_cols_up(t_cube *cube, int col);
+void	flood_fill(t_cube *cube, int x, int y);
 int		add_map_conditions(t_cube *cube, char *line, int row);
 
 //initialization
@@ -62,6 +61,9 @@ void	hook(void *param);
 void	draw_ray(t_cube *cube);
 int		draw_line(mlx_image_t *image, t_line line, float color);
 void	draw_pixel(t_cube *cube);
+void	find_pl_pos(t_cube *cube);
+int		find_pos(t_cube *cube, char c);
+void	background(void *param);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
 
@@ -71,7 +73,7 @@ int		is_wall(t_cube *cube, int x, int y);
 //utils
 void	print_error_exit(int flag);
 void	free_print_exit(t_cube *cube, int flag, int i);
-void	free_print_exit_two(t_cube *cube, int flag);
+void	free_print_exit_two(t_cube *cube, t_point *stack, int flag);
 void	final_free(t_cube *cube);
 void	print_map(t_cube *cube);
 
@@ -79,11 +81,5 @@ void	print_map(t_cube *cube);
 int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
-
-void	background(void *param);
-
-void	flood_fill(char **map, t_cube *cube, int x, int y);
-void	find_pl_pos(t_cube *cube);
-int		find_pos(t_cube *cube, char c);
 
 #endif

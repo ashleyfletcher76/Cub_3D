@@ -17,3 +17,7 @@ Key points
 * Finally the old map is freed and then given the new_maps value after. Map width is then subtracted by one to ensure an accurate map.
 
 * Another check is for the multiple start positions. This has been implemented in this stage after the map has been initialized. Now we use a checker to see if "NSEW" has been found multiple times, if yes, invalid map.
+
+* We also now have a flood fill checker to check the perimeter. This flood fill creates a stack and will move around the grid checking if it has reached width = 0, height = 0, width max and height max. In this case the perimeter would have been breached as it should not escape the 1's(walls). We start the search from the plasyers position.
+
+* We check previously with another method to avoid malloc'ing when unnecessary.

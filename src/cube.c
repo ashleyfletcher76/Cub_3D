@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 11:55:10 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:40:47 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	init_cube(&cube, &temp_cube);
 	init_map(cube);
 	fill_map(cube, argv[1]);
-	// check_map_perimeter(cube);
+	check_map_perimeter(cube);
 	print_map(cube);
 	init_mlx(cube);
 	init_player(cube);

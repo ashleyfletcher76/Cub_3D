@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validity.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 12:56:00 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:40:52 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,6 @@ void	check_map_perimeter(t_cube *cube)
 		check_rows_left(cube, curr_row);
 	while (--curr_col >= 0)
 		check_cols_up(cube, curr_col);
+	find_pl_pos(cube);
+	flood_fill(cube, cube->player.opx, cube->player.opy);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 14:08:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:52:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ void	free_print_exit(t_cube *cube, int flag, int i)
 	exit(EXIT_FAILURE);
 }
 
-void	free_print_exit_two(t_cube *cube, int flag)
+void	free_print_exit_two(t_cube *cube, t_point *stack, int flag)
 {
+	(void)stack;
 	if (flag == 0)
 	{
 		ft_putendl_fd("Failed to input line to map data", 2);
@@ -67,7 +68,10 @@ void	free_print_exit_two(t_cube *cube, int flag)
 	}
 	if (flag == 1)
 	{
-		ft_putendl_fd("Failed flood fill", 2);
+		ft_putendl_fd("Invalid map", 2);
+		free (stack);
+		print_map(cube);
 		final_free(cube);
 	}
+	exit(EXIT_FAILURE);
 }
