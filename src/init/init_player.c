@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 15:16:30 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/25 10:10:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	find_pl_pos(t_cube *cube)
 		{
 			if (find_pos(cube, map[i][j]))
 			{
+				cube->player.opx = j;
+				cube->player.opy = i;
 				cube->player.px = j * cube->map_size;
 				cube->player.py = i * cube->map_size;
 				return ;

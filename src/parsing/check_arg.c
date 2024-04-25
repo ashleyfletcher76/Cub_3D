@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:47:18 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 11:29:32 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:42:20 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 		free (line);
 		line = get_next_line(fd);
 	}
+	printf("Height = %d\n", temp_cube->max_height);
 	free (line);
 	close (fd);
 	return (*temp_cube);

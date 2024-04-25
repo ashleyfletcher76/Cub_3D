@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/24 18:52:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/25 09:59:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ int		edge_conditions(char c);
 
 void	background(void *param);
 
-void	flood_fill(char **tab, t_cube *cube, t_point begin);
-void	fill(char **tab, t_cube *cube, t_point curr, char to_fill);
+void	flood_fill(char **map, t_cube *cube, int x, int y);
+void	find_pl_pos(t_cube *cube);
+int		find_pos(t_cube *cube, char c);
 
 #endif
