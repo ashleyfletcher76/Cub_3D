@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:28:27 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 19:04:46 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 12:31:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	flood_fill(t_cube *cube, int x, int y)
 	t_point	point;
 	int		top;
 
-	stack = malloc(cube->max_width * cube->max_height * sizeof(t_point));
+	stack = malloc(cube->max_width + 1 * cube->max_height + 1 * sizeof(t_point));
 	if (!stack)
 		free_print_exit(cube, 2, 0);
 	top = 0;

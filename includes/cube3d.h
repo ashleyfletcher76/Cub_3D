@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 14:04:35 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:48:19 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	print_map(t_cube *cube);
 int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
+
+void	free_print_exit_tw(t_cube *cube, t_point *stack, int x, int y);
 
 #endif
