@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/24 18:52:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:30:54 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int32_t	init_mlx(t_cube *cube)
 	if (!cube->mlx)
 		return (EXIT_FAILURE);
 	cube->image = mlx_new_image(cube->mlx, cube->max_width
-			* cube->map_size, cube->max_height * cube->map_size);
+			* MAPSIZE, cube->max_height * MAPSIZE);
 	if (!cube->image)
 	{
 		mlx_delete_image(cube->mlx, cube->image);
@@ -70,6 +70,5 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->max_height = temp_cube->max_height;
 	(*cube)->max_width = temp_cube->max_width;
 	(*cube)->width_nospace = temp_cube->width_nospace;
-	(*cube)->map_size = 16;
 	(*cube)->map = NULL;
 }

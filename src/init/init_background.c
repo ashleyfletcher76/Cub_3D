@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_background.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 12:54:31 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:31:11 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	background(void *param)
 	t_cube		*cube;
 
 	cube = (t_cube *)param;
-	i = cube->map_size;
+	i = MAPSIZE;
 	x = -1;
 	while (++x < cube->image->width)
 	{
