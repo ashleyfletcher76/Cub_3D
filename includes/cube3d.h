@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 18:29:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:58:16 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void	print_map(t_cube *cube);
 int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
+
+void	free_print_exit_tw(t_cube *cube, t_point *stack, int x, int y);
 
 #endif
