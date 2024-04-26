@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/24 18:39:53 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/26 15:25:01 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ COLOUR_END = \033[0m
 
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
+CFLAGS = -Wall -Wextra -Werror -I./includes/ -g -fsanitize=address
 SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	hooks/hooks.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/check_arg.c  \

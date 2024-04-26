@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:55:41 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:43:36 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:19:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ char	*ft_strdup(const char *s1)
 	str[i] = '\0';
 	return (str);
 }
+
 //creates space for a copy of s1

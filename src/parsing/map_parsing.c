@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/25 18:40:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:10:58 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_cube	fill_map(t_cube *cube, char *map)
 		free_print_exit(cube, 3, 0);
 	line = get_next_line(fd);
 	y = 0;
-	printf("height = %d\n", cube->max_height);
 	while (line != NULL)
 	{
 		if (add_map_conditions(cube, line, y) != -1)
