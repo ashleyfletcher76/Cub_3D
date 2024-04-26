@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 14:57:39 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:17:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@
 # include "../libft/includes/libft.h"
 # include "../MLX42/include/MLX42/MLX42.h"
 
-# define WIDTH 1920
-# define HEIGHT 1080
-
 # define PI 3.1415926535
-# define MAPSIZE 64
-# define FPOV 90
 # define DR 0.0174533
+
+# define WIDTH 1080
+# define HEIGHT 720
+
+# define MAPSIZE 32
+# define FPOV 60
 
 //check args
 t_cube	check_args(int argc, char **argv);
@@ -63,7 +64,7 @@ int		draw_line(mlx_image_t *image, t_line line, float color);
 void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
-void	background(void *param);
+void	two_d_map(void *param);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
 

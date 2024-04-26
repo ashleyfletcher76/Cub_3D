@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 17:06:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:54:22 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	draw_player(t_cube *cube)
 	int	draw_x;
 	int	draw_y;
 
-	x = -5;
-	while (++x < 5)
+	x = -MAPSIZE / 8;
+	while (++x < MAPSIZE / 8)
 	{
-		y = -5;
-		while (++y < 5)
+		y = -MAPSIZE / 8;
+		while (++y < MAPSIZE / 8)
 		{
 			draw_x = cube->player.px + x;
 			draw_y = cube->player.py + y;
@@ -78,8 +78,7 @@ void	draw_pixel(t_cube *cube)
 	t_line	line;
 
 	line = init_line(cube->player.px, cube->player.py, cube->player.px
-			+ cube->player.pdx * 5, cube->player.py + cube->player.pdy * 5);
-	draw_ray(cube);
+			+ cube->player.pdx * MAPSIZE / 8, cube->player.py + cube->player.pdy * MAPSIZE / 8);
 	draw_player(cube);
 	draw_line(cube->image, line, pixel(255, 255, 0, 255));
 }

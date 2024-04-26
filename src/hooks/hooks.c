@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 17:08:46 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 12:00:06 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	player_reset(t_cube *cube)
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_P))
 	{
 		reset_players_values(cube);
-		background(cube);
+		two_d_map(cube);
 		draw_pixel(cube);
 	}
 }
@@ -96,6 +96,7 @@ void	user_input(void *param)
 		collision_conditions(cube, next_px, next_py, 1);
 	left_right_keys(cube);
 	player_reset(cube);
-	background(cube);
+	two_d_map(cube);
+	draw_ray(cube);
 	draw_pixel(cube);
 }
