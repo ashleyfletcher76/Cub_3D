@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 10:31:11 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:54:56 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,24 @@ static void	non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, int i)
 		mlx_put_pixel(cube->image, x, y, pixel(128, 128, 128, 255));
 }
 
-void	background(void *param)
+void	two_d_map(void *param)
 {
-	uint32_t	y;
-	uint32_t	x;
+	int			y;
+	int			x;
 	int			i;
 	t_cube		*cube;
 
 	cube = (t_cube *)param;
 	i = MAPSIZE;
 	x = -1;
-	while (++x < cube->image->width)
+	while (++x < WIDTH)
 	{
 		y = -1;
-		while (++y < cube->image->height)
+		while (++y < HEIGHT)
 		{
 			if (x % i == 0 || y % i == 0)
+				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
+			else if (x > cube->max_width * MAPSIZE || y > cube->max_height * MAPSIZE)
 				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
 			else
 				non_grid_lines(cube, x, y, i);
