@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 09:58:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/26 12:38:19 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define HEIGHT 1080
 
 # define PI 3.1415926535
-# define MAPSIZE 16
+# define MAPSIZE 64
 # define FPOV 90
 # define DR 0.0174533
 
