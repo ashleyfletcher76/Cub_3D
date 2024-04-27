@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 12:15:53 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:20:31 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 # define STRUCTS_H
 
 # include "../MLX42/include/MLX42/MLX42.h"
+
+typedef enum
+{
+	NORTH,
+	SOUTH,
+	EAST,
+	WEST,
+	FLOOR,
+	CEILING,
+	MAP
+}	state_type;
 
 typedef struct s_point
 {
@@ -63,6 +74,16 @@ typedef struct s_player
 	mlx_image_t		*p_img;
 }	t_player;
 
+typedef struct s_details
+{
+	char	*north;
+	char	*south;
+	char	*west;
+	char	*east;
+	char	*floor;
+	char	*ceiling;
+}	t_details;
+
 typedef struct s_map
 {
 	char	**map;
@@ -80,9 +101,9 @@ typedef struct s_cube
 	t_player	player;
 	t_line		line;
 	t_default	player_default;
+	t_details	details;
 	int			max_width;
 	int			max_height;
-	int			width_nospace;
 }	t_cube;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/26 16:16:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 11:52:57 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_cube	check_args(int argc, char **argv)
 		print_error_exit(0);
 	temp_cube.max_height = 0;
 	temp_cube.max_width = 0;
-	temp_cube.width_nospace = 0;
 	temp_cube = check_map(argv[1], &temp_cube);
 	return (temp_cube);
 }
@@ -48,8 +47,8 @@ int	check_empty_line(t_cube *cube, char *line)
 
 t_cube	check_map(char *map, t_cube *temp_cube)
 {
-	int			fd;
-	char		*line;
+	int		fd;
+	char	*line;
 
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
@@ -88,16 +87,12 @@ void	check_invalid_chars(char *line)
 void	find_map_width(char *line, t_cube *cube)
 {
 	int	i;
-	int	width_nospace;
 	int	current_width;
 
 	i = 0;
 	current_width = 0;
-	width_nospace = 0;
 	while (line[i] != '\n' && line[i] != '\0')
 	{
-		if (line[i] != ' ')
-			width_nospace++;
 		current_width++;
 		if (current_width > cube->max_width)
 			cube->max_width = current_width;
