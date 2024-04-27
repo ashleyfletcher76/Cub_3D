@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:17:48 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 16:45:29 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:11:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 void	get_west_east(t_cube *cube, char *line, int index)
 {

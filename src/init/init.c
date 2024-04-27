@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 16:31:30 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:11:46 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 int32_t	init_mlx(t_cube *cube)
 {

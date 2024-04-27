@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 16:31:55 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:11:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 static char	map_condition(t_cube *cube, uint32_t x, uint32_t y, int i)
 {

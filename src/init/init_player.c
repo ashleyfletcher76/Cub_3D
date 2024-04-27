@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 16:32:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:11:51 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a)
 {

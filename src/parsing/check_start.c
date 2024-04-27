@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/27 16:53:06 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/27 17:11:26 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/27 17:11:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 static int	check_multiple(char *line)
 {

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/27 14:06:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:12:21 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 t_ray	init_ray(float pa, float px, float py)
 {
@@ -61,7 +61,7 @@ void	put_wall(t_cube *cube, t_line line, t_ray ray)
 	else if (ray.ra > 5 * PIDIR && ray.ra <= 7 * PIDIR)
 		draw_line(cube->image, line, pixel(0, 0, 0, 255)); // North black
 	else
-		draw_line(cube->image, line, pixel(255, 255, 0, 255)); // East yellow 
+		draw_line(cube->image, line, pixel(255, 255, 0, 255)); // East yellow
 
 }
 
@@ -99,11 +99,11 @@ void	find_dist(t_ray *ray)
 {
 	if (ray->yo < 0)
 		ray->yl -= ray->yo;
-	else	
+	else
 		ray->yl += ray->yo;
 	if (ray->xo < 0)
 		ray->xl -= ray->xo;
-	else	
+	else
 		ray->xl += ray->xo;
 }
 

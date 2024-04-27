@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:36:13 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/23 09:53:05 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:12:16 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 void	reset_players_values(t_cube *cube)
 {

@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/27 16:17:43 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/27 17:16:15 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	parsing/map_parsing.c parsing/map_validity.c \
 	parsing/check_arg.c parsing/check_map_details.c \
 	parsing/check_start.c parsing/remove_space.c \
-	parsing/flood_fill.c \
+	parsing/flood_fill.c parsing/convert_details.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c\
 	gameplay/prevent_collision.c \
@@ -37,7 +37,7 @@ SRC_DIR = src/
 INCLUDES = -I$(MLX42_DIR)/include -I header -I libft
 LDINCLUDES = -L$(MLX42_DIR)/build -lmlx42 -L$(LIBFT_DIR) -lft -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
-DEPS = $(addprefix $(SRC_DIR)/, $(SRCS)) ./includes/cube3d.h ./includes/structs.h
+DEPS = $(addprefix $(SRC_DIR)/, $(SRCS)) ./includes/cub3d.h ./includes/structs.h
 
 NAME = cub3D
 

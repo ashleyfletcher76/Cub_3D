@@ -6,12 +6,30 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 13:17:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:10:17 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
+
+static void	free_details(t_cube *cube)
+{
+	if (cube->details->north)
+		free (cube->details->north);
+	if (cube->details->south)
+		free (cube->details->south);
+	if (cube->details->east)
+		free (cube->details->east);
+	if (cube->details->west)
+		free (cube->details->west);
+	if (cube->details->floor)
+		free (cube->details->floor);
+	if (cube->details->ceiling)
+		free (cube->details->ceiling);
+	if (cube->details)
+		free (cube->details);
+}
 
 void	final_free(t_cube *cube)
 {
@@ -27,7 +45,7 @@ void	final_free(t_cube *cube)
 		}
 		free (cube->map->map);
 	}
-	free (cube->details);
+	free_details(cube);
 	free (cube->map);
 	free (cube);
 }

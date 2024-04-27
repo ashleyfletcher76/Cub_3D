@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   prevent_collision.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:05:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 10:30:12 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/27 17:12:09 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
-#include "cube3d.h"
+#include "cub3d.h"
 
 int	is_wall(t_cube *cube, int x, int y)
 {
