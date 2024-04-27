@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 16:29:36 by asfletch         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2024/04/27 16:51:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
@@ -55,7 +56,8 @@ typedef struct s_ray
 	float	ra;
 	float	xo;
 	float	yo;
-	float	l;
+	float	xl;
+	float	yl;
 	int		mx;
 	int		my;
 }	t_ray;

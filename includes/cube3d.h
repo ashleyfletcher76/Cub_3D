@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 16:29:52 by asfletch         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2024/04/27 16:51:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CUBE3D_H
 # define CUBE3D_H
@@ -23,6 +24,7 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 
 # define PI 3.1415926535
+# define PIDIR 3.1415926535 / 4
 # define DR 0.0174533
 
 # define WIDTH 1080
