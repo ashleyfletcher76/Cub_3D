@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 12:00:06 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:04:40 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	left_right_keys(t_cube *cube)
 		|| mlx_is_key_down(cube->mlx, MLX_KEY_D))
 	{
 		cube->player.pa += 0.1;
-		if (cube->player.pa < 0)
+		if (cube->player.pa > 2 * PI)
 			cube->player.pa -= 2 * PI;
 		cube->player.pdx = cos(cube->player.pa) * 5;
 		cube->player.pdy = sin(cube->player.pa) * 5;

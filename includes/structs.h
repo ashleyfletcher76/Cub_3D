@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 12:15:53 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/27 12:39:18 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ typedef struct s_ray
 	float	ra;
 	float	xo;
 	float	yo;
-	float	l;
+	float	xl;
+	float	yl;
 	int		mx;
 	int		my;
 }	t_ray;
