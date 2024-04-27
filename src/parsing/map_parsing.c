@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 17:19:20 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:40:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,14 @@ int	add_map_conditions(t_cube *cube, char *line, int row)
 	x = -1;
 	if (!line)
 		free_print_exit_two(cube, NULL, 0);
+	if (get_details(cube, line) == 1)
+		return (-1);
 	if (check_empty_line(cube, line) == -1)
 		return (-1);
-	while (++x < cube->max_width && line[x] != '\0' && line[x] != '\n')
+	if (cube->details_found == 6)
+		cube->map_start = true;
+	while (++x < cube->max_width && line[x] != '\0'
+		&& line[x] != '\n' && cube->map_start)
 		cube->map->map[row][x] = line[x];
 	return (0);
 }

@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/27 11:52:57 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/27 16:40:26 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "structs.h"
 #include "cube3d.h"
@@ -22,6 +21,8 @@ t_cube	check_args(int argc, char **argv)
 		print_error_exit(0);
 	temp_cube.max_height = 0;
 	temp_cube.max_width = 0;
+	temp_cube.map_start = false;
+	temp_cube.details_found = 0;
 	temp_cube = check_map(argv[1], &temp_cube);
 	return (temp_cube);
 }
@@ -56,9 +57,12 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
-		check_invalid_chars(line);
+		if (check_details(temp_cube, line) == 0
+			&& temp_cube->details_found == 6)
+			temp_cube->map_start = true;
+		check_invalid_chars(temp_cube, line);
 		find_map_width(line, temp_cube);
-		if (check_empty_line(temp_cube, line) != -1)
+		if (check_empty_line(temp_cube, line) != -1 && temp_cube->map_start)
 			temp_cube->max_height++;
 		free (line);
 		line = get_next_line(fd);
@@ -68,14 +72,14 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 	return (*temp_cube);
 }
 
-void	check_invalid_chars(char *line)
+void	check_invalid_chars(t_cube *temp_cube, char *line)
 {
 	int		i;
 
 	i = 0;
 	while (line[i] != '\n' && line[i] != '\0')
 	{
-		if (correct_chars(line[i]) == -1)
+		if (correct_chars(line[i]) == -1 && temp_cube->map_start)
 		{
 			free (line);
 			print_error_exit(1);
@@ -84,18 +88,18 @@ void	check_invalid_chars(char *line)
 	}
 }
 
-void	find_map_width(char *line, t_cube *cube)
+void	find_map_width(char *line, t_cube *temp_cube)
 {
 	int	i;
 	int	current_width;
 
 	i = 0;
 	current_width = 0;
-	while (line[i] != '\n' && line[i] != '\0')
+	while (line[i] != '\n' && line[i] != '\0' && temp_cube->map_start)
 	{
 		current_width++;
-		if (current_width > cube->max_width)
-			cube->max_width = current_width;
+		if (current_width > temp_cube->max_width)
+			temp_cube->max_width = current_width;
 		i++;
 	}
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+         #
+#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/26 17:18:33 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/27 16:17:43 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,11 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g -fsanitize=address
 SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	hooks/hooks.c \
-	parsing/map_parsing.c parsing/map_validity.c parsing/check_arg.c  \
-	parsing/check_start.c parsing/remove_space.c parsing/flood_fill.c \
-	parsing/map_details.c \
+	parsing/map_parsing.c parsing/map_validity.c \
+	parsing/check_arg.c parsing/check_map_details.c \
+	parsing/check_start.c parsing/remove_space.c \
+	parsing/flood_fill.c \
+	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c\
 	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
@@ -37,7 +39,7 @@ LDINCLUDES = -L$(MLX42_DIR)/build -lmlx42 -L$(LIBFT_DIR) -lft -lglfw -framework 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 DEPS = $(addprefix $(SRC_DIR)/, $(SRCS)) ./includes/cube3d.h ./includes/structs.h
 
-NAME = Cube3D
+NAME = cub3D
 
 all: $(NAME)
 

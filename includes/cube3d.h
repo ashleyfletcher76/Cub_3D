@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:22:05 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 16:20:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:29:52 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,20 @@
 //check args
 t_cube	check_args(int argc, char **argv);
 t_cube	check_map(char *map, t_cube *temp_cube);
-void	check_invalid_chars(char *line);
+void	check_invalid_chars(t_cube *temp_cube, char *line);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
 int		check_empty_line(t_cube *cube, char *line);
 
 //get map details
-void	find_map_width(char *line, t_cube *cube);
+void	find_map_width(char *line, t_cube *temp_cube);
 
 //map parsing
 t_cube	fill_map(t_cube *cube, char *map);
 void	new_map(t_cube *cube, int index);
+void	get_west_east(t_cube *cube, char *line, int index);
+void	get_north_south(t_cube *cube, char *line, int index);
+void	get_floor_roof(t_cube *cube, char *line, int index);
 void	flood_fill(t_cube *cube, int x, int y);
 int		add_map_conditions(t_cube *cube, char *line, int row);
 
@@ -83,6 +86,9 @@ int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
 
-void	free_print_exit_tw(t_cube *cube, t_point *stack, int x, int y);
+int		get_details(t_cube *cube, char *line);
+t_type	get_state(char *line);
+
+int		check_details(t_cube *temp_cube, char *line);
 
 #endif

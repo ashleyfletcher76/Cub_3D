@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_start.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 12:49:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 16:35:47 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 12:16:09 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ void	multiple_start_pos(t_cube *cube)
 	y = -1;
 	checker = 0;
 	while (++y < cube->max_height)
-	{
 		checker += check_multiple(cube->map->map[y]);
-		if (checker != 1)
-			free_print_exit(cube, 2, 0);
-	}
+	if (checker != 1)
+		free_print_exit(cube, 2, 0);
 }

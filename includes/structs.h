@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:15:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 17:20:31 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:29:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../MLX42/include/MLX42/MLX42.h"
 
-typedef enum
+typedef enum s_type
 {
 	NORTH,
 	SOUTH,
@@ -23,8 +23,8 @@ typedef enum
 	WEST,
 	FLOOR,
 	CEILING,
-	MAP
-}	state_type;
+	END
+}	t_type;
 
 typedef struct s_point
 {
@@ -101,7 +101,9 @@ typedef struct s_cube
 	t_player	player;
 	t_line		line;
 	t_default	player_default;
-	t_details	details;
+	t_details	*details;
+	bool		map_start;
+	int			details_found;
 	int			max_width;
 	int			max_height;
 }	t_cube;

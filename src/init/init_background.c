@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_background.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 16:28:31 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:31:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	two_d_map(void *param)
 		{
 			if (x % i == 0 || y % i == 0)
 				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
-			else if (x > cube->max_width * MAPSIZE || y > cube->max_height * MAPSIZE)
+			else if (x > cube->max_width * MAPSIZE
+				|| y > cube->max_height * MAPSIZE)
 				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
 			else
 				non_grid_lines(cube, x, y, i);

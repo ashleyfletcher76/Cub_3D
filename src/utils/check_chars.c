@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_chars.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 09:49:25 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/22 14:04:48 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:27:09 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

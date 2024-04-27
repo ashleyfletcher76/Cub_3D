@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 15:13:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:17:18 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	final_free(t_cube *cube)
 		}
 		free (cube->map->map);
 	}
+	free (cube->details);
 	free (cube->map);
 	free (cube);
 }

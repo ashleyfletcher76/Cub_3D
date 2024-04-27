@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 11:54:22 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:31:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ void	draw_pixel(t_cube *cube)
 	t_line	line;
 
 	line = init_line(cube->player.px, cube->player.py, cube->player.px
-			+ cube->player.pdx * MAPSIZE / 8, cube->player.py + cube->player.pdy * MAPSIZE / 8);
+			+ cube->player.pdx * MAPSIZE / 8, cube->player.py
+			+ cube->player.pdy * MAPSIZE / 8);
 	draw_player(cube);
 	draw_line(cube->image, line, pixel(255, 255, 0, 255));
 }

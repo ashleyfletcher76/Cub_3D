@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 16:21:43 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:31:30 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	init_map(t_cube *cube)
 		cube->map->map[i] = ft_calloc(cube->max_width + 1, sizeof(char));
 		if (!cube->map->map[i])
 			free_print_exit(cube, 1, i);
+		cube->map->map[i][cube->max_width] = '\0';
 	}
 	cube->map->grid_size = cube->max_width * cube->max_height;
 }
@@ -69,4 +70,14 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->max_height = temp_cube->max_height;
 	(*cube)->max_width = temp_cube->max_width;
 	(*cube)->map = NULL;
+	(*cube)->details = malloc(sizeof(t_details));
+	if (!(*cube)->details)
+		print_error_exit(2);
+	(*cube)->details->north = NULL;
+	(*cube)->details->south = NULL;
+	(*cube)->details->east = NULL;
+	(*cube)->details->west = NULL;
+	(*cube)->details->floor = NULL;
+	(*cube)->details->ceiling = NULL;
+	(*cube)->details_found = 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 10:31:04 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:32:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	init_default_player(t_cube *cube)
 
 void	init_player(t_cube *cube)
 {
-	// find_pl_pos(cube); I check in previous function
 	cube->player.pdx = cos(cube->player.pa) * 5;
 	cube->player.pdy = sin(cube->player.pa) * 5;
 	init_default_player(cube);

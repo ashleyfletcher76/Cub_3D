@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:28:27 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/26 16:11:44 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:34:53 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,15 @@ static void	fill_helper(t_cube *cube, t_point *stack, t_point point)
 
 static void	move_point_y(t_cube *cube, t_point *stack, t_point point, int *top)
 {
-	if (point.y + 1 < cube->max_height && cube->map->map[point.y + 1][point.x] != '1' && cube->map->map[point.y + 1][point.x] != 'V')
+	if (point.y + 1 < cube->max_height
+		&& cube->map->map[point.y + 1][point.x] != '1'
+			&& cube->map->map[point.y + 1][point.x] != 'V')
 	{
 		stack[*top] = get_point(point.x, point.y + 1);
 		(*top)++;
 	}
-	if (point.y > 0 && cube->map->map[point.y - 1][point.x] != '1' && cube->map->map[point.y - 1][point.x] != 'V')
+	if (point.y > 0 && cube->map->map[point.y - 1][point.x] != '1'
+		&& cube->map->map[point.y - 1][point.x] != 'V')
 	{
 		stack[*top] = get_point(point.x, point.y - 1);
 		(*top)++;
@@ -45,12 +48,15 @@ static void	move_point_y(t_cube *cube, t_point *stack, t_point point, int *top)
 
 static void	move_point_x(t_cube *cube, t_point *stack, t_point point, int *top)
 {
-	if (point.x + 1 < cube->max_width && cube->map->map[point.y][point.x + 1] != '1' && cube->map->map[point.y][point.x + 1] != 'V')
+	if (point.x + 1 < cube->max_width
+		&& cube->map->map[point.y][point.x + 1] != '1'
+			&& cube->map->map[point.y][point.x + 1] != 'V')
 	{
 		stack[*top] = get_point(point.x + 1, point.y);
 		(*top)++;
 	}
-	if (point.x > 0 && cube->map->map[point.y][point.x - 1] != '1' && cube->map->map[point.y][point.x - 1] != 'V')
+	if (point.x > 0 && cube->map->map[point.y][point.x - 1] != '1'
+		&& cube->map->map[point.y][point.x - 1] != 'V')
 	{
 		stack[*top] = get_point(point.x - 1, point.y);
 		(*top)++;
@@ -63,7 +69,8 @@ void	flood_fill(t_cube *cube, int x, int y)
 	t_point	point;
 	int		top;
 
-	stack = malloc((cube->max_width + 1) * (cube->max_height + 1) * sizeof(t_point));
+	stack = malloc((cube->max_width + 1)
+			* (cube->max_height + 1) * sizeof(t_point));
 	if (!stack)
 		free_print_exit(cube, 2, 0);
 	top = 0;
