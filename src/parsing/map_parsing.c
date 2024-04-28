@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/28 10:08:39 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:55:44 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ t_cube	parse_map(t_cube *cube, char *map)
 		free (line);
 		line = get_next_line(fd);
 	}
-	//convert_compare(cube);
+	compare_textures(cube);
+	convert_floor(cube);
+	convert_ceiling(cube);
 	close (fd);
 	return (*cube);
 }

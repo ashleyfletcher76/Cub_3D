@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:10:48 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:43:57 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,4 @@ void	check_map_perimeter(t_cube *cube)
 		check_cols_up(cube, curr_col);
 	find_pl_pos(cube);
 	flood_fill(cube, cube->player.opx, cube->player.opy);
-	printf("%s", cube->details->north);
-	printf("%s", cube->details->south);
-	printf("%s", cube->details->east);
-	printf("%s", cube->details->west);
-	printf("%s", cube->details->floor);
-	printf("%s", cube->details->ceiling);
 }

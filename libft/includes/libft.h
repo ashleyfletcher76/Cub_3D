@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:00:17 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/20 15:07:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 13:57:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
-char	**ft_split(char *s, char delim);
+char	**ft_split(const char *s, char delim);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -76,9 +76,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnth(t_list *lst, int n);
 void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 void	ft_freearr(char **arr);
-size_t	count_words(const char *str, char delim);
 void	free_allocated(char **arr, size_t n);
 char	*ft_char_join(char *s1, char c);
 char	*ft_strcpy(char *s1, const char *s2);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

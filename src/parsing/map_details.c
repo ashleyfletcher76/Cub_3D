@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/27 17:11:01 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:11:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ static int	get_details_helper(t_cube *cube, char *line, t_type type)
 	}
 	else if (type == FLOOR)
 	{
-		get_floor_roof(cube, line, 0);
+		get_floor_ceiling(cube, line, 0);
 		cube->details_found += 1;
 		return (1);
 	}
 	else if (type == CEILING)
 	{
-		get_floor_roof(cube, line, 1);
+		get_floor_ceiling(cube, line, 1);
 		cube->details_found += 1;
 		return (1);
 	}

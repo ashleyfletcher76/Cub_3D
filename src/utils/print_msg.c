@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:10:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 13:35:16 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	free_print_exit_two(t_cube *cube, t_point *stack, int flag)
 	{
 		ft_putendl_fd("Invalid map", 2);
 		free (stack);
+		final_free(cube);
+	}
+	if (flag == 2)
+	{
+		ft_putendl_fd("Invalid map", 2);
 		final_free(cube);
 	}
 	exit(EXIT_FAILURE);
