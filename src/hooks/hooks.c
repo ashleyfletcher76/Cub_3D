@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:12:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:32:04 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@ static void	left_right_keys(t_cube *cube)
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_LEFT)
 		|| mlx_is_key_down(cube->mlx, MLX_KEY_A))
 	{
-		cube->player.pa -= 0.1;
+		cube->player.pa -= 0.03;
 		if (cube->player.pa < 0)
 			cube->player.pa += 2 * PI;
-		cube->player.pdx = cos(cube->player.pa) * 5;
-		cube->player.pdy = sin(cube->player.pa) * 5;
+		cube->player.pdx = cos(cube->player.pa) * 2;
+		cube->player.pdy = sin(cube->player.pa) * 2;
 	}
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_RIGHT)
 		|| mlx_is_key_down(cube->mlx, MLX_KEY_D))
 	{
-		cube->player.pa += 0.1;
+		cube->player.pa += 0.03;
 		if (cube->player.pa > 2 * PI)
 			cube->player.pa -= 2 * PI;
-		cube->player.pdx = cos(cube->player.pa) * 5;
-		cube->player.pdy = sin(cube->player.pa) * 5;
+		cube->player.pdx = cos(cube->player.pa) * 2;
+		cube->player.pdy = sin(cube->player.pa) * 2;
 	}
 }
 

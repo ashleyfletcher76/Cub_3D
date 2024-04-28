@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/27 17:12:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 14:44:08 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,48 +52,6 @@ int	is_done(t_cube *cube, int x, int y)
 	return (true);
 }
 
-void	put_wall(t_cube *cube, t_line line, t_ray ray)
-{
-	if (ray.ra > PIDIR && ray.ra <= 3 * PIDIR)
-		draw_line(cube->image, line, pixel(255, 0, 0, 255)); // South red
-	else if (ray.ra > 3 * PIDIR && ray.ra <= 5 * PIDIR)
-		draw_line(cube->image, line, pixel(255, 0, 255, 255)); // West magenta
-	else if (ray.ra > 5 * PIDIR && ray.ra <= 7 * PIDIR)
-		draw_line(cube->image, line, pixel(0, 0, 0, 255)); // North black
-	else
-		draw_line(cube->image, line, pixel(255, 255, 0, 255)); // East yellow
-
-}
-
-void	draw_3d(t_cube *cube, t_ray ray, int i)
-{
-	t_line	line;
-	float	dist = 0;
-	float	lineO;
-	float	lined;
-
-	float ca = cube->player.pa - ray.ra;
-	if (ca > 2 * PI)
-		ca -= 2 * PI;
-	else if (ca < 0)
-		ca += 2 * PI;
-
-	if (ray.xl > ray.yl)
-		lined = ray.xl;
-	else
-		lined = ray.yl;
-	lined = lined * cos(ca);
-	dist = 320 * MAPSIZE / lined;
-	lineO = 320 - dist / 2;
-	if (dist > 320)
-		dist = 320;
-	int x = -1;
-	while (++x < MAPSIZE)
-	{
-		line = init_line(MAPSIZE * (cube->max_width + i) + x, lineO, MAPSIZE * (cube->max_width + i) + x, dist + lineO);
-		put_wall(cube, line, ray);
-	}
-}
 
 void	find_dist(t_ray *ray)
 {
