@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/28 17:09:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:12:50 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
 void	two_d_map(void *param);
+void	put_wall(t_cube *cube, t_line line, t_ray ray);
+void	draw_3d(t_cube *cube, t_ray ray, int i);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
 

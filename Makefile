@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/28 13:02:04 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/28 17:12:37 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
 	parsing/check_start.c parsing/remove_space.c \
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
-	drawing/draw_player.c drawing/reset_player.c drawing/rays.c\
+	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c drawing/three_d_map.c\
 	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
 	utils/check_chars.c
