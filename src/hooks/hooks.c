@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/28 14:32:04 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:22:28 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	collision_conditions(t_cube *cube, double next_px
 	{
 		next_px = cube->player.px + cube->player.pdx;
 		next_py = cube->player.py + cube->player.pdy;
-		if (!is_wall(cube, next_px, next_py))
+		if (!is_wall_forward(cube, next_px, next_py))
 		{
 			cube->player.px = next_px;
 			cube->player.py = next_py;
@@ -71,7 +71,7 @@ static void	collision_conditions(t_cube *cube, double next_px
 	{
 		next_px = cube->player.px - cube->player.pdx;
 		next_py = cube->player.py - cube->player.pdy;
-		if (!is_wall(cube, next_px, next_py))
+		if (!is_wall_back(cube, next_px, next_py))
 		{
 			cube->player.px = next_px;
 			cube->player.py = next_py;
@@ -96,7 +96,7 @@ void	user_input(void *param)
 		collision_conditions(cube, next_px, next_py, 1);
 	left_right_keys(cube);
 	player_reset(cube);
-	two_d_map(cube);
 	draw_ray(cube);
+	two_d_map(cube);
 	draw_pixel(cube);
 }

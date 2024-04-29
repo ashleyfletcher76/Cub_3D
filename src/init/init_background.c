@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_background.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:10:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:11:55 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:15:08 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void	two_d_map(void *param)
 	cube = (t_cube *)param;
 	i = MAPSIZE;
 	x = -1;
-	while (++x < WIDTH)
+	while (++x < MAPSIZE * cube->max_width)
 	{
 		y = -1;
-		while (++y < HEIGHT)
+		while (++y < MAPSIZE * cube->max_height)
 		{
 			if (x % i == 0 || y % i == 0)
 				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
