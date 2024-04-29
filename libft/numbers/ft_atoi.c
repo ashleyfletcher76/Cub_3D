@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn>    +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:04:05 by asfletch          #+#    #+#             */
-/*   Updated: 2023/12/10 12:42:44 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:00:14 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	check_overflow(long int converted_int, int sign)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int			i;
 	int			sign;
@@ -48,7 +48,7 @@ int	ft_atoi(const char *str)
 	{
 		converted_int = converted_int * 10 + (str[i] - '0');
 		if (check_overflow(converted_int, sign))
-			return (0);
+			return (converted_int);
 		i++;
 	}
 	return (sign * converted_int);

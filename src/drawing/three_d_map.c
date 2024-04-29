@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 11:18:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:38:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 		line = init_line((16 * i) + x + 5, lineO,(16 * i) + x + 5, dist + lineO);
 		put_wall(cube, line, ray);
 		line = init_line((16 * i) + x + 5, dist + lineO,(16 * i) + x + 5, 720);
-		draw_line(cube->image, line, pixel(cube->details->floor_rgb[0], cube->details->floor_rgb[1], cube->details->floor_rgb[2], 255));
+		draw_line(cube->image, line, pixel(220, 100, 0, 255));
 		line = init_line((16 * i) + x + 5, 0,(16 * i) + x + 5, lineO);
-		draw_line(cube->image, line, pixel(cube->details->ceiling_rgb[0], cube->details->ceiling_rgb[1], cube->details->ceiling_rgb[2], 255));
+		draw_line(cube->image, line, pixel(225, 30, 0, 255));
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/28 13:06:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:01:40 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,9 @@ typedef struct s_details
 	char	*east;
 	char	*floor;
 	char	*ceiling;
-	int		*floor_rgb;
-	int		*ceiling_rgb;
+	int		*gen_rgb;
+	int32_t	floor_rgb;
+	int32_t	ceiling_rgb;
 	int		int_count;
 }	t_details;
 

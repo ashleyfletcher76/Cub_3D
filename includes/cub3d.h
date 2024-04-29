@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 11:27:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:40:42 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ void	free_print_exit(t_cube *cube, int flag, int i);
 void	free_print_exit_two(t_cube *cube, t_point *stack, int flag);
 void	final_free(t_cube *cube);
 void	free_rgb(char **rgb);
-void	free_num_rgb(t_cube *cube);
-void	null_ceiling(t_cube *cube);
 void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
 
@@ -102,7 +100,10 @@ int		edge_conditions(char c);
 void	compare_textures(t_cube *cube);
 void	convert_floor(t_cube *cube);
 void	convert_ceiling(t_cube *cube);
-void	convert_integers(t_cube *cube, char **rgb, int count, int flag);
+void	convert_integers(t_cube *cube, char **rgb, int count);
 int		count_double(char **rgb);
+int		check_numbers(int *rgb, int count);
+void	convert_to_rgb(t_cube *cube, int flag, int count);
+int		check_invalid_integers(char **rgb);
 
 #endif

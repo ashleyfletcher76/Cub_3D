@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:23:10 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:25:56 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->details->west = NULL;
 	(*cube)->details->floor = NULL;
 	(*cube)->details->ceiling = NULL;
-	(*cube)->details->floor_rgb = 0;
-	(*cube)->details->ceiling_rgb = 0;
+	(*cube)->details->gen_rgb = 0;
 	(*cube)->details_found = 0;
 }

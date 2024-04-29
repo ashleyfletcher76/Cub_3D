@@ -6,20 +6,18 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/28 17:11:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:04:38 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-void	free_num_rgb(t_cube *cube)
-{
-	if (cube->details->floor_rgb)
-		free (cube->details->floor_rgb);
-	if (cube->details->ceiling_rgb)
-		free (cube->details->ceiling_rgb);
-}
+// void	free_num_rgb(t_cube *cube)
+// {
+// 	if (cube->details->gen_rgb)
+// 		free (cube->details->floor_rgb);
+// }
 
 void	free_rgb(char **rgb)
 {
@@ -67,7 +65,6 @@ void	final_free(t_cube *cube)
 		}
 		free (cube->map->map);
 	}
-	free_num_rgb(cube);
 	free_details(cube);
 	free (cube->map);
 	free (cube);

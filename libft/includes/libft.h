@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:00:17 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/28 13:57:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:00:39 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_isalnum(int c);
