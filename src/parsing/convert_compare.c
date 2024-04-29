@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_compare.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:09:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:08:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:30:15 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	convert_floor(t_cube *cube)
 		free_rgb(rgb);
 		free_print_exit_two(cube, NULL, 2);
 	}
-	cube->details->int_count = count;
 	convert_helper(cube, rgb, count);
 	convert_to_rgb(cube, 0, count);
 }
@@ -82,7 +81,6 @@ void	convert_ceiling(t_cube *cube)
 		free_rgb(rgb);
 		free_print_exit_two(cube, NULL, 2);
 	}
-	cube->details->int_count = count;
 	convert_helper(cube, rgb, count);
 	convert_to_rgb(cube, 1, count);
 }

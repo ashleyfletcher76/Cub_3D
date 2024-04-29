@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 15:19:58 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:29:56 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_ray
 	double	yo;
 	double	xl;
 	double	yl;
+	double	dist;
 	int		mx;
 	int		my;
 }	t_ray;
@@ -87,7 +88,6 @@ typedef struct s_details
 	int		*gen_rgb;
 	int32_t	floor_rgb;
 	int32_t	ceiling_rgb;
-	int		int_count;
 }	t_details;
 
 typedef struct s_map
