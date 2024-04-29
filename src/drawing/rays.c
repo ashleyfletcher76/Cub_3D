@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 15:11:26 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:18:22 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	draw_ray(t_cube *cube)
 
 	i = -1;
 	ray = init_ray(cube->player.pa, cube->player.px, cube->player.py);
-	while (++i < FPOV * 2)
+	while (++i < FPOV)
 	{
 		set_ray(&ray, cube->player.px, cube->player.py);
 		while (is_done(cube, ray.mx, ray.my))

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 15:12:16 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:14:27 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 	int x = -1;
 	while (++x < 18)
 	{
-		line = init_line((18 * i) + x + 5, lineO,(18 * i) + x + 5, dist + lineO);
+		line = init_line((18 * i) + x + 5 + 256, lineO,(18 * i) + x + 5 + 256, dist + lineO);
 		put_wall(cube, line, ray);
-		line = init_line((18 * i) + x + 5, dist + lineO,(18 * i) + x + 5, 720);
+		line = init_line((18 * i) + x + 5 + 256, dist + lineO,(18 * i) + x + 5 + 256, 720);
 		draw_line(cube->image, line, pixel(cube->details->floor_rgb[0], cube->details->floor_rgb[1], cube->details->floor_rgb[2], 255));
-		line = init_line((18 * i) + x + 5, 0,(18 * i) + x + 5, lineO);
+		line = init_line((18 * i) + x + 5 + 256, 0,(18 * i) + x + 5 + 256, lineO);
 		draw_line(cube->image, line, pixel(cube->details->ceiling_rgb[0], cube->details->ceiling_rgb[1], cube->details->ceiling_rgb[2], 255));
 	}
 }

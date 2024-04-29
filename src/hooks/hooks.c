@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:12:40 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:15:49 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	user_input(void *param)
 		collision_conditions(cube, next_px, next_py, 1);
 	left_right_keys(cube);
 	player_reset(cube);
-	draw_ray(cube);
 	two_d_map(cube);
+	draw_ray(cube);
 	draw_pixel(cube);
 }
