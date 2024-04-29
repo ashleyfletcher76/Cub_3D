@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:11:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:22:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_cube	check_args(int argc, char **argv)
 	temp_cube.map_start = false;
 	temp_cube.details_found = 0;
 	temp_cube = check_map(argv[1], &temp_cube);
+	check_if_details(&temp_cube);
 	return (temp_cube);
 }
 

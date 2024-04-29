@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/28 17:12:50 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:21:59 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	final_free(t_cube *cube);
 void	free_rgb(char **rgb);
 void	free_num_rgb(t_cube *cube);
 void	null_ceiling(t_cube *cube);
+void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
 
 //char checkers
