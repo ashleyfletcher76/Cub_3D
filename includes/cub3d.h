@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 16:25:17 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:25:57 by asfletch         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2024/04/29 16:34:02 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 
 # define PI 3.1415926535
-# define PIDIR 3.1415926535 / 4
-# define DR 0.0174533
+# define PIDIR 0.78539816337
+# define DR 0.00096962777
 
 # define WIDTH 1080
 # define HEIGHT 720

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 15:18:22 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:28:42 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ t_ray	init_ray(double pa, double px, double py)
 	ray.yo = 0;
 	ray.xl = 0;
 	ray.yl = 0;
-	ray.ra = pa - (DR * FPOV / 2);
+	ray.dist = 0;
+	ray.ra = pa - (DR * FPOV * 7.11111111111);
 	ray.mx = ray.rx / MAPSIZE;
 	ray.my = ray.ry / MAPSIZE;
 	return (ray);
@@ -39,6 +40,7 @@ void	set_ray(t_ray *ray, double px, double py)
 	ray->yo = sin(ray->ra);
 	ray->xl = 0;
 	ray->yl = 0;
+	ray->dist = 0;
 }
 
 int	is_done(t_cube *cube, int x, int y)
@@ -73,7 +75,7 @@ void	draw_ray(t_cube *cube)
 
 	i = -1;
 	ray = init_ray(cube->player.pa, cube->player.px, cube->player.py);
-	while (++i < FPOV)
+	while (++i < FPOV * 18)
 	{
 		set_ray(&ray, cube->player.px, cube->player.py);
 		while (is_done(cube, ray.mx, ray.my))
@@ -90,3 +92,4 @@ void	draw_ray(t_cube *cube)
 		ray.ra += DR;
 	}
 }
+
