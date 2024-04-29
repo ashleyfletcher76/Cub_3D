@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 15:20:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:57:42 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 
 # define PI 3.1415926535
-# define PIDIR 3.1415926535 / 4
-# define DR 0.0174533
+# define PIDIR 0.78539816337
+# define DR 0.00096962777
 
 # define WIDTH 1080
 # define HEIGHT 720

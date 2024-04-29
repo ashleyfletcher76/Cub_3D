@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 15:21:00 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:01:26 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,30 @@ void	put_wall(t_cube *cube, t_line line, t_ray ray)
 void	draw_3d(t_cube *cube, t_ray ray, int i)
 {
 	t_line		line;
-	int			dist = 0;
+	double		dist = 0;
 	double		lineO;
 	double		lined;
-
+	double		ca = cube->player.pa - ray.ra;
+	if (ca < 0)
+		ca += 2 * PI;
+	else if (ca > 2 * PI)
+		ca -= 2 * PI;
+	
 	lined = sqrt(ray.xl * ray.xl + ray.yl * ray.yl);
+	lined = lined * cos(ca);
+
 	if (lined == 0)
 		lined = 1;
-	dist = 720 * 16 / lined;
+	dist = 720 * 48 / lined;
 	if (dist > 720)
 		dist = 720;
-	lineO = 350 - (dist / 2);
+	lineO = 360 - (dist / 2);
 	int x = -1;
-	while (++x < 18)
-	{
-		line = init_line((18 * i) + x + 5 + 256, lineO,(18 * i) + x + 5 + 256, dist + lineO);
+
+		line = init_line((WIDTH / (FPOV * 18) * i) + x + 5 + 256, lineO,(WIDTH / (FPOV * 18) * i) + x + 5 + 256, dist + lineO);
 		put_wall(cube, line, ray);
-		line = init_line((18 * i) + x + 5 + 256, dist + lineO,(18 * i) + x + 5 + 256, 720);
+		line = init_line((WIDTH / (FPOV * 18) * i) + x + 5 + 256, dist + lineO,(WIDTH / (FPOV * 18) * i) + x + 5 + 256, 720);
 		draw_line(cube->image, line, cube->details->floor_rgb);
-		line = init_line((18 * i) + x + 5 + 256, 0,(18 * i) + x + 5 + 256, lineO);
+		line = init_line((WIDTH / (FPOV * 18) * i) + x + 5 + 256, 0,(WIDTH / (FPOV * 18) * i) + x + 5 + 256, lineO);
 		draw_line(cube->image, line, cube->details->ceiling_rgb);
-	}
 }

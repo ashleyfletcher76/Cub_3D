@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:19:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:06:24 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->details->west = NULL;
 	(*cube)->details->floor = NULL;
 	(*cube)->details->ceiling = NULL;
-	(*cube)->details->gen_rgb = 0;
+	(*cube)->details->floor_rgb = 0;
+	(*cube)->details->ceiling_rgb = 0;
 	(*cube)->details_found = 0;
 }

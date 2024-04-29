@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 11:51:13 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:49:24 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	t_cube	temp_cube;
 	t_cube	*cube;
 
-	atexit(leaks);
+	//atexit(leaks);
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, &temp_cube);
 	init_map(cube);
