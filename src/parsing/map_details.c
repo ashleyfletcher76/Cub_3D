@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/28 17:11:08 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/29 16:28:11 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/29 16:28:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "structs.h"
 #include "cub3d.h"
 
-t_type get_state(char *line)
+t_type	get_state(char *line)
 {
 	if (line[0] == 'N')
 		return (NORTH);

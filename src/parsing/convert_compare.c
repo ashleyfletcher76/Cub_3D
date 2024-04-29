@@ -6,24 +6,20 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:09:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:08:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:19:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-int	check_numbers(int *rgb, int count)
+static void	convert_integers(t_cube *cube, char **rgb, int count)
 {
 	int	i;
 
 	i = -1;
 	while (++i < count)
-	{
-		if (rgb[i] < 0 || rgb[i] > 255)
-			return (-1);
-	}
-	return (0);
+		cube->details->gen_rgb[i] = ft_atoi(rgb[i]);
 }
 
 static void	convert_helper(t_cube *cube, char **rgb, int count)
@@ -57,7 +53,6 @@ void	convert_floor(t_cube *cube)
 		free_rgb(rgb);
 		free_print_exit_two(cube, NULL, 2);
 	}
-	cube->details->int_count = count;
 	convert_helper(cube, rgb, count);
 	convert_to_rgb(cube, 0, count);
 }
@@ -74,7 +69,6 @@ void	convert_ceiling(t_cube *cube)
 	if (count != 3)
 	{
 		free_rgb (rgb);
-		printf("here\n");
 		free_print_exit_two(cube, NULL, 1);
 	}
 	if (check_invalid_integers(rgb) == -1)
@@ -82,7 +76,6 @@ void	convert_ceiling(t_cube *cube)
 		free_rgb(rgb);
 		free_print_exit_two(cube, NULL, 2);
 	}
-	cube->details->int_count = count;
 	convert_helper(cube, rgb, count);
 	convert_to_rgb(cube, 1, count);
 }

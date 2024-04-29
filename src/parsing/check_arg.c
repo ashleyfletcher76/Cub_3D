@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 11:22:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:20:52 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,22 @@ int	check_empty_line(t_cube *cube, char *line)
 	return (-1);
 }
 
+static void	check_invalid_chars(t_cube *temp_cube, char *line)
+{
+	int		i;
+
+	i = 0;
+	while (line[i] != '\n' && line[i] != '\0')
+	{
+		if (correct_chars(line[i]) == -1 && temp_cube->map_start)
+		{
+			free (line);
+			print_error_exit(1);
+		}
+		i++;
+	}
+}
+
 t_cube	check_map(char *map, t_cube *temp_cube)
 {
 	int		fd;
@@ -71,22 +87,6 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 	free (line);
 	close (fd);
 	return (*temp_cube);
-}
-
-void	check_invalid_chars(t_cube *temp_cube, char *line)
-{
-	int		i;
-
-	i = 0;
-	while (line[i] != '\n' && line[i] != '\0')
-	{
-		if (correct_chars(line[i]) == -1 && temp_cube->map_start)
-		{
-			free (line);
-			print_error_exit(1);
-		}
-		i++;
-	}
 }
 
 void	find_map_width(char *line, t_cube *temp_cube)

@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 15:20:08 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/29 16:25:17 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/29 16:25:57 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -36,13 +35,19 @@
 //check args
 t_cube	check_args(int argc, char **argv);
 t_cube	check_map(char *map, t_cube *temp_cube);
-void	check_invalid_chars(t_cube *temp_cube, char *line);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
 int		check_empty_line(t_cube *cube, char *line);
 
 //get map details
 void	find_map_width(char *line, t_cube *temp_cube);
+void	compare_textures(t_cube *cube);
+void	convert_floor(t_cube *cube);
+void	convert_ceiling(t_cube *cube);
+int		count_double(char **rgb);
+int		check_numbers(int *rgb, int count);
+void	convert_to_rgb(t_cube *cube, int flag, int count);
+int		check_invalid_integers(char **rgb);
 
 //map parsing
 t_cube	parse_map(t_cube *cube, char *map);
@@ -51,7 +56,6 @@ void	get_west_east(t_cube *cube, char *line, int index);
 void	get_north_south(t_cube *cube, char *line, int index);
 void	get_floor_ceiling(t_cube *cube, char *line, int index);
 void	flood_fill(t_cube *cube, int x, int y);
-int		add_map_conditions(t_cube *cube, char *line, int row);
 int		get_details(t_cube *cube, char *line);
 t_type	get_state(char *line);
 int		check_details(t_cube *temp_cube, char *line);
@@ -79,9 +83,8 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
 
 //gameplay
-int	is_wall_back(t_cube *cube, int x, int y, int buff);
-int	is_wall_forward(t_cube *cube, int x, int y, int buff);
-
+int		is_wall_back(t_cube *cube, int x, int y, int buff);
+int		is_wall_forward(t_cube *cube, int x, int y, int buff);
 
 //utils
 void	print_error_exit(int flag);
@@ -96,14 +99,5 @@ void	print_map(t_cube *cube);
 int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
-
-void	compare_textures(t_cube *cube);
-void	convert_floor(t_cube *cube);
-void	convert_ceiling(t_cube *cube);
-void	convert_integers(t_cube *cube, char **rgb, int count);
-int		count_double(char **rgb);
-int		check_numbers(int *rgb, int count);
-void	convert_to_rgb(t_cube *cube, int flag, int count);
-int		check_invalid_integers(char **rgb);
 
 #endif

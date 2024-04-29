@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 15:19:58 by asfletch         ###   ########.fr       */
+/*   Created: 2024/04/29 16:26:28 by asfletch          #+#    #+#             */
+/*   Updated: 2024/04/29 16:26:30 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
@@ -87,7 +86,6 @@ typedef struct s_details
 	int		*gen_rgb;
 	int32_t	floor_rgb;
 	int32_t	ceiling_rgb;
-	int		int_count;
 }	t_details;
 
 typedef struct s_map
