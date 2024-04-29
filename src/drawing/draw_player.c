@@ -6,20 +6,20 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 11:16:44 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:10:22 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-int	draw_line(mlx_image_t *image, t_line line, float color)
+int	draw_line(mlx_image_t *image, t_line line, int color)
 {
-	float	deltax;
-	float	deltay;
+	double	deltax;
+	double	deltay;
 	int		pixels;
-	float	pixelx;
-	float	pixely;
+	double	pixelx;
+	double	pixely;
 
 	deltay = line.end_y - line.begin_y;
 	deltax = line.end_x - line.begin_x;
@@ -40,7 +40,7 @@ int	draw_line(mlx_image_t *image, t_line line, float color)
 	return (true);
 }
 
-t_line	init_line(float beginx, float beginy, float endx, float endy)
+t_line	init_line(double beginx, double beginy, double endx, double endy)
 {
 	t_line	line;
 

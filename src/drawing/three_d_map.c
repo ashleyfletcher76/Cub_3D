@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 11:18:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:12:16 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,26 @@ void	put_wall(t_cube *cube, t_line line, t_ray ray)
 
 void	draw_3d(t_cube *cube, t_ray ray, int i)
 {
-	t_line	line;
-	int		dist = 0;
-	int		lineO;
-	int		lined;
+	t_line		line;
+	int			dist = 0;
+	double		lineO;
+	double		lined;
 
-	if (ray.xl > ray.yl)
-		lined = (int)ray.xl;
-	else
-		lined = (int)ray.yl;
-
+	lined = sqrt(ray.xl * ray.xl + ray.yl * ray.yl);
 	if (lined == 0)
 		lined = 1;
-	dist = 700 * MAPSIZE / lined;
-	if (dist > 700)
-		dist = 700;
+	dist = 720 * 16 / lined;
+	if (dist > 720)
+		dist = 720;
 	lineO = 350 - (dist / 2);
 	int x = -1;
-	while (++x < 16)
+	while (++x < 18)
 	{
-		line = init_line((16 * i) + x + 5, lineO,(16 * i) + x + 5, dist + lineO);
+		line = init_line((18 * i) + x + 5, lineO,(18 * i) + x + 5, dist + lineO);
 		put_wall(cube, line, ray);
-		line = init_line((16 * i) + x + 5, dist + lineO,(16 * i) + x + 5, 720);
+		line = init_line((18 * i) + x + 5, dist + lineO,(18 * i) + x + 5, 720);
 		draw_line(cube->image, line, pixel(cube->details->floor_rgb[0], cube->details->floor_rgb[1], cube->details->floor_rgb[2], 255));
-		line = init_line((16 * i) + x + 5, 0,(16 * i) + x + 5, lineO);
+		line = init_line((18 * i) + x + 5, 0,(18 * i) + x + 5, lineO);
 		draw_line(cube->image, line, pixel(cube->details->ceiling_rgb[0], cube->details->ceiling_rgb[1], cube->details->ceiling_rgb[2], 255));
 	}
 }
