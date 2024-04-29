@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 11:21:59 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:27:37 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
 
 //gameplay
-int		is_wall(t_cube *cube, int x, int y);
+int	is_wall_back(t_cube *cube, int x, int y);
+int	is_wall_forward(t_cube *cube, int x, int y);
+
 
 //utils
 void	print_error_exit(int flag);

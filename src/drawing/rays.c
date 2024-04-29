@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/28 14:44:08 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:15:41 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ void	draw_ray(t_cube *cube)
 			ray.ry += ray.yo;
 			find_dist(&ray);
 		}
+		draw_3d(cube, ray, i);
 		line = init_line(cube->player.px, cube->player.py, ray.rx, ray.ry);
 		draw_line(cube->image, line, pixel(0, 0, 255, 255));
-		draw_3d(cube, ray, i);
 		ray.ra += DR;
 	}
 }
