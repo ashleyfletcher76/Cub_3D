@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 15:01:40 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:19:58 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,43 +35,43 @@ typedef struct s_point
 
 typedef struct s_default
 {
-	float	px;
-	float	py;
-	float	pdx;
-	float	pdy;
+	double	px;
+	double	py;
+	double	pdx;
+	double	pdy;
 }	t_default;
 
 typedef struct s_line
 {
-	float	begin_x;
-	float	begin_y;
-	float	end_x;
-	float	end_y;
+	double	begin_x;
+	double	begin_y;
+	double	end_x;
+	double	end_y;
 }	t_line;
 
 typedef struct s_ray
 {
-	float	rx;
-	float	ry;
-	float	ra;
-	float	xo;
-	float	yo;
-	float	xl;
-	float	yl;
+	double	rx;
+	double	ry;
+	double	ra;
+	double	xo;
+	double	yo;
+	double	xl;
+	double	yl;
 	int		mx;
 	int		my;
 }	t_ray;
 
 typedef struct s_player
 {
-	float			px;
-	float			py;
-	float			opx;
-	float			opy;
-	float			pdx;
-	float			pdy;
-	float			pa;
-	float			color;
+	double			px;
+	double			py;
+	double			opx;
+	double			opy;
+	double			pdx;
+	double			pdy;
+	double			pa;
+	double			color;
 	char			d;
 	mlx_image_t		*p_img;
 }	t_player;

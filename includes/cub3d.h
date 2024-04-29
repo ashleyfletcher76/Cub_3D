@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 14:40:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:20:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
 void	init_player(t_cube *cube);
-t_line	init_line(float beginx, float beginy, float endx, float endy);
+t_line	init_line(double beginx, double beginy, double endx, double endy);
 void	init_default_player(t_cube *cube);
 void	reset_players_values(t_cube *cube);
 void	hook(void *param);
 
 //drawing processes
 void	draw_ray(t_cube *cube);
-int		draw_line(mlx_image_t *image, t_line line, float color);
+int		draw_line(mlx_image_t *image, t_line line, int color);
 void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
@@ -79,8 +79,8 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
 
 //gameplay
-int	is_wall_back(t_cube *cube, int x, int y);
-int	is_wall_forward(t_cube *cube, int x, int y);
+int	is_wall_back(t_cube *cube, int x, int y, int buff);
+int	is_wall_forward(t_cube *cube, int x, int y, int buff);
 
 
 //utils
