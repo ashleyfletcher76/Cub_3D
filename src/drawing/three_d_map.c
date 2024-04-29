@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 16:31:46 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:00:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 	if (dist > 720)
 		dist = 720;
 	lineO = 350 - (dist / 2);
-	line = init_line(i + 256, lineO, i + 256, dist + lineO);
+	line = init_line(i, lineO, i, dist + lineO);
 	put_wall(cube, line, ray);
-	line = init_line(i + 256, dist + lineO, i + 256, 720);
+	line = init_line(i, dist + lineO, i, 720);
 	draw_line(cube->image, line, cube->details->floor_rgb);
-	line = init_line(i + 256, 0, i + 256, lineO);
+	line = init_line(i, 0, i, lineO);
 	draw_line(cube->image, line, cube->details->ceiling_rgb);
 }
 

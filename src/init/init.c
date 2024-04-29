@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:06:24 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:00:42 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int32_t	init_mlx(t_cube *cube)
 {
-	cube->mlx = mlx_init(WIDTH + 256, HEIGHT, "MLX42", true);
+	cube->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
 	if (!cube->mlx)
 		return (EXIT_FAILURE);
-	cube->image = mlx_new_image(cube->mlx, WIDTH + 256, HEIGHT);
+	cube->image = mlx_new_image(cube->mlx, WIDTH, HEIGHT);
 	if (!cube->image)
 	{
 		mlx_delete_image(cube->mlx, cube->image);
