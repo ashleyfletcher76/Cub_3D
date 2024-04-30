@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/29 16:28:42 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:41:49 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ t_ray	init_ray(double pa, double px, double py)
 	ray.ry = py;
 	ray.xo = 0;
 	ray.yo = 0;
-	ray.xl = 0;
-	ray.yl = 0;
 	ray.dist = 0;
 	ray.ra = pa - (DR * FPOV * 7.11111111111);
 	ray.mx = ray.rx / MAPSIZE;
@@ -38,8 +36,6 @@ void	set_ray(t_ray *ray, double px, double py)
 	ray->my = ray->ry / MAPSIZE;
 	ray->xo = cos(ray->ra);
 	ray->yo = sin(ray->ra);
-	ray->xl = 0;
-	ray->yl = 0;
 	ray->dist = 0;
 }
 
@@ -55,16 +51,14 @@ int	is_done(t_cube *cube, int x, int y)
 }
 
 
-void	find_dist(t_ray *ray)
+void	find_dist(t_ray *ray, t_player player)
 {
-	if (ray->yo < 0)
-		ray->yl -= ray->yo;
-	else
-		ray->yl += ray->yo;
-	if (ray->xo < 0)
-		ray->xl -= ray->xo;
-	else
-		ray->xl += ray->xo;
+	double x;
+	double y;
+
+	x = ray->rx - player.px;
+	y = ray->ry - player.py;
+	ray->dist = sqrt(x * x + y * y);
 }
 
 void	draw_ray(t_cube *cube)
@@ -84,8 +78,8 @@ void	draw_ray(t_cube *cube)
 			ray.my = (int)(ray.ry) / MAPSIZE;
 			ray.rx += ray.xo;
 			ray.ry += ray.yo;
-			find_dist(&ray);
 		}
+		find_dist(&ray, cube->player);
 		line = init_line(cube->player.px, cube->player.py, ray.rx, ray.ry);
 		draw_line(cube->image, line, pixel(0, 255, 0, 255));
 		draw_3d(cube, ray, i);
