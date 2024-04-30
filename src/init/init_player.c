@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:07:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:51:13 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	init_default_player(t_cube *cube)
 	cube->player_default.py = cube->player.py;
 	cube->player_default.pdx = cube->player.pdx;
 	cube->player_default.pdy = cube->player.pdy;
+	cube->player_default.pa = cube->player.pa;
 }
 
 void	init_player(t_cube *cube)

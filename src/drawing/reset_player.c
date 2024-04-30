@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reset_player.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:36:13 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:12:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:50:02 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	reset_players_values(t_cube *cube)
 	cube->player.py = cube->player_default.py;
 	cube->player.pdx = cube->player_default.pdx;
 	cube->player.pdy = cube->player_default.pdy;
+	cube->player.pa = cube->player_default.pa;
 }

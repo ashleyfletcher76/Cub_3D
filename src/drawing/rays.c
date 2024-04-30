@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/30 10:42:58 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:59:32 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_ray	init_ray(double pa, double px, double py)
 	ray.xo = 0;
 	ray.yo = 0;
 	ray.dist = 0;
-	ray.ra = pa - (DR * FPOV * 7.11111111111);
+	ray.ra = pa - (DR * (WIDTH / 2));
 	ray.mx = ray.rx / MAPSIZE;
 	ray.my = ray.ry / MAPSIZE;
 	return (ray);
