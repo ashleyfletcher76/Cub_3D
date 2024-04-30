@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/30 10:50:27 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/30 10:42:52 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_default
 	double	py;
 	double	pdx;
 	double	pdy;
-	double	pa;
 }	t_default;
 
 typedef struct s_line
@@ -65,11 +64,11 @@ typedef struct s_player
 {
 	double			px;
 	double			py;
+	double			opx;
+	double			opy;
 	double			pdx;
 	double			pdy;
 	double			pa;
-	double			opx;
-	double			opy;
 	double			color;
 	char			d;
 	mlx_image_t		*p_img;
