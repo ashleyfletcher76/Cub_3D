@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/30 10:42:58 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:48:54 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	find_dist(t_ray *ray, t_player player)
 void	draw_ray(t_cube *cube)
 {
 	t_ray	ray;
-	t_line	line;
+	//t_line	line;
 	int		i;
 
 	i = -1;
@@ -80,8 +80,8 @@ void	draw_ray(t_cube *cube)
 			ray.ry += ray.yo;
 		}
 		find_dist(&ray, cube->player);
-		line = init_line(cube->player.px, cube->player.py, ray.rx, ray.ry);
-		draw_line(cube->image, line, pixel(0, 255, 0, 255));
+		//line = init_line(cube->player.px, cube->player.py, ray.rx, ray.ry);
+		//draw_line(cube->image, line, pixel(0, 255, 0, 255));
 		draw_3d(cube, ray, i);
 		ray.ra += DR;
 	}

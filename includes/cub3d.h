@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 16:34:02 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:59:00 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 
 # define MAPSIZE 32
 # define FPOV 60
+
 
 //check args
 t_cube	check_args(int argc, char **argv);
@@ -65,6 +66,7 @@ int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
 void	init_player(t_cube *cube);
+void	init_textures(t_cube *cube);
 t_line	init_line(double beginx, double beginy, double endx, double endy);
 void	init_default_player(t_cube *cube);
 void	reset_players_values(t_cube *cube);
@@ -77,7 +79,7 @@ void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
 void	two_d_map(void *param);
-void	put_wall(t_cube *cube, t_line line, t_ray ray);
+void	put_wall(t_cube *cube, double dist, double lineO, int i);
 void	draw_3d(t_cube *cube, t_ray ray, int i);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/29 16:17:06 by asfletch         ###   ########.fr        #
+#    Updated: 2024/04/30 15:59:34 by muhakose         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ COLOUR_END = \033[0m
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
-SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
+SRCS = cube.c init/init.c init/init_player.c init/init_background.c init/textures.c\
 	hooks/hooks.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
 	parsing/check_arg.c parsing/check_map_details.c \
