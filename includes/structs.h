@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/30 14:21:14 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:34:26 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ typedef struct s_ray
 	double	ra;
 	double	xo;
 	double	yo;
+	double	vx;
+	double	vy;
+	double	disth;
+	double	distv;
 	double	dist;
 	int		mx;
 	int		my;

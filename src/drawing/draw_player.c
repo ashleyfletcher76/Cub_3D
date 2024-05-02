@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 17:04:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:46:13 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,19 @@ void	draw_player(t_cube *cube)
 {
 	int	x;
 	int	y;
+	int draw_x;
+	int draw_y;
 
-	x = 952 -MAPSIZE / 8;
-	while (++x < 952 + MAPSIZE / 8)
+	x = -MAPSIZE / 8;
+	while (++x < MAPSIZE / 8)
 	{
-		y = 592 - MAPSIZE / 8;
-		while (++y < 592 + MAPSIZE / 8)
+		y = - MAPSIZE / 8;
+		while (++y < MAPSIZE / 8)
 		{
-			// if (x >= 0 && y < WIDTH && x >= 0 && y < HEIGHT)
-				mlx_put_pixel(cube->image, x, y,
+			draw_x = x + cube->player.px;
+			draw_y = y + cube->player.py;
+			if (draw_x >= 0 && draw_y < WIDTH && draw_x >= 0 && draw_y < HEIGHT)
+				mlx_put_pixel(cube->image, draw_x, draw_y,
 					pixel(255, 255, 0, 255));
 		}
 	}

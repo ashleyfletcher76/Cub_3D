@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/30 15:59:00 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/02 10:50:02 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void	final_free(t_cube *cube);
 void	free_rgb(char **rgb);
 void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
+double	degtorad(float a);
+double	fixang(float a);
 
 //char checkers
 int		correct_chars(char c);

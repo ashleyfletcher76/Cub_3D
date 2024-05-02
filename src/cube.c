@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/01 11:09:57 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:39:34 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	//print_map(cube);
 	init_mlx(cube);
 	init_player(cube);
-	init_textures(cube);
+	//init_textures(cube);
 	mlx_loop_hook(cube->mlx, hook, cube);
 	mlx_loop_hook(cube->mlx, user_input, cube);
 	mlx_loop(cube->mlx);
