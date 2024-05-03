@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/02 10:50:02 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 14:37:58 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@
 # define WIDTH 1080
 # define HEIGHT 720
 
-# define MAPSIZE 32
+# define MAPSIZE 64
 # define FPOV 60
 
+# define ROTATIONSPEED 5
+# define MOVESPEED 0.05;
 
 //check args
 t_cube	check_args(int argc, char **argv);
@@ -49,6 +51,9 @@ int		count_double(char **rgb);
 int		check_numbers(int *rgb, int count);
 void	convert_to_rgb(t_cube *cube, int flag, int count);
 int		check_invalid_integers(char **rgb);
+
+//hooks
+void	read_keys(t_cube *cube);
 
 //map parsing
 t_cube	parse_map(t_cube *cube, char *map);
@@ -79,7 +84,6 @@ void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
 void	two_d_map(void *param);
-void	put_wall(t_cube *cube, double dist, double lineO, int i);
 void	draw_3d(t_cube *cube, t_ray ray, int i);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	user_input(void *param);
@@ -96,8 +100,8 @@ void	final_free(t_cube *cube);
 void	free_rgb(char **rgb);
 void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
-double	degtorad(float a);
-double	fixang(float a);
+double	degtorad(double a);
+double	fixang(double a);
 
 //char checkers
 int		correct_chars(char c);

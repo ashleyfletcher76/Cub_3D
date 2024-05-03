@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/02 11:27:05 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:37:14 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,94 +72,52 @@ void	draw_ray(t_cube *cube)
 	t_ray	ray;
 	t_line	line;
 	int		i;
+	int		dof;
+	float	aTan;
 
-	i = -1;
+	i = 0;
 	ray = init_ray(cube->player);
-	while (++i < 1)
+	while (i < 1)
 	{
-		set_ray(&ray, cube->player.px, cube->player.py);
-		while (is_done(cube, ray.mx, ray.my))
+		dof = 0;
+		if (ray.ra != 180 || ray.ra != 90)
+			aTan = tan(degtorad(ray.ra));
+		if (cos(degtorad(ray.ra) > 0.001)) // loking left
 		{
-			ray.mx = (int)(ray.rx) / MAPSIZE;
-			ray.my = (int)(ray.ry) / MAPSIZE;
-			ray.rx += ray.xo;
-			ray.ry += ray.yo;
+			ray.rx = (((int)cube->player.px >> 6 ) << 6) + MAPSIZE;
+			ray.ry = (cube->player.px - ray.rx) * aTan + cube->player.py;
+			ray.xo = 64;
+			ray.xo = ray.xo * aTan;
 		}
-		find_dist(&ray, cube->player);
-		line = init_line(cube->player.px, cube->player.py, ray.rx, ray.ry);
-		draw_line(cube->image, line, pixel(0, 255, 0, 255));
-		//draw_3d(cube, ray, i);
-		if ((ray.ra >= 7 * M_PI / 4 && ray.ra <= 2 * M_PI) || (ray.ra >= 0 && ray.ra < M_PI / 4))
-			printf("N\n");
-		else if (ray.ra > M_PI && ray.ra <= 3 * M_PI)
-			printf("W\n");
-		else if (ray.ra > 3 * M_PI && ray.ra <= 5 * M_PI)
-			printf("S\n");
+		else if (cos(degtorad(ray.ra) < -0.001))
+		{
+			ray.rx = (((int)cube->player.px >> 6 ) << 6) - 0.0001;
+			ray.ry = (cube->player.px - ray.rx) * aTan + cube->player.py;
+			ray.xo = -MAPSIZE;
+			ray.xo = ray.xo * aTan;
+		}
 		else
-			printf("E\n");
-		ray.ra += DR;
-		if (ray.ra < 0)			{ray.ra += 2 * PI;}
-		if (ray.ra > 2 * PI)	{ray.ra -= 2 * PI;}
+		{
+			ray.rx = cube->player.px * MAPSIZE;
+			ray.ry = cube->player.py * MAPSIZE;
+			dof = 8;
+		}
+		while (dof < 8)
+		{
+			printf("here\n");
+			ray.mx = (int)ray.rx >> 6;
+			ray.my = (int)ray.ry >> 6;
+			if (is_done(cube, ray.mx, ray.my))
+				dof = 8;
+			else
+			{
+				ray.rx += ray.xo;
+				ray.ry += ray.yo;
+				dof += 1;
+			}
+		}
+		line = init_line(cube->player.px * MAPSIZE, cube->player.py * MAPSIZE, ray.rx, ray.ry);
+		draw_line(cube->image, line, pixel(255, 0, 0, 255));
+		i++;
 	}
 }
-
-
-//void	vertical_rays(t_cube *cube, t_ray *ray)
-//{
-//	float atan = -tan(ray->ra);
-//	if(cos((ray->ra)) > 0.001)
-//	{
-//		ray->rx = cube->player.px;
-//		ray->ry = cube->player.py;
-//		ray->xo = 1;
-//		ray->yo = -ray->xo * atan;
-//		printf("here\n");
-//	}
-//	else if(cos((ray->ra)) < -0.001)
-//	{
-//		ray->rx = cube->player.px;
-//		ray->ry = cube->player.py;
-//		ray->xo = -1;
-//		ray->yo = -ray->xo * atan;
-//		printf("nothere\n");
-//	}
-//	else 
-//	{
-//		ray->rx = cube->player.px;
-//		ray->ry = cube->player.py;
-//		ray->xo = 0;
-//		ray->yo = 1;
-//	}
-//	while(is_done(cube, ray->mx, ray->my))
-//	{
-//		ray->mx = (int)ray->rx / MAPSIZE;
-//		ray->my = (int)ray->ry / MAPSIZE;
-//		ray->rx += ray->xo;
-//		ray->ry += ray->yo;
-//	}
-//	t_line line = init_line(cube->player.px, cube->player.py, ray->rx, ray->ry);
-//	draw_line(cube->image, line, pixel(255,0,0,255));
-//}
-
-//void	horizontal_rays(t_cube *cube, t_ray *ray)
-//{
-	
-//}
-
-//void	draw_ray(t_cube *cube)
-//{
-//	t_ray ray = init_ray(cube->player);
-//	int i = 0;
-
-//	while (i < 1)
-//	{
-//		vertical_rays(cube, &ray);
-//		//horizontal_rays(cube, &ray);
-
-		
-//		i++;
-//	}
-
-
-//}
-
