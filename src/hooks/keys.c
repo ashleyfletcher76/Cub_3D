@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:44:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/03 14:17:14 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:40:44 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ void	key_down(t_cube *cube)
 }
 void	key_left(t_cube *cube)
 {
-	cube->player.pa += ROTATIONSPEED;
+	cube->player.pa -= ROTATIONSPEED;
 	cube->player.pa = fixang(cube->player.pa);
 	cube->player.pdx = cos(degtorad(cube->player.pa));
 	cube->player.pdy = -sin(degtorad(cube->player.pa));
 }
 void	key_rigth(t_cube *cube)
 {
-	cube->player.pa -= ROTATIONSPEED;
+	cube->player.pa += ROTATIONSPEED;
 	cube->player.pa = fixang(cube->player.pa);
 	cube->player.pdx = cos(degtorad(cube->player.pa));
 	cube->player.pdy = -sin(degtorad(cube->player.pa));

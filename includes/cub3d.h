@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/03 14:37:58 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:30:17 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@
 
 # define PI 3.1415926535
 # define PIDIR 0.78539816337
-# define DR 0.00096962777
+# define DR 0.06111111111
 
 # define WIDTH 1080
 # define HEIGHT 720
 
 # define MAPSIZE 64
-# define FPOV 60
+# define FPOV 66
 
-# define ROTATIONSPEED 5
+# define ROTATIONSPEED 3
 # define MOVESPEED 0.05;
 
 //check args

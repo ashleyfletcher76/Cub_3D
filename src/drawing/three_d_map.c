@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/02 10:50:07 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:17:57 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,46 +18,19 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 {
 	t_line		line;
 	int			dist;
-	double		lineO;
+	double		lineoff;
 	int			ca;
 
 	ca = fixang(cube->player.pa - ray.ra);
-	ray.dist = ray.dist * cos(degtorad(ca));
-	if (ray.dist == 0)
-		ray.dist = 1;
-	dist = HEIGHT * 32 / ray.dist;
-	double	ty_step = cube->wall_tex.height / dist;
-	double	ty_off = 0;
-	lineO = HEIGHT / 2 - (dist / 2);
-
-
+	ray.disth = ray.disth * cos(degtorad(ca));
+	if (ray.disth == 0)
+		ray.disth = 0;
+	dist = (HEIGHT) / ray.disth;
 	if (dist > HEIGHT)
-	{
 		dist = HEIGHT;
-		ty_off = (dist - HEIGHT) / 2.0;
-	}
-	int lineoff = HEIGHT / 2 - (dist / 2);
-
-	u_int8_t *pixels;
-	int color;
-	int y;
-	double ty = ty_off * ty_step;
-	double tx;
-
-	tx = ((int)(ray.rx / 2.0) % 80);
-
-	for (y = 0; y < dist; y++)
-	{
-		int index = ((int)tx * cube->wall_tex.width + (int)ty) * 4;
-		pixels = &cube->wall_tex.pixels[index];
-		color = pixel(pixels[0]  , pixels[1]  , pixels[2] , pixels[3]);
-		mlx_put_pixel(cube->image, i, y + lineoff, color);
-		ty += ty_step;
-	}
-
-
-
-
+	lineoff = HEIGHT / 2 - (dist / 2);
+	line = init_line(i, lineoff, i, dist + lineoff);
+	draw_line(cube->image, line, pixel(0,255,0,255));
 	line = init_line(i, dist + lineoff, i, HEIGHT);
 	draw_line(cube->image, line, cube->details->floor_rgb);
 	line = init_line(i, 0, i, lineoff);

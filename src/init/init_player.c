@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 15:21:03 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:03:52 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	init_player(t_cube *cube)
 		cube->player.pa = 180;
 	if (cube->player.d == 'N')
 		cube->player.pa = 270;
-	printf("%f\n", cube->player.pa);
 	cube->player.pdx = cos(cube->player.pa);
 	cube->player.pdy = sin(cube->player.pa);
 	init_default_player(cube);
