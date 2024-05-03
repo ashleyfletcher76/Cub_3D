@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   cube.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 13:07:09 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:46:07 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "cub3d.h"
 #include "structs.h"
@@ -33,7 +34,7 @@ int	main(int argc, char **argv)
 	init_mlx(cube);
 	init_2d_map(cube);
 	init_player(cube);
-	draw_pixel(cube);
+	//init_textures(cube);
 	mlx_loop_hook(cube->mlx, hook, cube);
 	mlx_loop_hook(cube->mlx, user_input, cube);
 	mlx_loop(cube->mlx);

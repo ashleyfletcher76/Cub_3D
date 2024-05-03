@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   maths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 17:44:22 by muhakose         ###   ########.fr       */
+/*   Created: 2024/05/02 10:49:23 by muhakose          #+#    #+#             */
+/*   Updated: 2024/05/03 15:29:18 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-void	hook(void *param)
+double	degtorad(double a)
 {
-	t_cube	*cube;
-
-	cube = (t_cube *)param;
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(cube->mlx);
+	return (a * (PI / 180.0));
 }
 
-
-void	user_input(void *param)
+double	fixang(double a)
 {
-	t_cube	*cube;
-
-	cube = (t_cube *)param;
-	read_keys(cube);
-	//two_d_map(cube);
-	//draw_pixel(cube);
-	draw_ray(cube);
+	if (a > 359)
+		a -= 360;
+	if (a < 0)
+		a += 360;
+	return (a);
 }

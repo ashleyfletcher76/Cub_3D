@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 17:04:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 14:18:37 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,23 @@ t_line	init_line(double beginx, double beginy, double endx, double endy)
 	return (line);
 }
 
-void	draw_player(t_cube *cube)
+void	draw_player(t_cube *cube, double mx, double my)
 {
 	int	x;
 	int	y;
+	int draw_x;
+	int draw_y;
 
-	x = 952 -MAPSIZE / 8;
-	while (++x < 952 + MAPSIZE / 8)
+	x = -MAPSIZE / 8;
+	while (++x < MAPSIZE / 8)
 	{
-		y = 592 - MAPSIZE / 8;
-		while (++y < 592 + MAPSIZE / 8)
+		y = - MAPSIZE / 8;
+		while (++y < MAPSIZE / 8)
 		{
-			// if (x >= 0 && y < WIDTH && x >= 0 && y < HEIGHT)
-				mlx_put_pixel(cube->image, x, y,
+			draw_x = x + mx;
+			draw_y = y + my;
+			if (draw_x >= 0 && draw_y < WIDTH && draw_x >= 0 && draw_y < HEIGHT)
+				mlx_put_pixel(cube->image, draw_x, draw_y,
 					pixel(255, 255, 0, 255));
 		}
 	}
@@ -72,10 +76,11 @@ void	draw_player(t_cube *cube)
 void	draw_pixel(t_cube *cube)
 {
 	t_line	line;
+	double	mx = cube->player.px * MAPSIZE;
+	double	my = cube->player.py * MAPSIZE;
 
-	line = init_line(cube->player.px, cube->player.py, cube->player.px
-			+ cube->player.pdx * MAPSIZE / 4, cube->player.py
-			+ cube->player.pdy * MAPSIZE / 4);
-	draw_player(cube);
+	line = init_line(mx, my, mx + cube->player.pdx * MAPSIZE, my
+			+ cube->player.pdy * MAPSIZE);
+	draw_player(cube, mx, my);
 	draw_line(cube->image, line, pixel(255, 255, 0, 255));
 }
