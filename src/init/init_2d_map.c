@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_2d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:05:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 15:16:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:54:04 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,19 @@ int32_t	init_2d_map(t_cube *cube)
 	scale = calculate_scale(cube);
 	printf("scale = %d\n", scale);
 	calculate_dimensions(cube, scale);
-	cube->mini = mlx_new_image(cube->mlx, cube->map->mini_width, cube->map->mini_height);
-	if (!cube->mini)
-	{
-		mlx_delete_image(cube->mlx, cube->image);
-		mlx_delete_image(cube->mlx, cube->mini);
-		mlx_close_window(cube->mlx);
-		return (EXIT_FAILURE);
-	}
-	if (mlx_image_to_window(cube->mlx, cube->mini, 0, 0) == -1)
-	{
-		mlx_close_window(cube->mlx);
-		return (EXIT_FAILURE);
-	}
+	//cube->mini = mlx_new_image(cube->mlx, cube->map->mini_width, cube->map->mini_height);
+	//if (!cube->mini)
+	//{
+	//	mlx_delete_image(cube->mlx, cube->image);
+	//	mlx_delete_image(cube->mlx, cube->mini);
+	//	mlx_close_window(cube->mlx);
+	//	return (EXIT_FAILURE);
+	//}
+	//if (mlx_image_to_window(cube->mlx, cube->mini, 0, 0) == -1)
+	//{
+	//	mlx_close_window(cube->mlx);
+	//	return (EXIT_FAILURE);
+	//}
 	return (EXIT_SUCCESS);
 }
 

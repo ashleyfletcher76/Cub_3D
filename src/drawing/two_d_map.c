@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   two_d_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/03 15:32:59 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:53:45 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 		color = pixel(128, 128, 128, 0);
 	else
 		color = pixel(128, 128, 128, 0);
-	mlx_put_pixel(cube->mini, x, y, color);
+	mlx_put_pixel(cube->image, x, y, color);
 }
 
 void	two_d_map(void *param)
@@ -61,7 +61,7 @@ void	two_d_map(void *param)
 		while (++y < cube->map->mini_height)
 		{
 			if (x % scale == 0 || y % scale == 0)
-				mlx_put_pixel(cube->mini, x, y, pixel(0, 0, 0, 0));
+				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
 			else if (x < mini_width && y < mini_height)
 				non_grid_lines(cube, x, y, scale);
 		}

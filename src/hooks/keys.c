@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:44:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/03 17:40:44 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:52:43 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,11 @@ void	read_keys(t_cube *cube)
 		key_down(cube);
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_P))
 		reset_players_values(cube);
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_M))
+	{
+		if (cube->map->flag == 0)
+			cube->map->flag = 1;
+		else
+			cube->map->flag = 0;
+	}
 }

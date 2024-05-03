@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 17:49:14 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:54:34 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	user_input(void *param)
 
 	cube = (t_cube *)param;
 	read_keys(cube);
-	two_d_map(cube);
+	draw_ray(cube);
 	draw_pixel(cube);
-	//draw_ray(cube);
+	if (cube->map->flag == 1)
+		two_d_map(cube);
 }

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/03 17:48:29 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:51:24 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ typedef struct s_map
 	int		mini_width;
 	int		mini_height;
 	int		grid_size;
+	bool	flag;
 }	t_map;
 
 typedef struct s_cube
