@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/03 15:20:09 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:32:59 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,15 @@ static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 	condition = map_condition(cube, x, y, scale);
 	color = 0;
 	if (condition == '1')
+		color = pixel(255, 255, 255, 0);
+	else if (condition == 'V')
 		color = pixel(255, 255, 255, 255);
-	else if (condition == '0')
-		color = pixel(0, 0, 0, 255);
 	else if (condition == ' ')
 		color = pixel(128, 128, 128, 0);
 	else
 		color = pixel(128, 128, 128, 0);
 	mlx_put_pixel(cube->mini, x, y, color);
 }
-
-int	gl = 0;
 
 void	two_d_map(void *param)
 {
@@ -56,9 +54,6 @@ void	two_d_map(void *param)
 	scale = fmin(scale_width, scale_height);
 	int	mini_width = cube->max_width * scale;
 	int	mini_height = cube->max_height * scale;
-	if (gl == 0)
-		printf("scale = %d\n", scale);
-	gl++;
 	x = -1;
 	while (++x < cube->map->mini_width)
 	{
