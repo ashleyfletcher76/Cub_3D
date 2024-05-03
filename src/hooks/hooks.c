@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:51:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/01 17:12:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	user_input(void *param)
 		collision_conditions(cube, next_px, next_py, 1);
 	left_right_keys(cube);
 	player_reset(cube);
-	draw_ray(cube);
+	//draw_ray(cube);
 	two_d_map(cube);
 	draw_pixel(cube);
 }

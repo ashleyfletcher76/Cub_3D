@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/04/29 16:17:06 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/03 13:20:15 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,15 @@ COLOUR_END = \033[0m
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
-SRCS = cube.c init/init.c init/init_player.c init/init_background.c \
+SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
 	hooks/hooks.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
 	parsing/check_arg.c parsing/check_map_details.c \
 	parsing/check_start.c parsing/remove_space.c \
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
-	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c drawing/three_d_map.c\
+	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \
+	drawing/three_d_map.c \
 	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
 	utils/check_chars.c utils/utils.c

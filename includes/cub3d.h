@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/29 16:34:02 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 14:46:48 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 
 # define WIDTH 1080
 # define HEIGHT 720
+# define MINI_WIDTH 600
+# define MINI_HEIGHT 600
 
 # define MAPSIZE 32
 # define FPOV 60
@@ -99,5 +101,7 @@ void	print_map(t_cube *cube);
 int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
+
+int32_t	init_2d_map(t_cube *cube);
 
 #endif

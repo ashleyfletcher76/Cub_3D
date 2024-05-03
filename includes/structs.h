@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/04/30 10:42:52 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:12:09 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,8 @@ typedef struct s_details
 typedef struct s_map
 {
 	char	**map;
-	int		empty_col;
-	int		start_x;
-	int		start_y;
+	int		mini_width;
+	int		mini_height;
 	int		grid_size;
 }	t_map;
 
@@ -100,6 +99,7 @@ typedef struct s_cube
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
+	mlx_image_t	*mini;
 	t_map		*map;
 	t_player	player;
 	t_line		line;

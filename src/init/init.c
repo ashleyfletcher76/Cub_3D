@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 17:00:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:24:03 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int32_t	init_mlx(t_cube *cube)
 	cube->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
 	if (!cube->mlx)
 		return (EXIT_FAILURE);
-	cube->image = mlx_new_image(cube->mlx, WIDTH, HEIGHT);
+	cube->image = mlx_new_image(cube->mlx, WIDTH * 2, HEIGHT * 2);
 	if (!cube->image)
 	{
 		mlx_delete_image(cube->mlx, cube->image);
