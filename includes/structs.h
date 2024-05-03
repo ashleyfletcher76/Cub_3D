@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/03 17:47:22 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:48:29 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,7 @@ typedef struct s_cube
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-<<<<<<< HEAD
 	mlx_image_t	*mini;
-=======
-	mlx_texture_t	wall_tex;
-	xpm_t		*wall_xpm;
->>>>>>> images
 	t_map		*map;
 	t_player	player;
 	t_line		line;
