@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 12:23:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 15:24:11 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,14 @@ void	draw_player(t_cube *cube, double mx, double my)
 	int	y;
 	int	draw_x;
 	int	draw_y;
+	int	pixel_size;
 
-	x = -cube->map->scale_new / 4;
-	while (++x < cube->map->scale_new / 4)
+	pixel_size = cube->map->pixel_scale;
+	x = -pixel_size;
+	while (++x < pixel_size)
 	{
-		y = -cube->map->scale_new / 4;
-		while (++y < cube->map->scale_new / 4)
+		y = -pixel_size;
+		while (++y < pixel_size)
 		{
 			draw_x = x + mx;
 			draw_y = y + my;
@@ -83,5 +85,5 @@ void	draw_pixel(t_cube *cube)
 	line = init_line(mx, my, mx + cube->player.pdx * cube->map->scale, my
 			+ cube->player.pdy * cube->map->scale);
 	draw_player(cube, mx, my);
-	draw_line(cube->image, line, pixel(255, 255, 0, 255));
+	draw_line(cube->image, line, pixel(0, 0, 255, 255));
 }

@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 11:51:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:42:09 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@
 
 # define WIDTH 1920
 # define HEIGHT 1080
-# define MINI_WIDTH 600
-# define MINI_HEIGHT 600
+# define MIN_MAP_SIZE 300
+# define MAX_MAP_SIZE 1000
+# define PIXEL_PER_CELL 15
 
 # define MAPSIZE 64
 # define FPOV 66

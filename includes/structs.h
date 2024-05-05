@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 12:23:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:48:02 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ typedef struct s_map
 	int		scale_width;
 	int		scale_height;
 	int		scale;
-	int		scale_new;
+	int		pixel_scale;
 	int		draw_width;
 	int		draw_height;
 	bool	show_map;

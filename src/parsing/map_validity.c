@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:45:35 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:56:39 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ static void	check_rows_right(t_cube *cube, int row)
 			c = current;
 	}
 	if (c != '1')
+	{
+		printf("Rows right\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_cols_down(t_cube *cube, int col)
@@ -48,7 +51,10 @@ static void	check_cols_down(t_cube *cube, int col)
 	if (c == 'X')
 		new_map(cube, col);
 	else if (c != '1')
+	{
+		printf("Cols down\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_rows_left(t_cube *cube, int row)
@@ -66,7 +72,10 @@ static void	check_rows_left(t_cube *cube, int row)
 			c = current;
 	}
 	if (c != '1')
+	{
+		printf("Rows left\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 static void	check_cols_up(t_cube *cube, int col)
@@ -86,7 +95,10 @@ static void	check_cols_up(t_cube *cube, int col)
 	if (c == 'X')
 		new_map(cube, col);
 	else if (c != '1')
+	{
+		printf("Cols up\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
 
 void	check_map_perimeter(t_cube *cube)

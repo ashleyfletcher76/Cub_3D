@@ -6,52 +6,22 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:05:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 12:51:58 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:56:52 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-static int	calculate_scale(t_cube *cube)
+static void	calculate_dimensions(t_cube *cube)
 {
-	int	max;
-	int	scale;
+	int	baseline_width;
+	int	baseline_height;
 
-	max = fmax(cube->max_width, cube->max_height);
-	scale = max / 4;
-	if (scale == 0)
-		scale = 1;
-	return (scale);
-}
-
-static void	calculate_dimensions(t_cube *cube, int scale)
-{
-	if (scale >= 1 && scale <= 5)
-	{
-		cube->map->mini_width = 300;
-		cube->map->mini_height = 300;
-	}
-	else if (scale >= 6 && scale <= 10)
-	{
-		cube->map->mini_width = 400;
-		cube->map->mini_height = 400;
-	}
-	else if (scale >= 11 && scale <= 15)
-	{
-		cube->map->mini_width = 500;
-		cube->map->mini_height = 500;
-	}
-	else if (scale >= 16 && scale <= 20)
-	{
-		cube->map->mini_width = 1000;
-		cube->map->mini_height = 1000;
-	}
-	else
-	{
-		cube->map->mini_width = 800;
-		cube->map->mini_height = 800;
-	}
+	baseline_width = cube->max_width * PIXEL_PER_CELL;
+	baseline_height = cube->max_height * PIXEL_PER_CELL;
+	cube->map->mini_width = fmax(MIN_MAP_SIZE, fmin(baseline_width, MAX_MAP_SIZE));
+	cube->map->mini_height = fmax(MIN_MAP_SIZE, fmin(baseline_height, MAX_MAP_SIZE));
 }
 
 static void	cube_helper(t_cube *cube)
@@ -69,10 +39,7 @@ static void	cube_helper(t_cube *cube)
 
 int32_t	init_2d_map(t_cube *cube)
 {
-	int	scale;
-
 	cube_helper(cube);
-	scale = calculate_scale(cube);
-	calculate_dimensions(cube, scale);
+	calculate_dimensions(cube);
 	return (EXIT_SUCCESS);
 }

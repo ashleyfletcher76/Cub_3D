@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:11:26 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:11:29 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:06:01 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,8 @@ void	multiple_start_pos(t_cube *cube)
 	while (++y < cube->max_height)
 		checker += check_multiple(cube->map->map[y]);
 	if (checker != 1)
+	{
+		printf("Multiple start pos\n");
 		free_print_exit(cube, 2, 0);
+	}
 }
