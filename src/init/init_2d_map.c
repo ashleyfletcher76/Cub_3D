@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:05:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 12:21:32 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:56:34 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ static void	calculate_dimensions(t_cube *cube, int scale)
 	}
 	else if (scale >= 16 && scale <= 20)
 	{
-		cube->map->mini_width = 600;
-		cube->map->mini_height = 600;
+		cube->map->mini_width = 1000;
+		cube->map->mini_height = 1000;
 	}
 	else
 	{
-		cube->map->mini_width = 700;
-		cube->map->mini_height = 700;
+		cube->map->mini_width = 800;
+		cube->map->mini_height = 800;
 	}
 }
 

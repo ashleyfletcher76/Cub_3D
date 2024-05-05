@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 11:14:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:06:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ int32_t	init_mlx(t_cube *cube)
 	{
 		mlx_delete_image(cube->mlx, cube->image);
 		mlx_close_window(cube->mlx);
-		return (EXIT_FAILURE);
+		free_print_exit_two(cube, NULL, 3);
 	}
 	if (mlx_image_to_window(cube->mlx, cube->image, 0, 0) == -1)
 	{
+
+		mlx_delete_image(cube->mlx, cube->image);
 		mlx_close_window(cube->mlx);
-		return (EXIT_FAILURE);
+		free_print_exit_two(cube, NULL, 3);
 	}
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 12:20:54 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:56:17 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	draw_player(t_cube *cube, double mx, double my)
 	int	draw_x;
 	int	draw_y;
 
-	x = -cube->map->scale / 4;
-	while (++x < cube->map->scale / 4)
+	x = -cube->map->scale_new / 4;
+	while (++x < cube->map->scale_new / 4)
 	{
-		y = -cube->map->scale / 4;
-		while (++y < cube->map->scale / 4)
+		y = -cube->map->scale_new / 4;
+		while (++y < cube->map->scale_new / 4)
 		{
 			draw_x = x + mx;
 			draw_y = y + my;
