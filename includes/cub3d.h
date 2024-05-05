@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/03 17:22:45 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:12:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@
 
 # define PI 3.1415926535
 # define PIDIR 0.78539816337
-# define DR 0.00096962777
+# define DR 0.06111111111
 
 # define WIDTH 1080
 # define HEIGHT 720
 # define MINI_WIDTH 600
 # define MINI_HEIGHT 600
 
-# define MAPSIZE 34
-# define FPOV 60
+# define MAPSIZE 64
+# define FPOV 66
 
-# define ROTATIONSPEED 5
+# define ROTATIONSPEED 3
 # define MOVESPEED 0.05;
 
 //check args

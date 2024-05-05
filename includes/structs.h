@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/03 17:44:34 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:18:11 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,11 @@ typedef struct s_map
 	char	**map;
 	int		mini_width;
 	int		mini_height;
+	int		scale_width;
+	int		scale_height;
 	int		scale;
 	int		draw_width;
 	int		draw_height;
-	double	scale_width;
-	double	scale_height;
 	bool	show_map;
 }	t_map;
 
@@ -108,9 +108,7 @@ typedef struct s_cube
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-	//mlx_image_t	*mini;
-	mlx_texture_t	wall_tex;
-	xpm_t		*wall_xpm;
+	mlx_image_t	*mini;
 	t_map		*map;
 	t_player	player;
 	t_line		line;

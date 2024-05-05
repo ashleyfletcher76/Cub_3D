@@ -6,9 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 16:49:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:19:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "cub3d.h"
 #include "structs.h"
@@ -29,7 +30,6 @@ int	main(int argc, char **argv)
 	init_map(cube);
 	parse_map(cube, argv[1]);
 	check_map_perimeter(cube);
-	//print_map(cube);
 	init_mlx(cube);
 	init_2d_map(cube);
 	init_player(cube);
