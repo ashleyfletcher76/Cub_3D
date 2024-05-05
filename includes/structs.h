@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 11:24:18 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:35:28 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,22 @@
 # define STRUCTS_H
 
 # include "../MLX42/include/MLX42/MLX42.h"
+
+enum e_keycode
+{
+	KEY_UP = 87,
+	KEY_DOWN = 83,
+	KEY_LEFT = 65,
+	KEY_RIGHT = 68,
+	RESET = 15,
+	ESC = 256,
+	KEY_P = 80,
+	KEY_M = 77,
+	KEY_A = 65,
+	KEY_D = 68,
+	KEY_S = 83,
+	KEY_W = 87
+};
 
 typedef enum s_type
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 11:26:44 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:51:14 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	convert_to_rgb(t_cube *cube, int flag, int count);
 int		check_invalid_integers(char **rgb);
 
 //hooks
-void	user_input(void *param);
+void	user_input(mlx_key_data_t keys, void *param);
+void	user_input_two(void *param);
 void	read_keys(t_cube *cube);
 void	key_up(t_cube *cube);
 void	key_down(t_cube *cube);
