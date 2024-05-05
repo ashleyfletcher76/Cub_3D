@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 15:26:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:58:37 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int		check_numbers(int *rgb, int count);
 void	convert_to_rgb(t_cube *cube, int flag, int count);
 int		check_invalid_integers(char **rgb);
 
-
 //rays
 void	draw_ray(t_cube *cube);
 void	dda(t_cube *cube, t_ray *ray);
@@ -63,7 +62,6 @@ t_ray	init_ray(t_player player);
 void	set_ray(t_ray *ray, double px, double py);
 int		is_done(t_cube *cube, int x, int y);
 double	find_dist(t_ray *ray, t_player player);
-
 
 //hooks
 void	user_input(mlx_key_data_t keys, void *param);
@@ -106,20 +104,26 @@ void	two_d_map(void *param);
 void	draw_3d(t_cube *cube, t_ray ray, int i);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 
+//textures
+void	init_textures(t_cube *cube);
+
 //gameplay
 int		is_wall_back(t_cube *cube, int x, int y, int buff);
 int		is_wall_forward(t_cube *cube, int x, int y, int buff);
 
 //utils
-void	print_error_exit(int flag);
-void	free_print_exit(t_cube *cube, int flag, int i);
-void	free_print_exit_two(t_cube *cube, t_point *stack, int flag);
-void	final_free(t_cube *cube);
-void	free_rgb(char **rgb);
 void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
 double	degtorad(double a);
 double	fixang(double a);
+
+//free and messages
+void	print_error_exit(int flag);
+void	free_print_exit(t_cube *cube, int flag, int i);
+void	free_print_exit_two(t_cube *cube, t_point *stack, int flag);
+void	free_print_exit_three(t_cube *cube, int flag);
+void	final_free(t_cube *cube);
+void	free_rgb(char **rgb);
 
 //char checkers
 int		correct_chars(char c);

@@ -6,33 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 12:48:42 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:27:48 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:18:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
-
-void	compare_textures(t_cube *cube)
-{
-	char	*no;
-	char	*so;
-	char	*ea;
-	char	*we;
-
-	no = "./path_to_the_north_texture";
-	so = "./path_to_the_south_texture";
-	ea = "./path_to_the_east_texture";
-	we = "./path_to_the_west_texture";
-	if (ft_strcmp(cube->details->north, no) != 0)
-		free_print_exit_two(cube, NULL, 1);
-	if (ft_strcmp(cube->details->south, so) != 0)
-		free_print_exit_two(cube, NULL, 1);
-	if (ft_strcmp(cube->details->east, ea) != 0)
-		free_print_exit_two(cube, NULL, 1);
-	if (ft_strcmp(cube->details->west, we) != 0)
-		free_print_exit_two(cube, NULL, 1);
-}
 
 static int	whitespace_skip(char c)
 {

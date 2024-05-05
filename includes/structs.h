@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 14:48:02 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:49:48 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ typedef enum s_type
 	CEILING,
 	END
 }	t_type;
+
+typedef struct s_texture
+{
+	xpm_t			*north;
+	xpm_t			*south;
+	xpm_t			*east;
+	xpm_t			*west;
+	mlx_texture_t	north_tex;
+	mlx_texture_t	south_tex;
+	mlx_texture_t	east_tex;
+	mlx_texture_t	west_tex;
+}	t_texture;
 
 typedef struct s_point
 {
@@ -126,12 +138,12 @@ typedef struct s_cube
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-	mlx_image_t	*mini;
 	t_map		*map;
 	t_player	player;
 	t_line		line;
 	t_default	player_default;
 	t_details	*details;
+	t_texture	texture;
 	bool		map_start;
 	int			details_found;
 	int			max_width;
