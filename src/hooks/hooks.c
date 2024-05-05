@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 11:54:20 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:09:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void	user_input_two(void *param)
 	read_keys(cube);
 	draw_ray(cube);
 	if (cube->map->show_map == true)
+	{
 		two_d_map(cube);
-	draw_pixel(cube);
+		draw_pixel(cube);
+	}
 }
 
 void	read_keys(t_cube *cube)
