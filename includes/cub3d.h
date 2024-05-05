@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 14:42:09 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 15:26:14 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,16 @@ int		check_numbers(int *rgb, int count);
 void	convert_to_rgb(t_cube *cube, int flag, int count);
 int		check_invalid_integers(char **rgb);
 
+
+//rays
+void	draw_ray(t_cube *cube);
+void	dda(t_cube *cube, t_ray *ray);
+t_ray	init_ray(t_player player);
+void	set_ray(t_ray *ray, double px, double py);
+int		is_done(t_cube *cube, int x, int y);
+double	find_dist(t_ray *ray, t_player player);
+
+
 //hooks
 void	user_input(mlx_key_data_t keys, void *param);
 void	user_input_two(void *param);
@@ -88,7 +98,6 @@ void	reset_players_values(t_cube *cube);
 int32_t	init_2d_map(t_cube *cube);
 
 //drawing processes
-void	draw_ray(t_cube *cube);
 int		draw_line(mlx_image_t *image, t_line line, int color);
 void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);

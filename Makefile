@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/05 11:15:53 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/05 12:13:27 by muhakose         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c init/textures.c 
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \
-	drawing/three_d_map.c \
+	drawing/three_d_map.c drawing/rays_helper.c \
 	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
 	utils/check_chars.c utils/utils.c /utils/maths.c
