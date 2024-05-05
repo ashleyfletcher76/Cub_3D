@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/03 13:24:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:18:38 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	init_map(t_cube *cube)
 			free_print_exit(cube, 1, i);
 		cube->map->map[i][cube->max_width] = '\0';
 	}
-	cube->map->grid_size = cube->max_width * cube->max_height;
 }
 
 void	init_cube(t_cube **cube, t_cube *temp_cube)

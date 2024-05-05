@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/03 15:42:22 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/03 16:57:09 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ COLOUR_END = \033[0m
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
-SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
-	hooks/hooks.c hooks/keys.c \
+SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c init/textures.c \
+	hooks/hooks.c hooks/keys.c hooks/close_minimap.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
 	parsing/check_arg.c parsing/check_map_details.c \
 	parsing/check_start.c parsing/remove_space.c \
@@ -32,7 +32,7 @@ SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
 	drawing/three_d_map.c \
 	gameplay/prevent_collision.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
-	utils/check_chars.c utils/utils.c
+	utils/check_chars.c utils/utils.c /utils/maths.c
 OBJ_DIR = obj
 SRC_DIR = src/
 INCLUDES = -I$(MLX42_DIR)/include -I header -I libft

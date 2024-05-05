@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/03 14:46:48 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:22:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@
 # define MINI_WIDTH 600
 # define MINI_HEIGHT 600
 
-# define MAPSIZE 32
+# define MAPSIZE 34
 # define FPOV 60
+
+# define ROTATIONSPEED 5
+# define MOVESPEED 0.05;
 
 //check args
 t_cube	check_args(int argc, char **argv);
@@ -51,6 +54,15 @@ int		check_numbers(int *rgb, int count);
 void	convert_to_rgb(t_cube *cube, int flag, int count);
 int		check_invalid_integers(char **rgb);
 
+//hooks
+void	user_input(void *param);
+void	read_keys(t_cube *cube);
+void	key_up(t_cube *cube);
+void	key_down(t_cube *cube);
+void	key_left(t_cube *cube);
+void	key_right(t_cube *cube);
+void	close_mini_map(t_cube *cube);
+
 //map parsing
 t_cube	parse_map(t_cube *cube, char *map);
 void	new_map(t_cube *cube, int index);
@@ -67,10 +79,11 @@ int32_t	init_mlx(t_cube *cube);
 void	init_cube(t_cube **cube, t_cube *temp_cube);
 void	init_map(t_cube *cube);
 void	init_player(t_cube *cube);
+void	init_textures(t_cube *cube);
 t_line	init_line(double beginx, double beginy, double endx, double endy);
 void	init_default_player(t_cube *cube);
 void	reset_players_values(t_cube *cube);
-void	hook(void *param);
+int32_t	init_2d_map(t_cube *cube);
 
 //drawing processes
 void	draw_ray(t_cube *cube);
@@ -79,10 +92,8 @@ void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
 void	two_d_map(void *param);
-void	put_wall(t_cube *cube, t_line line, t_ray ray);
 void	draw_3d(t_cube *cube, t_ray ray, int i);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
-void	user_input(void *param);
 
 //gameplay
 int		is_wall_back(t_cube *cube, int x, int y, int buff);
@@ -96,12 +107,12 @@ void	final_free(t_cube *cube);
 void	free_rgb(char **rgb);
 void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
+double	degtorad(double a);
+double	fixang(double a);
 
 //char checkers
 int		correct_chars(char c);
 int		map_valid_chars(char c);
 int		edge_conditions(char c);
-
-int32_t	init_2d_map(t_cube *cube);
 
 #endif

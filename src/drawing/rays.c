@@ -3,26 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/30 10:42:58 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:56:32 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-t_ray	init_ray(double pa, double px, double py)
+t_ray	init_ray(t_player player)
 {
 	t_ray	ray;
 
-	ray.rx = px;
-	ray.ry = py;
+	ray.rx = player.px;
+	ray.ry = player.py;
 	ray.xo = 0;
 	ray.yo = 0;
+	ray.vx = 0;
+	ray.vy = 0;
+	ray.disth = 0;
+	ray.distv = 0;
 	ray.dist = 0;
-	ray.ra = pa - (DR * FPOV * 7.11111111111);
+	ray.ra = fixang(player.pa);
 	ray.mx = ray.rx / MAPSIZE;
 	ray.my = ray.ry / MAPSIZE;
 	return (ray);
@@ -37,6 +41,8 @@ void	set_ray(t_ray *ray, double px, double py)
 	ray->xo = cos(ray->ra);
 	ray->yo = sin(ray->ra);
 	ray->dist = 0;
+	ray->disth = 0;
+	ray->distv = 0;
 }
 
 int	is_done(t_cube *cube, int x, int y)
@@ -66,24 +72,51 @@ void	draw_ray(t_cube *cube)
 	t_ray	ray;
 	t_line	line;
 	int		i;
+	int		dof;
+	float	aTan;
 
-	i = -1;
-	ray = init_ray(cube->player.pa, cube->player.px, cube->player.py);
-	while (++i < WIDTH)
+	i = 0;
+	ray = init_ray(cube->player);
+	while (i < 1)
 	{
-		set_ray(&ray, cube->player.px, cube->player.py);
-		while (is_done(cube, ray.mx, ray.my))
+		dof = 0;
+		if (ray.ra != 180 || ray.ra != 90)
+			aTan = tan(degtorad(ray.ra));
+		if (cos(degtorad(ray.ra) > 0.001)) // loking left
 		{
-			ray.mx = (int)(ray.rx) / MAPSIZE;
-			ray.my = (int)(ray.ry) / MAPSIZE;
-			ray.rx += ray.xo;
-			ray.ry += ray.yo;
+			ray.rx = (((int)cube->player.px >> 6 ) << 6) + MAPSIZE;
+			ray.ry = (cube->player.px - ray.rx) * aTan + cube->player.py;
+			ray.xo = 64;
+			ray.xo = ray.xo * aTan;
 		}
-		find_dist(&ray, cube->player);
-		line = init_line(cube->player.px, cube->player.py, ray.rx, ray.ry);
-		draw_line(cube->image, line, pixel(0, 255, 0, 255));
-		draw_3d(cube, ray, i);
-		ray.ra += DR;
+		else if (cos(degtorad(ray.ra) < -0.001))
+		{
+			ray.rx = (((int)cube->player.px >> 6 ) << 6) - 0.0001;
+			ray.ry = (cube->player.px - ray.rx) * aTan + cube->player.py;
+			ray.xo = -MAPSIZE;
+			ray.xo = ray.xo * aTan;
+		}
+		else
+		{
+			ray.rx = cube->player.px * MAPSIZE;
+			ray.ry = cube->player.py * MAPSIZE;
+			dof = 8;
+		}
+		while (dof < 8)
+		{
+			ray.mx = (int)ray.rx >> 6;
+			ray.my = (int)ray.ry >> 6;
+			if (is_done(cube, ray.mx, ray.my))
+				dof = 8;
+			else
+			{
+				ray.rx += ray.xo;
+				ray.ry += ray.yo;
+				dof += 1;
+			}
+		}
+		line = init_line(cube->player.px * MAPSIZE, cube->player.py * MAPSIZE, ray.rx, ray.ry);
+		draw_line(cube->image, line, pixel(255, 0, 0, 255));
+		i++;
 	}
 }
-

@@ -6,50 +6,60 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/04/30 10:40:15 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/02 10:50:07 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-void	put_wall(t_cube *cube, t_line line, t_ray ray)
-{
-	if (ray.ra > PIDIR && ray.ra <= 3 * PIDIR)
-		draw_line(cube->image, line, pixel(255, 0, 0, 255));
-	else if (ray.ra > 3 * PIDIR && ray.ra <= 5 * PIDIR)
-		draw_line(cube->image, line, pixel(255, 0, 0, 255));
-	else if (ray.ra > 5 * PIDIR && ray.ra <= 7 * PIDIR)
-		draw_line(cube->image, line, pixel(255, 0, 0, 255));
-	else
-		draw_line(cube->image, line, pixel(255, 0, 0, 255));
-
-}
-
 
 void	draw_3d(t_cube *cube, t_ray ray, int i)
 {
 	t_line		line;
-	double		dist;
+	int			dist;
 	double		lineO;
-	double		ca;
+	int			ca;
 
-	ca = cube->player.pa - ray.ra;
-	if (ca < 0)
-		ca += 2 * PI;
-	else if (ca > 2 * PI)
-		ca -= 2 * PI;
-	ray.dist = ray.dist * cos(ca);
+	ca = fixang(cube->player.pa - ray.ra);
+	ray.dist = ray.dist * cos(degtorad(ca));
 	if (ray.dist == 0)
 		ray.dist = 1;
-	dist = HEIGHT * 48 / ray.dist;
-	if (dist > HEIGHT)
-		dist = HEIGHT;
+	dist = HEIGHT * 32 / ray.dist;
+	double	ty_step = cube->wall_tex.height / dist;
+	double	ty_off = 0;
 	lineO = HEIGHT / 2 - (dist / 2);
-	line = init_line(i, lineO, i, dist + lineO);
-	put_wall(cube, line, ray);
-	line = init_line(i, dist + lineO, i, HEIGHT);
+
+
+	if (dist > HEIGHT)
+	{
+		dist = HEIGHT;
+		ty_off = (dist - HEIGHT) / 2.0;
+	}
+	int lineoff = HEIGHT / 2 - (dist / 2);
+
+	u_int8_t *pixels;
+	int color;
+	int y;
+	double ty = ty_off * ty_step;
+	double tx;
+
+	tx = ((int)(ray.rx / 2.0) % 80);
+
+	for (y = 0; y < dist; y++)
+	{
+		int index = ((int)tx * cube->wall_tex.width + (int)ty) * 4;
+		pixels = &cube->wall_tex.pixels[index];
+		color = pixel(pixels[0]  , pixels[1]  , pixels[2] , pixels[3]);
+		mlx_put_pixel(cube->image, i, y + lineoff, color);
+		ty += ty_step;
+	}
+
+
+
+
+	line = init_line(i, dist + lineoff, i, HEIGHT);
 	draw_line(cube->image, line, cube->details->floor_rgb);
-	line = init_line(i, 0, i, lineO);
+	line = init_line(i, 0, i, lineoff);
 	draw_line(cube->image, line, cube->details->ceiling_rgb);
 }

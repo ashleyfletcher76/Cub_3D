@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 17:04:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:44:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,25 @@ t_line	init_line(double beginx, double beginy, double endx, double endy)
 	return (line);
 }
 
-void	draw_player(t_cube *cube)
+void	draw_player(t_cube *cube, double mx, double my)
 {
 	int	x;
 	int	y;
+	int	draw_x;
+	int	draw_y;
 
-	x = 952 -MAPSIZE / 8;
-	while (++x < 952 + MAPSIZE / 8)
+	x = -cube->map->scale / 4;
+	while (++x < cube->map->scale / 4)
 	{
-		y = 592 - MAPSIZE / 8;
-		while (++y < 592 + MAPSIZE / 8)
+		y = -cube->map->scale / 4;
+		while (++y < cube->map->scale / 4)
 		{
-			// if (x >= 0 && y < WIDTH && x >= 0 && y < HEIGHT)
-				mlx_put_pixel(cube->image, x, y,
-					pixel(255, 255, 0, 255));
+			draw_x = x + mx;
+			draw_y = y + my;
+			if (draw_x >= 0 && draw_y < cube->map->mini_width
+				&& draw_x >= 0 && draw_y < cube->map->mini_height)
+				mlx_put_pixel(cube->image, draw_x, draw_y,
+					pixel(0, 0, 255, 255));
 		}
 	}
 }
@@ -72,10 +77,11 @@ void	draw_player(t_cube *cube)
 void	draw_pixel(t_cube *cube)
 {
 	t_line	line;
+	double	mx = cube->player.px * cube->map->scale;
+	double	my = cube->player.py * cube->map->scale;
 
-	line = init_line(cube->player.px, cube->player.py, cube->player.px
-			+ cube->player.pdx * MAPSIZE / 4, cube->player.py
-			+ cube->player.pdy * MAPSIZE / 4);
-	draw_player(cube);
+	line = init_line(mx, my, mx + cube->player.pdx * cube->map->scale, my
+			+ cube->player.pdy * cube->map->scale);
+	draw_player(cube, mx, my);
 	draw_line(cube->image, line, pixel(255, 255, 0, 255));
 }

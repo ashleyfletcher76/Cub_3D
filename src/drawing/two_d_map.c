@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/03 15:32:59 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:44:56 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,32 +38,36 @@ static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 		color = pixel(128, 128, 128, 0);
 	else
 		color = pixel(128, 128, 128, 0);
-	mlx_put_pixel(cube->mini, x, y, color);
+	mlx_put_pixel(cube->image, x, y, color);
+}
+
+static void	init_mini_values(t_cube *cube)
+{
+	cube->map->scale_width = cube->map->mini_width / (double)cube->max_width;
+	cube->map->scale_height = cube->map->mini_height / (double)cube->max_height;
+	cube->map->scale = fmin(cube->map->scale_width, cube->map->scale_height);
+	cube->map->draw_width = cube->max_width * cube->map->scale;
+	cube->map->draw_height = cube->max_height * cube->map->scale;
 }
 
 void	two_d_map(void *param)
 {
 	int			y;
 	int			x;
-	int			scale;
 	t_cube		*cube;
 
 	cube = (t_cube *)param;
-	double scale_width = cube->map->mini_width / (double)cube->max_width;
-	double scale_height = cube->map->mini_height / (double)cube->max_height;
-	scale = fmin(scale_width, scale_height);
-	int	mini_width = cube->max_width * scale;
-	int	mini_height = cube->max_height * scale;
+	init_mini_values(cube);
 	x = -1;
 	while (++x < cube->map->mini_width)
 	{
 		y = -1;
 		while (++y < cube->map->mini_height)
 		{
-			if (x % scale == 0 || y % scale == 0)
-				mlx_put_pixel(cube->mini, x, y, pixel(0, 0, 0, 0));
-			else if (x < mini_width && y < mini_height)
-				non_grid_lines(cube, x, y, scale);
+			if (x % cube->map->scale == 0 || y % cube->map->scale == 0)
+				mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 0));
+			else if (x < cube->map->draw_width && y < cube->map->draw_height)
+				non_grid_lines(cube, x, y, cube->map->scale);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 15:07:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:21:03 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	find_pl_pos(t_cube *cube)
 			{
 				cube->player.opx = j;
 				cube->player.opy = i;
-				cube->player.px = j * MAPSIZE;
-				cube->player.py = i * MAPSIZE;
+				cube->player.px = j;
+				cube->player.py = i;
 				return ;
 			}
 		}
@@ -78,15 +78,17 @@ void	init_default_player(t_cube *cube)
 
 void	init_player(t_cube *cube)
 {
+	find_pl_pos(cube);
 	if (cube->player.d == 'E')
 		cube->player.pa = 0;
 	if (cube->player.d == 'S')
-		cube->player.pa = PI / 2;
+		cube->player.pa = 90;
 	if (cube->player.d == 'W')
-		cube->player.pa = PI;
+		cube->player.pa = 180;
 	if (cube->player.d == 'N')
-		cube->player.pa = 3 * PI / 2;
-	cube->player.pdx = cos(cube->player.pa) * MAPSIZE / 16;
-	cube->player.pdy = sin(cube->player.pa) * MAPSIZE / 16;
+		cube->player.pa = 270;
+	printf("%f\n", cube->player.pa);
+	cube->player.pdx = cos(cube->player.pa);
+	cube->player.pdy = sin(cube->player.pa);
 	init_default_player(cube);
 }
