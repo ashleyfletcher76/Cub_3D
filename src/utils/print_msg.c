@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 12:05:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:57:51 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,16 @@ void	free_print_exit_two(t_cube *cube, t_point *stack, int flag)
 	if (flag == 3)
 	{
 		ft_putendl_fd("Invalid MLX initalization", 2);
+		final_free(cube);
+	}
+	exit(EXIT_FAILURE);
+}
+
+void	free_print_exit_three(t_cube *cube, int flag)
+{
+	if (flag == 0)
+	{
+		ft_putendl_fd("Failed to open texture", 2);
 		final_free(cube);
 	}
 	exit(EXIT_FAILURE);

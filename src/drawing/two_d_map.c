@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 12:51:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:39:24 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,12 @@ static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 
 static void	correct_pixel_scale(t_cube *cube)
 {
-	if (cube->map->scale >= 1 && cube->map->scale <= 5)
-		cube->map->scale_new = cube->map->scale + 10;
-	else if (cube->map->scale >= 6 && cube->map->scale <= 10)
-		cube->map->scale_new = cube->map->scale + 7;
-	else if (cube->map->scale >= 11 && cube->map->scale <= 15)
-		cube->map->scale_new = cube->map->scale + 3;
-	else if (cube->map->scale >= 16 && cube->map->scale <= 20)
-		cube->map->scale_new = cube->map->scale;
-	else
-		cube->map->scale_new = cube->map->scale - 4;
+	double	total_area;
+	double	base_scale;
+
+	total_area = cube->max_width * cube->max_height;
+	base_scale = sqrt(total_area) / 150;
+	cube->map->pixel_scale = fmax(5, fmin(base_scale, 40));
 }
 
 static void	init_mini_values(t_cube *cube)
@@ -77,8 +73,6 @@ void	two_d_map(void *param)
 		{
 			if (x < cube->map->draw_width && y < cube->map->draw_height)
 				non_grid_lines(cube, x, y, cube->map->scale);
-			// if (x % cube->map->scale == 0 || y % cube->map->scale == 0)
-			// 	mlx_put_pixel(cube->image, x, y, pixel(0, 0, 0, 255));
 		}
 	}
 }
