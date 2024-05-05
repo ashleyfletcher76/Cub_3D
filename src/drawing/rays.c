@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 11:12:56 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:27:39 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,7 @@ void	draw_ray(t_cube *cube)
 		draw_3d(cube, ray, i);
 		line = init_line(cube->player.px * MAPSIZE, cube->player.py * MAPSIZE, ray.rx * MAPSIZE, ray.ry * MAPSIZE);
 		draw_line(cube->image, line, pixel(255, 0, 0, 255));
-		ray.ra = fixang(ray.ra + DR);
+		ray.ra = fixang(ray.ra + (double)FPOV / (double)WIDTH);
 		i++;
 	}
 }

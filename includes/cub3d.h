@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 11:12:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 11:26:44 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 # define PIDIR 0.78539816337
 # define DR 0.06111111111
 
-# define WIDTH 1080
-# define HEIGHT 720
+# define WIDTH 1920
+# define HEIGHT 1080
 # define MINI_WIDTH 600
 # define MINI_HEIGHT 600
 
