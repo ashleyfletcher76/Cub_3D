@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_2d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:05:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 11:15:13 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:21:32 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	cube_helper(t_cube *cube)
 	cube->map->draw_height = 0;
 	cube->map->scale_width = 0;
 	cube->map->scale_height = 0;
-	cube->map->show_map = true;
+	cube->map->show_map = false;
 }
 
 int32_t	init_2d_map(t_cube *cube)
