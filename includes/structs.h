@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 12:23:16 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:02:34 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,11 @@ typedef struct s_ray
 	double	vy;
 	double	disth;
 	double	distv;
-	double	dist;
+	double	lineoff;
+	double	ty_step;
+	double	ty_off;
+	double	shade;
+	int		dist;
 	int		mx;
 	int		my;
 }	t_ray;
@@ -127,6 +131,8 @@ typedef struct s_cube
 	mlx_t		*mlx;
 	mlx_image_t	*image;
 	mlx_image_t	*mini;
+	xpm_t		*wall_xpm;
+	mlx_texture_t wall_tex;
 	t_map		*map;
 	t_player	player;
 	t_line		line;

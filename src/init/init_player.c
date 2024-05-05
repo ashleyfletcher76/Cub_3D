@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 11:24:30 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 15:15:17 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ void	init_player(t_cube *cube)
 	find_pl_pos(cube);
 	if (cube->player.d == 'E')
 		cube->player.pa = 0;
-	if (cube->player.d == 'S')
+	if (cube->player.d == 'N')
 		cube->player.pa = 90;
 	if (cube->player.d == 'W')
 		cube->player.pa = 180;
-	if (cube->player.d == 'N')
+	if (cube->player.d == 'S')
 		cube->player.pa = 270;
-	cube->player.pdx = cos(cube->player.pa);
-	cube->player.pdy = sin(cube->player.pa);
+	cube->player.pdx = cos(degtorad(cube->player.pa));
+	cube->player.pdy = -sin(degtorad(cube->player.pa));
 	init_default_player(cube);
 }

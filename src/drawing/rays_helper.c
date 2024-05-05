@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 12:48:38 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:02:45 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_ray	init_ray(t_player player)
 	ray.disth = 0;
 	ray.distv = 0;
 	ray.dist = 0;
+	ray.shade = 1;
 	ray.ra = fixang(player.pa - FPOV / 2);
 	ray.mx = (int)ray.rx;
 	ray.my = (int)ray.ry;
