@@ -6,14 +6,14 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 17:10:08 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:49:51 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
 
-void draw_textures(t_cube *cube, t_ray ray, int i)
+void draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 {
 	int y;
 	double	ty;
@@ -34,15 +34,10 @@ void draw_textures(t_cube *cube, t_ray ray, int i)
 
 
 
-	//printf("ty_step = %f\n", ray.ty_step);
-	//printf("ty_of   = %f\n", ray.ty_off);
-	//printf("tx      = %f\n", tx);
-	//printf("ty      = %f\n", ty);
-
 	for (y = 0; y < ray.dist; y++)
 	{
-		index = ((int)tx * cube->wall_tex.height + (int)ty) * 4;
-		pixels = &cube->wall_tex.pixels[index];
+		index = ((int)tx * tex.height + (int)ty) * 4;
+		pixels = &tex.pixels[index];
 		color = pixel(pixels[0], pixels[1] ,pixels[2], pixels[3]);
 		mlx_put_pixel(cube->image, i, y + ray.lineoff, color);
 		ty += ray.ty_step;
@@ -67,7 +62,7 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 	ca = fixang(cube->player.pa - ray.ra);
 	ray.disth = ray.disth * cos(degtorad(ca));
 	ray.dist = (HEIGHT) / ray.disth;
-	ray.ty_step = cube->wall_tex.height / (double)ray.dist;
+	ray.ty_step = cube->texture.north_tex.height / (double)ray.dist;
 	ray.ty_off = 0;
 	if (ray.dist > HEIGHT)
 	{
@@ -75,7 +70,7 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 		ray.dist = HEIGHT;
 	}
 	ray.lineoff = HEIGHT / 2 - (ray.dist / 2);
-	draw_textures(cube, ray, i);
+	draw_textures(cube, ray, i, cube->texture.north_tex);
 	draw_floor_ceiling(cube, ray, i);
 }
 

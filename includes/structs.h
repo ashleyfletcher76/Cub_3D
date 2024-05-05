@@ -6,11 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/05/05 17:02:34 by muhakose         ###   ########.fr       */
-=======
-/*   Updated: 2024/05/05 16:49:48 by asfletch         ###   ########.fr       */
->>>>>>> c9193590662c1b875610b1138b905e5973b750f6
+/*   Updated: 2024/05/05 17:44:28 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,12 +142,9 @@ typedef struct s_cube
 {
 	mlx_t		*mlx;
 	mlx_image_t	*image;
-<<<<<<< HEAD
 	mlx_image_t	*mini;
 	xpm_t		*wall_xpm;
 	mlx_texture_t wall_tex;
-=======
->>>>>>> c9193590662c1b875610b1138b905e5973b750f6
 	t_map		*map;
 	t_player	player;
 	t_line		line;
