@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:44:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 15:16:27 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:38:13 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,32 @@
 
 void	key_up(t_cube *cube)
 {
-	double newposx;
-	double newposy;
+	double	newposx;
+	double	newposy;
 
 	newposx = cube->player.px;
 	newposy = cube->player.py;
-	newposx += cube->player.pdx * MOVESPEED;
-	newposy += cube->player.pdy * MOVESPEED;
-	if (newposx < 0 || newposx >= cube->max_width)
+	newposx += cube->player.pdx * MOVESPEED * STOP;
+	newposy += cube->player.pdy * MOVESPEED * STOP;
+	if (is_wall_collision(cube, newposx, newposy))
 		return ;
-	if (newposy < 0 || newposy >= cube->max_height)
-		return ;
-	if (is_wall_forward(cube, newposx, newposy, 0))
-		return ;
-	cube->player.px = newposx;
-	cube->player.py = newposy;
+	cube->player.px += cube->player.pdx * MOVESPEED;
+	cube->player.py += cube->player.pdy * MOVESPEED;
 }
 
 void	key_down(t_cube *cube)
 {
-	double newposx;
-	double newposy;
+	double	newposx;
+	double	newposy;
 
 	newposx = cube->player.px;
 	newposy = cube->player.py;
-	newposx -= cube->player.pdx * MOVESPEED;
-	newposy -= cube->player.pdy * MOVESPEED;
-	if (newposx < 0 || newposx >= cube->max_width)
+	newposx -= cube->player.pdx * MOVESPEED * STOP;
+	newposy -= cube->player.pdy * MOVESPEED * STOP;
+	if (is_wall_collision(cube, newposx, newposy))
 		return ;
-	if (newposy < 0 || newposy >= cube->max_height)
-		return ;
-	if (is_wall_back(cube, newposx, newposy, 0))
-		return ;
-	cube->player.px = newposx;
-	cube->player.py = newposy;
+	cube->player.px -= cube->player.pdx * MOVESPEED;
+	cube->player.py -= cube->player.pdy * MOVESPEED;
 }
 
 void	key_left(t_cube *cube)

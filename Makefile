@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/05 16:04:16 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/06 15:42:34 by muhakose         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
 SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
-	hooks/hooks.c hooks/keys.c hooks/close_minimap.c \
+	hooks/hooks.c hooks/keys.c hooks/keys2.c hooks/close_minimap.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
 	parsing/check_arg.c parsing/check_map_details.c \
 	parsing/check_start.c parsing/remove_space.c \
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \
-	drawing/three_d_map.c drawing/rays_helper.c \
+	drawing/three_d_map.c drawing/rays_helper.c\
 	gameplay/prevent_collision.c \
 	textures/textures.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
