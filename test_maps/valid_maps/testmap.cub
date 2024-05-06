@@ -1,10 +1,10 @@
-NO ./images/ready/box.xpm42
-SO ./images/ready/blue.xpm42
-EA ./images/ready/new.xpm42
-WE ./images/ready/new.xpm42
+NO ./images/ready/wall3.xpm42
+SO ./images/ready/wall2.xpm42
+EA ./images/ready/wall1.xpm42
+WE ./images/ready/wall5.xpm42
 
-F 220,100,255
-C 225,255,0
+F 155,155,255
+C 225,255,255
 
         1111111111111111111111111        1111111111111111111111111
         1000000000110000000000001        100000001100000100000011
