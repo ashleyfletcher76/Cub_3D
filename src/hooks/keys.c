@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:44:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 11:20:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/05 15:16:27 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	key_up(t_cube *cube)
 	cube->player.px = newposx;
 	cube->player.py = newposy;
 }
+
 void	key_down(t_cube *cube)
 {
 	double newposx;
@@ -49,6 +50,7 @@ void	key_down(t_cube *cube)
 	cube->player.px = newposx;
 	cube->player.py = newposy;
 }
+
 void	key_left(t_cube *cube)
 {
 	cube->player.pa -= ROTATIONSPEED;
@@ -56,6 +58,7 @@ void	key_left(t_cube *cube)
 	cube->player.pdx = cos(degtorad(cube->player.pa));
 	cube->player.pdy = -sin(degtorad(cube->player.pa));
 }
+
 void	key_right(t_cube *cube)
 {
 	cube->player.pa += ROTATIONSPEED;
