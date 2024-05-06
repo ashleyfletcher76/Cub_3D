@@ -1,7 +1,7 @@
-NO ./images/box.xpm42
-SO ./images/blue.xpm42
-EA ./images/new.xpm42
-WE ./images/new.xpm42
+NO ./images/ready/box.xpm42
+SO ./images/ready/blue.xpm42
+EA ./images/ready/new.xpm42
+WE ./images/ready/new.xpm42
 
 F 220,100,0
 C 225,30,0
