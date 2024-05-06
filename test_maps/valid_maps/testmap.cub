@@ -1,7 +1,7 @@
-NO ./images/platingnormal3.xpm42
-SO ./images/blue.xpm42
-EA ./images/box.xpm42
-WE ./images/new.xpm42
+NO ./images/ready/box.xpm42
+SO ./images/ready/blue.xpm42
+EA ./images/ready/new.xpm42
+WE ./images/ready/new.xpm42
 
 F 220,100,255
 C 225,255,0

@@ -6,12 +6,24 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:17:29 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:50:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
+
+static void	free_xpm(t_cube *cube)
+{
+	if (cube->texture.north)
+		mlx_delete_xpm42(cube->texture.north);
+	if (cube->texture.south)
+		mlx_delete_xpm42(cube->texture.south);
+	if (cube->texture.east)
+		mlx_delete_xpm42(cube->texture.east);
+	if (cube->texture.west)
+		mlx_delete_xpm42(cube->texture.west);
+}
 
 void	free_rgb(char **rgb)
 {
@@ -60,6 +72,7 @@ void	final_free(t_cube *cube)
 		free (cube->map->map);
 	}
 	free_details(cube);
+	free_xpm(cube);
 	free (cube->map);
 	free (cube);
 }

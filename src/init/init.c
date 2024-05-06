@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 12:06:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:50:10 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,14 @@ void	init_map(t_cube *cube)
 	}
 }
 
+static void	init_texture_helper(t_cube *cube)
+{
+	cube->texture.north = NULL;
+	cube->texture.south = NULL;
+	cube->texture.east = NULL;
+	cube->texture.west = NULL;
+}
+
 void	init_cube(t_cube **cube, t_cube *temp_cube)
 {
 	*cube = malloc(sizeof(t_cube));
@@ -83,4 +91,5 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->details->floor_rgb = 0;
 	(*cube)->details->ceiling_rgb = 0;
 	(*cube)->details_found = 0;
+	init_texture_helper(*cube);
 }
