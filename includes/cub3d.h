@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/06 11:21:00 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:06:25 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define FPOV 66
 
 # define ROTATIONSPEED 3
-# define MOVESPEED 0.05;
+# define MOVESPEED 0.05
 
 //check args
 t_cube	check_args(int argc, char **argv);

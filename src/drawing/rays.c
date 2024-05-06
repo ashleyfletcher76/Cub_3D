@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 17:02:26 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:03:35 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,11 @@ void	draw_ray(t_cube *cube)
 	t_ray	ray;
 	int		i;
 
-	i = 0;
+	i = -1;
 	ray = init_ray(cube->player);
-	while (i < WIDTH)
+	while (++i < WIDTH)
 	{
+		ray.shade = 1;
 		draw_horizontal(cube, &ray, tan(degtorad(ray.ra)));
 		dda(cube, &ray);
 		ray.vx = ray.rx;
@@ -113,6 +114,5 @@ void	draw_ray(t_cube *cube)
 		}
 		draw_3d(cube, ray, i);
 		ray.ra = fixang(ray.ra + (double)FPOV / (double)WIDTH);
-		i++;
 	}
 }

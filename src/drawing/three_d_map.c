@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 11:51:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:05:48 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,26 @@ void draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 {
 	double		ty;
 	double		tx;
-	int32_t		color;
 	u_int8_t	*pixels;
 	int			index;
 	int			y;
 
+	y = 0;
 	ty = ray.ty_off * ray.ty_step;
 	if (ray.shade == 1)
 		tx = ((ray.rx) - (int)ray.rx) * tex.width;
 	else
 		tx = (ray.ry - (int)ray.ry) * tex.width;
-	for (y = 0; y < ray.dist; y++)
+	while (y < ray.dist)
 	{
 		index = ((int)tx * tex.height + (int)ty) * 4;
 		pixels = &tex.pixels[index];
-		color = pixel(pixels[0], pixels[1] ,pixels[2], pixels[3]);
-		mlx_put_pixel(cube->image, i, y + ray.lineoff, color);
+		mlx_put_pixel(cube->image, i, y + ray.lineoff,
+			pixel(pixels[0], pixels[1], pixels[2], pixels[3]));
 		ty += ray.ty_step;
+		y++;
 	}
 }
-
 
 void	draw_floor_ceiling(t_cube *cube, t_ray ray, int i)
 {
