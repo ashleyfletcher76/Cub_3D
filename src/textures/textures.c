@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 17:15:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:49:40 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 void	init_textures(t_cube *cube)
 {
-	cube->texture.north = NULL;
-	cube->texture.south = NULL;
-	cube->texture.east = NULL;
-	cube->texture.west = NULL;
 	cube->texture.north = mlx_load_xpm42(cube->details->north);
 	if (!cube->texture.north)
 		free_print_exit_three(cube, 0);
