@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/05 17:49:51 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:51:43 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,18 @@
 
 void draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 {
-	int y;
-	double	ty;
-	double	tx;
-	int32_t color;
-	u_int8_t *pixels;
-	int index;
+	double		ty;
+	double		tx;
+	int32_t		color;
+	u_int8_t	*pixels;
+	int			index;
+	int			y;
 
 	ty = ray.ty_off * ray.ty_step;
 	if (ray.shade == 1)
-	{
-		tx = (int)(ray.rx) % 80;
-	}
+		tx = ((ray.rx) - (int)ray.rx) * tex.width;
 	else
-	{
-		tx = (int)(ray.ry) % 80;
-	}
-
-
-
+		tx = (ray.ry - (int)ray.ry) * tex.width;
 	for (y = 0; y < ray.dist; y++)
 	{
 		index = ((int)tx * tex.height + (int)ty) * 4;
@@ -55,22 +48,45 @@ void	draw_floor_ceiling(t_cube *cube, t_ray ray, int i)
 	draw_line(cube->image, line, cube->details->ceiling_rgb);
 }
 
+mlx_texture_t find_facing(t_cube *cube, t_ray ray)
+{
+	mlx_texture_t	tex;
+
+	if (ray.shade == 1)
+	{
+		if (ray.ra > 180)
+			tex = cube->texture.south_tex;
+		else
+			tex = cube->texture.north_tex;
+	}
+	else
+	{
+		if (ray.ra > 90 && ray.ra < 270)
+			tex = cube->texture.west_tex;
+		else
+			tex = cube->texture.east_tex;
+	}
+	return (tex);
+}
+
 void	draw_3d(t_cube *cube, t_ray ray, int i)
 {
-	int			ca;
+	int				ca;
+	mlx_texture_t	tex;
 
+	tex = find_facing(cube, ray);
 	ca = fixang(cube->player.pa - ray.ra);
 	ray.disth = ray.disth * cos(degtorad(ca));
 	ray.dist = (HEIGHT) / ray.disth;
-	ray.ty_step = cube->texture.north_tex.height / (double)ray.dist;
+	ray.ty_step = tex.height / (double)ray.dist;
 	ray.ty_off = 0;
 	if (ray.dist > HEIGHT)
 	{
-		ray.ty_off = (ray.dist - 720) / 2.0;
+		ray.ty_off = (ray.dist - HEIGHT) / 2.0;
 		ray.dist = HEIGHT;
 	}
 	ray.lineoff = HEIGHT / 2 - (ray.dist / 2);
-	draw_textures(cube, ray, i, cube->texture.north_tex);
 	draw_floor_ceiling(cube, ray, i);
+	draw_textures(cube, ray, i, tex);
 }
 

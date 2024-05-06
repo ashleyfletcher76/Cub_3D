@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:19:15 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:18:28 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:20:46 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,25 @@ int	count_double(char **rgb)
 	while (rgb[i])
 		i++;
 	return (i);
+}
+
+void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex)
+{
+	uint32_t n;
+	uint32_t m;
+
+	n = 0;
+	while (n < tex.width)
+	{
+		m = 0;
+		while (m < tex.height)
+		{
+			int index = (n * tex.width + m) * 4;
+			uint8_t *pixels = &tex.pixels[index];
+			int color = pixel(pixels[0], pixels[1] ,pixels[2], pixels[3]);
+			mlx_put_pixel(cube->image, n, m, color);
+			m++;
+		}
+		n++;
+	}
 }
