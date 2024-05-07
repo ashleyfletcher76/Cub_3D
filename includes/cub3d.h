@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 11:01:00 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:20:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ double	find_dist(t_ray *ray, t_player player);
 //hooks
 void	user_input(mlx_key_data_t keys, void *param);
 void	user_input_two(void *param);
+void	mouse_hook(mouse_key_t button, action_t action, modifier_key_t mods, void* param);
+void	cursour_hook(double xpos, double ypos, void* param);
 void	read_keys(t_cube *cube);
 void	key_up(t_cube *cube);
 void	key_down(t_cube *cube);
@@ -77,6 +79,8 @@ void	key_left(t_cube *cube);
 void	key_right(t_cube *cube);
 void	key_a(t_cube *cube);
 void	key_d(t_cube *cube);
+void	mouse_left(t_cube *cube);
+void	mouse_right(t_cube *cube);
 void	close_mini_map(t_cube *cube);
 
 //map parsing

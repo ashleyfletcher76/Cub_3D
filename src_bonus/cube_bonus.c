@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube.c                                             :+:      :+:    :+:   */
+/*   cube_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 14:20:24 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:16:59 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,12 @@ int	main(int argc, char **argv)
 	init_2d_map(cube);
 	init_player(cube);
 	init_textures(cube);
+	init_guns(cube);
+	mlx_set_cursor_mode(cube->mlx, MLX_MOUSE_HIDDEN);
+	mlx_set_cursor(cube->mlx, mlx_create_std_cursor(MLX_CURSOR_CROSSHAIR));
 	mlx_key_hook(cube->mlx, user_input, cube);
+	mlx_mouse_hook(cube->mlx, mouse_hook, cube);;
+	mlx_cursor_hook(cube->mlx, cursour_hook, cube);;
 	mlx_loop_hook(cube->mlx, user_input_two, cube);
 	mlx_loop(cube->mlx);
 	mlx_terminate(cube->mlx);
