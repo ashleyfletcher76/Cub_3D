@@ -4,7 +4,7 @@ EA ./images/ready/wall1.xpm42
 WE ./images/ready/wall4.xpm42
 
 F 125,125,125
-C 125,0,125
+C 0,150,255
 
 11111111
 10100001

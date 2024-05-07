@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 12:34:43 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:24:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ static void	init_texture_helper(t_cube *cube)
 	cube->texture.south = NULL;
 	cube->texture.east = NULL;
 	cube->texture.west = NULL;
+	cube->guns.gun1 = NULL;
+	cube->guns.gun2 = NULL;
+	cube->guns.gun3 = NULL;
+	cube->guns.gun1_t = NULL;
+	cube->guns.gun2_t = NULL;
+	cube->guns.gun3_t = NULL;
 }
 
 void	init_cube(t_cube **cube, t_cube *temp_cube)
