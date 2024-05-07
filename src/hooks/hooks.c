@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 09:28:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:03:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	user_input_two(void *param)
 		two_d_map(cube);
 		draw_pixel(cube);
 	}
-	mlx_image_to_window(cube->mlx, cube->guns.gun1, 0, 0);
+	// mlx_image_to_window(cube->mlx, cube->guns.gun1, 0, 0);
 	// mlx_image_to_window(cube->mlx, cube->img2, 0, 0);
 	// mlx_image_to_window(cube->mlx, cube->img3, 0, 0);
 }

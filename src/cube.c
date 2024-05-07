@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 09:21:34 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:03:22 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 	init_player(cube);
 	init_textures(cube);
 	init_guns(cube);
+	mlx_image_to_window(cube->mlx, cube->guns.gun1, 0, 0);
 	mlx_key_hook(cube->mlx, user_input, cube);
 	mlx_loop_hook(cube->mlx, user_input_two, cube);
 	mlx_loop(cube->mlx);

@@ -6,12 +6,32 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:05:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 15:26:24 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:46:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
+
+static void	correct_pixel_scale(t_cube *cube)
+{
+	double	total_area;
+	double	base_scale;
+
+	total_area = cube->max_width * cube->max_height;
+	base_scale = sqrt(total_area) / 150;
+	cube->map->pixel_scale = fmax(5, fmin(base_scale, 40));
+}
+
+static void	init_mini_values(t_cube *cube)
+{
+	cube->map->scale_width = cube->map->mini_width / (double)cube->max_width;
+	cube->map->scale_height = cube->map->mini_height / (double)cube->max_height;
+	cube->map->scale = fmin(cube->map->scale_width, cube->map->scale_height);
+	cube->map->draw_width = cube->max_width * cube->map->scale;
+	cube->map->draw_height = cube->max_height * cube->map->scale;
+	correct_pixel_scale(cube);
+}
 
 static void	calculate_dimensions(t_cube *cube)
 {
@@ -41,5 +61,6 @@ int32_t	init_2d_map(t_cube *cube)
 {
 	cube_helper(cube);
 	calculate_dimensions(cube);
+	init_mini_values(cube);
 	return (EXIT_SUCCESS);
 }

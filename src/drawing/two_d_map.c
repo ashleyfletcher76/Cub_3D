@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   two_d_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 14:39:54 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 10:46:31 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,6 @@ static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 	}
 }
 
-static void	correct_pixel_scale(t_cube *cube)
-{
-	double	total_area;
-	double	base_scale;
-
-	total_area = cube->max_width * cube->max_height;
-	base_scale = sqrt(total_area) / 150;
-	cube->map->pixel_scale = fmax(5, fmin(base_scale, 40));
-}
-
-static void	init_mini_values(t_cube *cube)
-{
-	cube->map->scale_width = cube->map->mini_width / (double)cube->max_width;
-	cube->map->scale_height = cube->map->mini_height / (double)cube->max_height;
-	cube->map->scale = fmin(cube->map->scale_width, cube->map->scale_height);
-	cube->map->draw_width = cube->max_width * cube->map->scale;
-	cube->map->draw_height = cube->max_height * cube->map->scale;
-	correct_pixel_scale(cube);
-}
-
 void	two_d_map(void *param)
 {
 	int			y;
@@ -64,7 +44,6 @@ void	two_d_map(void *param)
 	t_cube		*cube;
 
 	cube = (t_cube *)param;
-	init_mini_values(cube);
 	x = -1;
 	while (++x < cube->map->mini_width)
 	{
