@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   two_d_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 14:39:54 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:55:46 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 static char map_condition(t_cube *cube, uint32_t x, uint32_t y, double scale)
 {
@@ -35,6 +35,10 @@ static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 		else
 			mlx_put_pixel(cube->image, x, y, pixel(255, 255, 255, 255));
 	}
+	else if (condition == 'L')
+		mlx_put_pixel(cube->image, x, y, pixel(160, 32, 240, 255));
+	else if (condition == 'Z')
+		mlx_put_pixel(cube->image, x, y, pixel(255, 0, 0, 255));
 }
 
 static void	correct_pixel_scale(t_cube *cube)

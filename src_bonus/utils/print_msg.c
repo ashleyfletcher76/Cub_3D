@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 16:57:51 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:57:40 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 void	print_error_exit(int flag)
 {
@@ -27,6 +27,8 @@ void	print_error_exit(int flag)
 		ft_putendl_fd("Structure is NULL", 2);
 	else if (flag == 5)
 		perror("Failed to open map file");
+	else if (flag == 6)
+		ft_putendl_fd("You pressed escaped cos your scared", 0);
 	exit(EXIT_FAILURE);
 }
 
@@ -89,6 +91,11 @@ void	free_print_exit_three(t_cube *cube, int flag)
 	if (flag == 0)
 	{
 		ft_putendl_fd("Failed to open texture", 2);
+		final_free(cube);
+	}
+	if (flag == 1)
+	{
+		ft_putendl_fd("You have disappeared to another dimension", 2);
 		final_free(cube);
 	}
 	exit(EXIT_FAILURE);

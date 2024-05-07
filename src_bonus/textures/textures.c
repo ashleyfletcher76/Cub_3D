@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 13:23:11 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:57:20 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 void	init_guns(t_cube *cube)
 {
@@ -42,4 +42,8 @@ void	init_textures(t_cube *cube)
 	if (!cube->texture.west)
 		free_print_exit_three(cube, 0);
 	cube->texture.west_tex = cube->texture.west->texture;
+	cube->texture.teleport = mlx_load_xpm42("./images/ready/teleport.xpm42");
+	if (!cube->texture.teleport)
+		free_print_exit_three(cube, 0);
+	cube->texture.teleport_tex = cube->texture.teleport->texture;
 }

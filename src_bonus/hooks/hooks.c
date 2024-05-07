@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 13:58:48 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:55:57 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 void	user_input(mlx_key_data_t keys, void *param)
 {
@@ -86,5 +86,8 @@ void	read_keys(t_cube *cube)
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_P))
 		reset_players_values(cube);
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_ESCAPE))
+	{
+		print_error_exit(6);
 		mlx_close_window(cube->mlx);
+	}
 }

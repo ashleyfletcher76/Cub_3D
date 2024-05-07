@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   rays_helper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 13:00:47 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:55:31 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 t_ray	init_ray(t_player player)
 {
@@ -27,6 +27,7 @@ t_ray	init_ray(t_player player)
 	ray.distv = 0;
 	ray.dist = 0;
 	ray.shade = 1;
+	ray.tex = '.';
 	ray.ra = fixang(player.pa - FPOV / 2);
 	ray.mx = (int)ray.rx;
 	ray.my = (int)ray.ry;
@@ -44,7 +45,7 @@ void	set_ray(t_ray *ray, double px, double py)
 	ray->distv = 0;
 }
 
-int	is_done(t_cube *cube, int x, int y)
+int		is_done_bonus(t_cube *cube, t_ray *ray, int x, int y)
 {
 	if (x < 0 || x >= cube->max_width)
 		return (false);
@@ -52,6 +53,11 @@ int	is_done(t_cube *cube, int x, int y)
 		return (false);
 	if (cube->map->map[y][x] == '1')
 		return (false);
+	if (cube->map->map[y][x] == 'Z')
+	{
+		ray->tex = 'Z';
+		return (false);
+	}
 	return (true);
 }
 

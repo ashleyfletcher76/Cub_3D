@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 16:47:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:35:31 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,28 @@ typedef enum s_type
 	END
 }	t_type;
 
+typedef struct s_guns
+{
+	mlx_image_t		*gun1;
+	mlx_image_t		*gun2;
+	mlx_image_t		*gun3;
+	mlx_texture_t	*gun1_t;
+	mlx_texture_t	*gun2_t;
+	mlx_texture_t	*gun3_t;
+}	t_guns;
+
 typedef struct s_texture
 {
 	xpm_t			*north;
 	xpm_t			*south;
 	xpm_t			*east;
 	xpm_t			*west;
+	xpm_t			*teleport;
 	mlx_texture_t	north_tex;
 	mlx_texture_t	south_tex;
 	mlx_texture_t	east_tex;
 	mlx_texture_t	west_tex;
+	mlx_texture_t	teleport_tex;
 }	t_texture;
 
 typedef struct s_point
@@ -158,6 +170,8 @@ typedef struct s_cube
 	t_default	player_default;
 	t_details	*details;
 	t_texture	texture;
+	t_guns		guns;
+	t_mouse		mouse;
 	bool		map_start;
 	int			details_found;
 	int			max_width;

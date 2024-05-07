@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 13:03:35 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:55:35 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 void	dda(t_cube *cube, t_ray *ray)
 {
@@ -19,7 +19,7 @@ void	dda(t_cube *cube, t_ray *ray)
 	{
 		ray->mx = (int)ray->rx;
 		ray->my = (int)ray->ry;
-		if (!is_done(cube, ray->mx, ray->my))
+		if (!is_done_bonus(cube, ray, ray->mx, ray->my))
 		{
 			ray->disth = find_dist(ray, cube->player);
 			break ;
@@ -98,6 +98,7 @@ void	draw_ray(t_cube *cube)
 	while (++i < WIDTH)
 	{
 		ray.shade = 1;
+		ray.tex = '.';
 		draw_horizontal(cube, &ray, tan(degtorad(ray.ra)));
 		dda(cube, &ray);
 		ray.vx = ray.rx;

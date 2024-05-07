@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 14:20:41 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:58:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,8 @@ void	read_keys(t_cube *cube)
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_P))
 		reset_players_values(cube);
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_ESCAPE))
+	{
+		print_error_exit(6);
 		mlx_close_window(cube->mlx);
+	}
 }

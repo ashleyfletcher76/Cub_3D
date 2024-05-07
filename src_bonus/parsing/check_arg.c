@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:20:52 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:56:23 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 t_cube	check_args(int argc, char **argv)
 {

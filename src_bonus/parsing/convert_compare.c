@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:09:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:34:25 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:56:38 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 static void	convert_integers(t_cube *cube, char **rgb, int count)
 {

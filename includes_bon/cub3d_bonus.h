@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 16:54:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:54:57 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -39,6 +39,10 @@
 # define MOVESPEED 0.05
 # define STOP 5
 
+# define PATH1 "./images/our_guns/1.png"
+# define PATH2 "./images/our_guns/2.png"
+# define PATH3 "./images/our_guns/3.png"
+
 //check args
 t_cube	check_args(int argc, char **argv);
 t_cube	check_map(char *map, t_cube *temp_cube);
@@ -61,11 +65,14 @@ void	dda(t_cube *cube, t_ray *ray);
 t_ray	init_ray(t_player player);
 void	set_ray(t_ray *ray, double px, double py);
 int		is_done(t_cube *cube, int x, int y);
+int		is_done_bonus(t_cube *cube, t_ray *ray, int x, int y);
 double	find_dist(t_ray *ray, t_player player);
 
 //hooks
 void	user_input(mlx_key_data_t keys, void *param);
 void	user_input_two(void *param);
+void	mouse_hook(mouse_key_t button, action_t action, modifier_key_t mods, void* param);
+void	cursour_hook(double xpos, double ypos, void* param);
 void	read_keys(t_cube *cube);
 void	key_up(t_cube *cube);
 void	key_down(t_cube *cube);
@@ -73,6 +80,8 @@ void	key_left(t_cube *cube);
 void	key_right(t_cube *cube);
 void	key_a(t_cube *cube);
 void	key_d(t_cube *cube);
+void	mouse_left(t_cube *cube);
+void	mouse_right(t_cube *cube);
 void	close_mini_map(t_cube *cube);
 
 //map parsing
@@ -110,6 +119,7 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 //textures
 void	init_textures(t_cube *cube);
 void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex);
+void	init_guns(t_cube *cube);
 
 //gameplay
 int		is_wall_collision(t_cube *cube, int x, int y);

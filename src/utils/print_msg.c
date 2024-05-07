@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 16:57:51 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:59:23 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	print_error_exit(int flag)
 		ft_putendl_fd("Structure is NULL", 2);
 	else if (flag == 5)
 		perror("Failed to open map file");
+	else if (flag == 6)
+		ft_putendl_fd("You pressed escaped cos your scared", 0);
 	exit(EXIT_FAILURE);
 }
 

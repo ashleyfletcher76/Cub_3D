@@ -6,12 +6,12 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:13:09 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:10:28 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:57:14 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 static void	free_new_map(char **new_map, int row)
 {

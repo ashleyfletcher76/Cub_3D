@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:19:15 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/06 11:20:46 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:57:44 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 int	check_numbers(int *rgb, int count)
 {
@@ -61,4 +61,13 @@ void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex)
 		}
 		n++;
 	}
+}
+
+t_point	get_point(int x, int y)
+{
+	t_point	point;
+
+	point.x = x;
+	point.y = y;
+	return (point);
 }

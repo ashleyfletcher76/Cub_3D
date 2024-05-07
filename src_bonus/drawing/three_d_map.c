@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 13:05:48 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:55:43 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
-#include "cub3d.h"
+#include "structs_bonus.h"
+#include "cub3d_bonus.h"
 
 void draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 {
@@ -52,6 +52,8 @@ mlx_texture_t find_facing(t_cube *cube, t_ray ray)
 {
 	mlx_texture_t	tex;
 
+	if (ray.tex == 'Z')
+		return (cube->texture.teleport_tex);
 	if (ray.shade == 1)
 	{
 		if (ray.ra > 180)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
+#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/07 12:37:51 by muhakose         ###   ########.fr        #
+#    Updated: 2024/05/07 17:12:34 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,14 +54,16 @@ OBJ_DIR_BON = obj_bon
 SRC_DIR = src/
 SRC_DIR_BON = src_bonus/
 INCLUDES = -I$(MLX42_DIR)/include -I header -I libft
+INCLUDES += -Iincludes_bon
 LDINCLUDES = -L$(MLX42_DIR)/build -lmlx42 -L$(LIBFT_DIR) -lft -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 OBJ_BON = $(addprefix $(OBJ_DIR_BON)/, $(SRCS_BON:.c=.o))
 DEPS = $(addprefix $(SRC_DIR)/, $(SRCS)) ./includes/cub3d.h ./includes/structs.h
+BONUS_DEPS = $(addprefix $(SRC_DIR_BON)/, $(SRCS_BON)) ./includes_bon/cub3d_bonus.h ./includes_bon/structs_bonus.h
 
 NAME = cub3D
 
-BONUS = cub3D_bonus
+BONUS = Bonus
 
 all: $(NAME)
 
@@ -93,7 +95,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)%.c $(DEPS)
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJ_DIR_BON)/%.o: $(SRC_DIR_BON)%.c $(DEPS)
+$(OBJ_DIR_BON)/%.o: $(SRC_DIR_BON)%.c $(BONUS_DEPS)
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
