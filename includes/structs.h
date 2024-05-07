@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/05 17:44:28 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:20:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ typedef enum s_type
 	CEILING,
 	END
 }	t_type;
+
+typedef struct s_guns
+{
+	mlx_image_t		*gun1;
+	mlx_image_t		*gun2;
+	mlx_image_t		*gun3;
+	mlx_texture_t	*gun1_t;
+	mlx_texture_t	*gun2_t;
+	mlx_texture_t	*gun3_t;
+}	t_guns;
 
 typedef struct s_texture
 {
@@ -151,6 +161,7 @@ typedef struct s_cube
 	t_default	player_default;
 	t_details	*details;
 	t_texture	texture;
+	t_guns		guns;
 	bool		map_start;
 	int			details_found;
 	int			max_width;

@@ -6,12 +6,22 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/06 11:49:40 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:21:54 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
+
+void	init_guns(t_cube *cube)
+{
+	cube->guns.gun1_t = mlx_load_png(PATH1);
+	cube->guns.gun1 = mlx_texture_to_image(cube->mlx, cube->guns.gun1_t);
+	// mlx_texture_t	*img_t2 = mlx_load_png(PATH2);
+	// cube->img2 = mlx_texture_to_image(cube->mlx, img_t2);
+	// mlx_texture_t	*img_t3 = mlx_load_png(PATH3);
+	// cube->img3 = mlx_texture_to_image(cube->mlx, img_t3);
+}
 
 void	init_textures(t_cube *cube)
 {

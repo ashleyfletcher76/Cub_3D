@@ -6,12 +6,28 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/06 11:50:29 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:26:39 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "structs.h"
 #include "cub3d.h"
+
+static void	free_png(t_cube *cube)
+{
+	if (cube->guns.gun1)
+		mlx_delete_image(cube->mlx, cube->guns.gun1);
+	if (cube->guns.gun2)
+		mlx_delete_image(cube->mlx, cube->guns.gun2);
+	if (cube->guns.gun3)
+		mlx_delete_image(cube->mlx, cube->guns.gun3);
+	if (cube->guns.gun1_t)
+		mlx_delete_texture(cube->guns.gun1_t);
+	if (cube->guns.gun2_t)
+		mlx_delete_texture(cube->guns.gun2_t);
+	if (cube->guns.gun3_t)
+		mlx_delete_texture(cube->guns.gun3_t);
+}
 
 static void	free_xpm(t_cube *cube)
 {
@@ -73,6 +89,7 @@ void	final_free(t_cube *cube)
 	}
 	free_details(cube);
 	free_xpm(cube);
+	free_png(cube);
 	free (cube->map);
 	free (cube);
 }

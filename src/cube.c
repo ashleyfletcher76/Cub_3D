@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/06 11:51:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:21:34 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	t_cube	temp_cube;
 	t_cube	*cube;
 
-	//atexit(leaks);
+	atexit(leaks);
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, &temp_cube);
 	init_map(cube);
@@ -34,6 +34,7 @@ int	main(int argc, char **argv)
 	init_2d_map(cube);
 	init_player(cube);
 	init_textures(cube);
+	init_guns(cube);
 	mlx_key_hook(cube->mlx, user_input, cube);
 	mlx_loop_hook(cube->mlx, user_input_two, cube);
 	mlx_loop(cube->mlx);

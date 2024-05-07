@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/06 13:06:25 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:22:07 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@
 # define ROTATIONSPEED 3
 # define MOVESPEED 0.05
 
+# define PATH1 "./images/our_guns/1.png"
+# define PATH2 "./images/our_guns/2.png"
+# define PATH3 "./images/our_guns/3.png"
+
 //check args
 t_cube	check_args(int argc, char **argv);
 t_cube	check_map(char *map, t_cube *temp_cube);
@@ -47,7 +51,6 @@ int		check_empty_line(t_cube *cube, char *line);
 
 //get map details
 void	find_map_width(char *line, t_cube *temp_cube);
-void	compare_textures(t_cube *cube);
 void	convert_floor(t_cube *cube);
 void	convert_ceiling(t_cube *cube);
 int		count_double(char **rgb);
@@ -107,6 +110,7 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 //textures
 void	init_textures(t_cube *cube);
 void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex);
+void	init_guns(t_cube *cube);
 
 //gameplay
 int		is_wall_back(t_cube *cube, int x, int y, int buff);

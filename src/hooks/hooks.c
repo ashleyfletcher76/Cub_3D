@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/06 11:22:40 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:20:22 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ void	user_input_two(void *param)
 		two_d_map(cube);
 		draw_pixel(cube);
 	}
+	mlx_image_to_window(cube->mlx, cube->guns.gun1, 0, 0);
+	// mlx_image_to_window(cube->mlx, cube->img2, 0, 0);
+	// mlx_image_to_window(cube->mlx, cube->img3, 0, 0);
 }
 
 void	read_keys(t_cube *cube)
