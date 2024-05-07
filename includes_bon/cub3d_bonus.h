@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 16:54:57 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:54:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdbool.h>
 # include <unistd.h>
 # include <math.h>
-# include "structs.h"
+# include "structs_bonus.h"
 # include "../libft/includes/libft.h"
 # include "../MLX42/include/MLX42/MLX42.h"
 
@@ -45,7 +45,7 @@
 
 //check args
 t_cube	check_args(int argc, char **argv);
-t_cube	check_map(char *map, t_cube *temp_cube);
+void	check_map(char *map, t_cube *temp_cube);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
 int		check_empty_line(t_cube *cube, char *line);
@@ -98,7 +98,7 @@ int		check_details(t_cube *temp_cube, char *line);
 
 //initialization
 int32_t	init_mlx(t_cube *cube);
-void	init_cube(t_cube **cube, t_cube *temp_cube);
+void	init_cube(t_cube **cube, t_cube temp_cube);
 void	init_map(t_cube *cube);
 void	init_player(t_cube *cube);
 void	init_textures(t_cube *cube);

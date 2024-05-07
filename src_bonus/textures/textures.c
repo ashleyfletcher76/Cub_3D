@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 16:57:20 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:05:23 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 void	init_guns(t_cube *cube)

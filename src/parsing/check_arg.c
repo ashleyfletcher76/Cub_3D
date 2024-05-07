@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:20:52 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:58:18 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "cub3d.h"
 
 t_cube	check_args(int argc, char **argv)
@@ -23,7 +22,7 @@ t_cube	check_args(int argc, char **argv)
 	temp_cube.max_width = 0;
 	temp_cube.map_start = false;
 	temp_cube.details_found = 0;
-	temp_cube = check_map(argv[1], &temp_cube);
+	check_map(argv[1], &temp_cube);
 	check_if_details(&temp_cube);
 	return (temp_cube);
 }
@@ -63,7 +62,7 @@ static void	check_invalid_chars(t_cube *temp_cube, char *line)
 	}
 }
 
-t_cube	check_map(char *map, t_cube *temp_cube)
+void	check_map(char *map, t_cube *temp_cube)
 {
 	int		fd;
 	char	*line;
@@ -86,7 +85,6 @@ t_cube	check_map(char *map, t_cube *temp_cube)
 	}
 	free (line);
 	close (fd);
-	return (*temp_cube);
 }
 
 void	find_map_width(char *line, t_cube *temp_cube)

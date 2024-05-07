@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:28:27 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:56:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:04:45 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 static void	move_point_y(t_cube *cube, t_point *stack, t_point point, int *top)

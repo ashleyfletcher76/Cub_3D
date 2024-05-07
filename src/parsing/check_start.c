@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:11:26 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 14:06:01 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:00:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "cub3d.h"
 
 static int	check_multiple(char *line)

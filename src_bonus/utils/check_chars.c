@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 09:49:25 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:57:23 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:05:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 int	correct_chars(char c)

@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:57:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:05:34 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 static void	free_png(t_cube *cube)

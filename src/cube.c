@@ -6,13 +6,11 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:24:25 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:01:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "cub3d.h"
-#include "structs.h"
 
 void	leaks(void)
 {

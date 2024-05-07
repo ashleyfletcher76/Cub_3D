@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:28:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/29 16:28:27 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:00:26 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "cub3d.h"
 
 t_type	get_state(char *line)

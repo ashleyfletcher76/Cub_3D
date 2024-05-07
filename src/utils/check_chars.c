@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 09:49:25 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:10:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:00:54 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "cub3d.h"
 
 int	correct_chars(char c)

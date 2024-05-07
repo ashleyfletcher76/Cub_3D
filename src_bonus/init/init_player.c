@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 10:50:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:56:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:04:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a)

@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:36:13 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:55:39 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:03:29 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 void	reset_players_values(t_cube *cube)

@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:05:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:55:49 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:03:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 int	is_wall_collision(t_cube *cube, int x, int y)

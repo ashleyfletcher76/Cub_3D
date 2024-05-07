@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:56:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:07:32 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 int32_t	init_mlx(t_cube *cube)
@@ -83,13 +82,13 @@ void	init_mouse(t_cube *cube)
 	cube->mouse.y = HEIGHT / 2;
 }
 
-void	init_cube(t_cube **cube, t_cube *temp_cube)
+void	init_cube(t_cube **cube, t_cube temp_cube)
 {
 	*cube = malloc(sizeof(t_cube));
 	if (!*cube)
 		print_error_exit(3);
-	(*cube)->max_height = temp_cube->max_height;
-	(*cube)->max_width = temp_cube->max_width;
+	(*cube)->max_height = temp_cube.max_height;
+	(*cube)->max_width = temp_cube.max_width;
 	(*cube)->map = NULL;
 	(*cube)->details = malloc(sizeof(t_details));
 	if (!(*cube)->details)

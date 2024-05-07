@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   reset_player.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:36:13 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/05 14:59:11 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:58:59 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "cub3d.h"
 
 void	reset_players_values(t_cube *cube)

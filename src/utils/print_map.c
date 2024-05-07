@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:41:28 by asfletch          #+#    #+#             */
-/*   Updated: 2024/04/27 17:10:13 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:01:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs.h"
 #include "cub3d.h"
 
 void	print_map(t_cube *cube)

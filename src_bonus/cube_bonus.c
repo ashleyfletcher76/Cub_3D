@@ -6,12 +6,11 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 17:12:50 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:56:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
-#include "structs_bonus.h"
 
 void	leaks(void)
 {
@@ -53,10 +52,10 @@ int	main(int argc, char **argv)
 	t_cube	temp_cube;
 	t_cube	*cube;
 
-	atexit(leaks);
+	//atexit(leaks);
 	//check_defines();
 	temp_cube = check_args(argc, argv);
-	init_cube(&cube, &temp_cube);
+	init_cube(&cube, temp_cube);
 	init_map(cube);
 	parse_map(cube, argv[1]);
 	check_map_perimeter(cube);

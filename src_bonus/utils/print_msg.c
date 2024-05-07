@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:57:40 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:07:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 void	print_error_exit(int flag)
@@ -28,7 +27,7 @@ void	print_error_exit(int flag)
 	else if (flag == 5)
 		perror("Failed to open map file");
 	else if (flag == 6)
-		ft_putendl_fd("You pressed escaped cos your scared", 0);
+		ft_putendl_fd("You pressed escape cos your scared", 0);
 	exit(EXIT_FAILURE);
 }
 
@@ -37,7 +36,7 @@ void	free_print_exit(t_cube *cube, int flag, int i)
 	if (flag == 0)
 	{
 		free (cube->map);
-		ft_putendl_fd("Map creation failed", 2);
+		ft_putendl_fd("Map creation failed one", 2);
 	}
 	else if (flag == 1)
 	{
@@ -45,7 +44,7 @@ void	free_print_exit(t_cube *cube, int flag, int i)
 			free (cube->map->map[i]);
 		free (cube->map->map);
 		free (cube->map);
-		ft_putendl_fd("Map creation failed", 2);
+		ft_putendl_fd("Map creation failed two", 2);
 	}
 	else if (flag == 2)
 	{

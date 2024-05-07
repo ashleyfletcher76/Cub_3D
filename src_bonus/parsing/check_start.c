@@ -6,11 +6,10 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:11:26 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 16:56:33 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 18:04:26 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "structs_bonus.h"
 #include "cub3d_bonus.h"
 
 static int	check_multiple_portal(char *line)
