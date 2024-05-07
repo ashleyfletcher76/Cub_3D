@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 09:22:07 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:28:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 
 # define ROTATIONSPEED 3
 # define MOVESPEED 0.05
+# define STOP 5
 
 # define PATH1 "./images/our_guns/1.png"
 # define PATH2 "./images/our_guns/2.png"
@@ -74,6 +75,8 @@ void	key_up(t_cube *cube);
 void	key_down(t_cube *cube);
 void	key_left(t_cube *cube);
 void	key_right(t_cube *cube);
+void	key_a(t_cube *cube);
+void	key_d(t_cube *cube);
 void	close_mini_map(t_cube *cube);
 
 //map parsing
@@ -113,8 +116,7 @@ void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex);
 void	init_guns(t_cube *cube);
 
 //gameplay
-int		is_wall_back(t_cube *cube, int x, int y, int buff);
-int		is_wall_forward(t_cube *cube, int x, int y, int buff);
+int		is_wall_collision(t_cube *cube, int x, int y);
 
 //utils
 void	check_if_details(t_cube *temp_cube);

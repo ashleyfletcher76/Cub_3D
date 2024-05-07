@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 09:20:22 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 09:28:17 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ void	user_input_two(void *param)
 
 void	read_keys(t_cube *cube)
 {
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_LEFT)
-		|| mlx_is_key_down(cube->mlx, MLX_KEY_A))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_LEFT))
 		key_left(cube);
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_RIGHT)
-		|| mlx_is_key_down(cube->mlx, MLX_KEY_D))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_RIGHT))
 		key_right(cube);
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_A))
+		key_a(cube);
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_D))
+		key_d(cube);
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_UP)
 		|| mlx_is_key_down(cube->mlx, MLX_KEY_W))
 		key_up(cube);

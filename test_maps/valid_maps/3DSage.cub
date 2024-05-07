@@ -1,7 +1,7 @@
-NO ./images/ready/17.xpm42
-SO ./images/ready/blue.xpm42
-EA ./images/ready/box.xpm42
-WE ./images/ready/platingnormal3.xpm42
+NO ./images/ready/wall3.xpm42
+SO ./images/ready/wall2.xpm42
+EA ./images/ready/wall1.xpm42
+WE ./images/ready/wall4.xpm42
 
 F 125,125,125
 C 125,0,125
