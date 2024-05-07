@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 09:21:54 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:23:11 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_guns(t_cube *cube)
 {
 	cube->guns.gun1_t = mlx_load_png(PATH1);
 	cube->guns.gun1 = mlx_texture_to_image(cube->mlx, cube->guns.gun1_t);
+	mlx_image_to_window(cube->mlx, cube->guns.gun1, 0, 0);
 	// mlx_texture_t	*img_t2 = mlx_load_png(PATH2);
 	// cube->img2 = mlx_texture_to_image(cube->mlx, img_t2);
 	// mlx_texture_t	*img_t3 = mlx_load_png(PATH3);

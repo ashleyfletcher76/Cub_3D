@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 09:24:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:32:27 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ static void	init_texture_helper(t_cube *cube)
 	cube->guns.gun3_t = NULL;
 }
 
+void	init_mouse(t_cube *cube)
+{
+	cube->mouse.x = WIDTH / 2;
+	cube->mouse.y = HEIGHT / 2;
+}
+
 void	init_cube(t_cube **cube, t_cube *temp_cube)
 {
 	*cube = malloc(sizeof(t_cube));
@@ -98,4 +104,5 @@ void	init_cube(t_cube **cube, t_cube *temp_cube)
 	(*cube)->details->ceiling_rgb = 0;
 	(*cube)->details_found = 0;
 	init_texture_helper(*cube);
+	init_mouse(*cube);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 09:28:22 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:30:05 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef struct s_point
 	int	x;
 	int	y;
 }	t_point;
+
+typedef struct s_mouse
+{
+	double	x;
+	double	y;
+}	t_mouse;
 
 typedef struct s_default
 {
@@ -162,6 +168,7 @@ typedef struct s_cube
 	t_details	*details;
 	t_texture	texture;
 	t_guns		guns;
+	t_mouse		mouse;
 	bool		map_start;
 	int			details_found;
 	int			max_width;
