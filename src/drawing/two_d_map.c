@@ -6,13 +6,13 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:36 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 17:59:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:15:38 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static char map_condition(t_cube *cube, uint32_t x, uint32_t y, double scale)
+static char	map_condition(t_cube *cube, uint32_t x, uint32_t y, double scale)
 {
 	int	map_x;
 	int	map_y;
@@ -22,7 +22,7 @@ static char map_condition(t_cube *cube, uint32_t x, uint32_t y, double scale)
 	return (cube->map->map[map_y][map_x]);
 }
 
-static void non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
+static void	non_grid_lines(t_cube *cube, uint32_t x, uint32_t y, double scale)
 {
 	char		condition;
 

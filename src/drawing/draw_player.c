@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:09:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 17:58:44 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:14:02 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,11 @@ void	draw_player(t_cube *cube, double mx, double my)
 void	draw_pixel(t_cube *cube)
 {
 	t_line	line;
-	double	mx = cube->player.px * cube->map->scale;
-	double	my = cube->player.py * cube->map->scale;
+	double	mx;
+	double	my;
 
+	mx = cube->player.px * cube->map->scale;
+	my = cube->player.py * cube->map->scale;
 	line = init_line(mx, my, mx + cube->player.pdx * cube->map->scale, my
 			+ cube->player.pdy * cube->map->scale);
 	draw_player(cube, mx, my);

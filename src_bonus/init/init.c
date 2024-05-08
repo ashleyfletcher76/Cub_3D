@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:07:32 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:26:46 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int32_t	init_mlx(t_cube *cube)
 	}
 	if (mlx_image_to_window(cube->mlx, cube->image, 0, 0) == -1)
 	{
-
 		mlx_delete_image(cube->mlx, cube->image);
 		mlx_close_window(cube->mlx);
 		free_print_exit_two(cube, NULL, 3);
@@ -68,12 +67,10 @@ static void	init_texture_helper(t_cube *cube)
 	cube->texture.south = NULL;
 	cube->texture.east = NULL;
 	cube->texture.west = NULL;
-	cube->guns.gun1 = NULL;
-	cube->guns.gun2 = NULL;
-	cube->guns.gun3 = NULL;
-	cube->guns.gun1_t = NULL;
-	cube->guns.gun2_t = NULL;
-	cube->guns.gun3_t = NULL;
+	cube->texture.teleport = NULL;
+	cube->texture.teleport_tex = NULL;
+	cube->gun.gun = NULL;
+	cube->gun.gun_t = NULL;
 }
 
 void	init_mouse(t_cube *cube)

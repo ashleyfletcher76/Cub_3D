@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prevent_collision.c                                :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 10:05:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:23:27 by asfletch         ###   ########.fr       */
+/*   Created: 2024/05/08 15:00:05 by asfletch          #+#    #+#             */
+/*   Updated: 2024/05/08 15:18:39 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d_bonus.h"
+#include "cub3d.h"
 
-int	is_wall_collision(t_cube *cube, int x, int y)
+void	check_defines(void)
 {
-	if (x >= 0 && x < cube->max_width && y >= 0
-		&& y < cube->max_height)
+	if (WIDTH == 0 || HEIGHT == 0 || PI != 3.1415926535 || PIXEL_PER_CELL != 15
+		|| PIDIR != 0.78539816337 || DR != 0.06111111111
+		|| MIN_MAP_SIZE != 300 || MAX_MAP_SIZE != 1000 || MAPSIZE != 64
+		|| FPOV != 66 || ROTATIONSPEED != 3 || MOVESPEED != 0.05 || STOP != 5)
 	{
-		if (cube->map->map[y][x] == '1')
-			return (cube->map->map[y][x] == '1');
-		if (cube->map->map[y][x] == 'Z')
-			free_print_exit_three(cube, 1);
+		ft_putendl_fd("You tried to change our values go away", 2);
+		exit(-1);
 	}
-	return (0);
 }

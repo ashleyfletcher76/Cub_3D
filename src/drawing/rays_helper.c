@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 17:58:48 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:14:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,10 @@ int	is_done(t_cube *cube, int x, int y)
 	return (true);
 }
 
-
 double	find_dist(t_ray *ray, t_player player)
 {
-	double x;
-	double y;
+	double	x;
+	double	y;
 
 	x = ray->rx - player.px;
 	y = ray->ry - player.py;

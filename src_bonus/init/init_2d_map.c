@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:05:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:04:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:33:34 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ static void	calculate_dimensions(t_cube *cube)
 
 	baseline_width = cube->max_width * PIXEL_PER_CELL;
 	baseline_height = cube->max_height * PIXEL_PER_CELL;
-	cube->map->mini_width = fmax(MIN_MAP_SIZE, fmin(baseline_width, MAX_MAP_SIZE));
-	cube->map->mini_height = fmax(MIN_MAP_SIZE, fmin(baseline_height, MAX_MAP_SIZE));
+	cube->map->mini_width = fmax(MIN_MAP_SIZE,
+			fmin(baseline_width, MAX_MAP_SIZE));
+	cube->map->mini_height = fmax(MIN_MAP_SIZE,
+			fmin(baseline_height, MAX_MAP_SIZE));
 }
 
 static void	cube_helper(t_cube *cube)

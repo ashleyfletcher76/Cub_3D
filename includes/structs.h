@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 16:47:53 by asfletch         ###   ########.fr       */
+/*   Created: 2024/05/08 15:08:42 by asfletch          #+#    #+#             */
+/*   Updated: 2024/05/08 15:09:26 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,21 +147,21 @@ typedef struct s_map
 
 typedef struct s_cube
 {
-	mlx_t		*mlx;
-	mlx_image_t	*image;
-	mlx_image_t	*mini;
-	xpm_t		*wall_xpm;
-	mlx_texture_t wall_tex;
-	t_map		*map;
-	t_player	player;
-	t_line		line;
-	t_default	player_default;
-	t_details	*details;
-	t_texture	texture;
-	bool		map_start;
-	int			details_found;
-	int			max_width;
-	int			max_height;
+	mlx_t			*mlx;
+	mlx_image_t		*image;
+	mlx_image_t		*mini;
+	xpm_t			*wall_xpm;
+	mlx_texture_t	wall_tex;
+	t_map			*map;
+	t_player		player;
+	t_line			line;
+	t_default		player_default;
+	t_details		*details;
+	t_texture		texture;
+	bool			map_start;
+	int				details_found;
+	int				max_width;
+	int				max_height;
 }	t_cube;
 
 #endif

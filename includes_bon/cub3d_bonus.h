@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 17:54:25 by asfletch         ###   ########.fr       */
+/*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
+/*   Updated: 2024/05/08 15:25:15 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@
 # define MOVESPEED 0.05
 # define STOP 5
 
-# define PATH1 "./images/our_guns/1.png"
-# define PATH2 "./images/our_guns/2.png"
+# define PATH1 "./images/our_guns/5.png"
+# define PATH2 "./images/our_guns/6.png"
 # define PATH3 "./images/our_guns/3.png"
 
 //check args
@@ -71,8 +71,9 @@ double	find_dist(t_ray *ray, t_player player);
 //hooks
 void	user_input(mlx_key_data_t keys, void *param);
 void	user_input_two(void *param);
-void	mouse_hook(mouse_key_t button, action_t action, modifier_key_t mods, void* param);
-void	cursour_hook(double xpos, double ypos, void* param);
+void	mouse_hook(mouse_key_t button, action_t action,
+			modifier_key_t mods, void *param);
+void	cursour_hook(double xpos, double ypos, void *param);
 void	read_keys(t_cube *cube);
 void	key_up(t_cube *cube);
 void	key_down(t_cube *cube);
@@ -83,6 +84,8 @@ void	key_d(t_cube *cube);
 void	mouse_left(t_cube *cube);
 void	mouse_right(t_cube *cube);
 void	close_mini_map(t_cube *cube);
+void	handle_fire(t_cube *cube);
+void	handle_fire_two(t_cube *cube);
 
 //map parsing
 t_cube	parse_map(t_cube *cube, char *map);
@@ -129,6 +132,7 @@ void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
 double	degtorad(double a);
 double	fixang(double a);
+void	check_defines(void);
 
 //free and messages
 void	print_error_exit(int flag);

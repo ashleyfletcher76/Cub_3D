@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/07 17:12:34 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/08 15:25:38 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,10 +33,10 @@ SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
 	gameplay/prevent_collision.c \
 	textures/textures.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
-	utils/check_chars.c utils/utils.c /utils/maths.c
+	utils/check_chars.c utils/utils.c /utils/maths.c utils/utils2.c
 
 SRCS_BON = cube_bonus.c init/init.c init/init_player.c init/init_2d_map.c \
-	hooks/hooks.c hooks/keys.c hooks/keys2.c hooks/close_minimap.c \
+	hooks/hooks.c hooks/keys.c hooks/keys2.c hooks/hook_functions.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
 	parsing/check_arg.c parsing/check_map_details.c \
 	parsing/check_start.c parsing/remove_space.c \
@@ -47,7 +47,7 @@ SRCS_BON = cube_bonus.c init/init.c init/init_player.c init/init_2d_map.c \
 	gameplay/prevent_collision.c \
 	textures/textures.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
-	utils/check_chars.c utils/utils.c /utils/maths.c
+	utils/check_chars.c utils/utils.c /utils/maths.c utils/utils2.c
 
 OBJ_DIR = obj
 OBJ_DIR_BON = obj_bon

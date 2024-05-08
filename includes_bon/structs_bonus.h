@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 17:56:41 by asfletch         ###   ########.fr       */
+/*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
+/*   Updated: 2024/05/08 15:11:22 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef STRUCTS_BONUS_H
+# define STRUCTS_BONUS_H
 
 # include "../MLX42/include/MLX42/MLX42.h"
 
@@ -42,15 +42,11 @@ typedef enum s_type
 	END
 }	t_type;
 
-typedef struct s_guns
+typedef struct s_gun
 {
-	mlx_image_t		*gun1;
-	mlx_image_t		*gun2;
-	mlx_image_t		*gun3;
-	mlx_texture_t	*gun1_t;
-	mlx_texture_t	*gun2_t;
-	mlx_texture_t	*gun3_t;
-}	t_guns;
+	mlx_image_t		*gun;
+	mlx_texture_t	*gun_t;
+}	t_gun;
 
 typedef struct s_texture
 {
@@ -63,7 +59,7 @@ typedef struct s_texture
 	mlx_texture_t	south_tex;
 	mlx_texture_t	east_tex;
 	mlx_texture_t	west_tex;
-	mlx_texture_t	teleport_tex;
+	mlx_texture_t	*teleport_tex;
 }	t_texture;
 
 typedef struct s_point
@@ -159,23 +155,23 @@ typedef struct s_map
 
 typedef struct s_cube
 {
-	mlx_t		*mlx;
-	mlx_image_t	*image;
-	mlx_image_t	*mini;
-	xpm_t		*wall_xpm;
-	mlx_texture_t wall_tex;
-	t_map		*map;
-	t_player	player;
-	t_line		line;
-	t_default	player_default;
-	t_details	*details;
-	t_texture	texture;
-	t_guns		guns;
-	t_mouse		mouse;
-	bool		map_start;
-	int			details_found;
-	int			max_width;
-	int			max_height;
+	mlx_t			*mlx;
+	mlx_image_t		*image;
+	mlx_image_t		*mini;
+	xpm_t			*wall_xpm;
+	mlx_texture_t	wall_tex;
+	t_map			*map;
+	t_player		player;
+	t_line			line;
+	t_default		player_default;
+	t_details		*details;
+	t_texture		texture;
+	t_gun			gun;
+	t_mouse			mouse;
+	bool			map_start;
+	int				details_found;
+	int				max_width;
+	int				max_height;
 }	t_cube;
 
 #endif

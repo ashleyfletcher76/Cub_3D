@@ -6,13 +6,13 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 18:03:32 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:22:28 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
+void	draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 {
 	double		ty;
 	double		tx;
@@ -47,12 +47,12 @@ void	draw_floor_ceiling(t_cube *cube, t_ray ray, int i)
 	draw_line(cube->image, line, cube->details->ceiling_rgb);
 }
 
-mlx_texture_t find_facing(t_cube *cube, t_ray ray)
+mlx_texture_t	find_facing(t_cube *cube, t_ray ray)
 {
 	mlx_texture_t	tex;
 
 	if (ray.tex == 'Z')
-		return (cube->texture.teleport_tex);
+		return (*cube->texture.teleport_tex);
 	if (ray.shade == 1)
 	{
 		if (ray.ra > 180)
@@ -90,4 +90,3 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 	draw_floor_ceiling(cube, ray, i);
 	draw_textures(cube, ray, i, tex);
 }
-

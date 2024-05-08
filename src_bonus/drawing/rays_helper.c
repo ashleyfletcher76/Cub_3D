@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 18:03:23 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:22:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	set_ray(t_ray *ray, double px, double py)
 	ray->distv = 0;
 }
 
-int		is_done_bonus(t_cube *cube, t_ray *ray, int x, int y)
+int	is_done_bonus(t_cube *cube, t_ray *ray, int x, int y)
 {
 	if (x < 0 || x >= cube->max_width)
 		return (false);
@@ -60,11 +60,10 @@ int		is_done_bonus(t_cube *cube, t_ray *ray, int x, int y)
 	return (true);
 }
 
-
 double	find_dist(t_ray *ray, t_player player)
 {
-	double x;
-	double y;
+	double	x;
+	double	y;
 
 	x = ray->rx - player.px;
 	y = ray->ry - player.py;

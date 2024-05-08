@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:03:49 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:33:13 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,27 @@ void	user_input_two(void *param)
 	}
 }
 
-void	mouse_hook(mouse_key_t button, action_t action, modifier_key_t mods, void* param)
+void	mouse_hook(mouse_key_t button, action_t action,
+	modifier_key_t mods, void *param)
 {
 	t_cube	*cube;
 
 	cube = (t_cube *)param;
-	(void)button; // if equals to 0 left click 1 right clik 2 middle click
+	if (action == MLX_PRESS)
+	{
+		if (button == MLX_MOUSE_BUTTON_LEFT)
+			handle_fire(cube);
+	}
+	if (action == MLX_RELEASE)
+	{
+		if (button == MLX_MOUSE_BUTTON_LEFT)
+			handle_fire_two(cube);
+	}
 	(void)action;
 	(void)mods;
 }
 
-void	cursour_hook(double xpos, double ypos, void* param)
+void	cursour_hook(double xpos, double ypos, void *param)
 {
 	t_cube	*cube;
 
@@ -64,7 +74,6 @@ void	cursour_hook(double xpos, double ypos, void* param)
 		mlx_set_mouse_pos(cube->mlx, WIDTH / 2, HEIGHT / 2);
 	}
 }
-
 
 void	read_keys(t_cube *cube)
 {

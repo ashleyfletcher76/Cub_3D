@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 17:56:25 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:58:25 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,12 @@ static void	init_functions(t_cube *cube)
 	init_guns(cube);
 }
 
-// static void	check_defines(void)
-// {
-// 	if (WIDTH == 0 || HEIGHT == 0 || PI != 3.1415926535 || PIXEL_PER_CELL != 15
-// 		|| PIDIR != 0.78539816337 || DR != 0.06111111111
-// 		|| MIN_MAP_SIZE != 300 || MAX_MAP_SIZE != 1000 || MAPSIZE != 64
-// 		|| FPOV != 66 || ROTATIONSPEED != 3 || MOVESPEED != 0.05 || STOP != 5)
-// 		{
-// 			ft_putendl_fd("You tried to change our values go away", 2);
-// 			exit(-1);
-// 		}
-// }
-
 int	main(int argc, char **argv)
 {
 	t_cube	temp_cube;
 	t_cube	*cube;
 
-	//atexit(leaks);
+	atexit(leaks);
 	//check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);

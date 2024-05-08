@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:05:34 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:54:03 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 static void	free_png(t_cube *cube)
 {
-	if (cube->guns.gun1_t)
-		mlx_delete_texture(cube->guns.gun1_t);
-	if (cube->guns.gun2_t)
-		mlx_delete_texture(cube->guns.gun2_t);
-	if (cube->guns.gun3_t)
-		mlx_delete_texture(cube->guns.gun3_t);
+	if (cube->gun.gun_t)
+		mlx_delete_texture(cube->gun.gun_t);
+	if (cube->texture.teleport_tex)
+		mlx_delete_texture(cube->texture.teleport_tex);
 }
 
 static void	free_xpm(t_cube *cube)

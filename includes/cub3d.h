@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/05/07 18:02:33 by asfletch         ###   ########.fr       */
+/*   Created: 2024/05/08 15:08:32 by asfletch          #+#    #+#             */
+/*   Updated: 2024/05/08 15:12:24 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void	check_if_details(t_cube *temp_cube);
 void	print_map(t_cube *cube);
 double	degtorad(double a);
 double	fixang(double a);
+void	check_defines(void);
 
 //free and messages
 void	print_error_exit(int flag);

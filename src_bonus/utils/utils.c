@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 11:19:15 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:05:51 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:31:52 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ int	count_double(char **rgb)
 
 void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex)
 {
-	uint32_t n;
-	uint32_t m;
+	uint32_t	n;
+	uint32_t	m;
+	uint8_t		*pixels;
+	int			index;
+	int			color;
 
 	n = 0;
 	while (n < tex.width)
@@ -52,9 +55,9 @@ void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex)
 		m = 0;
 		while (m < tex.height)
 		{
-			int index = (n * tex.width + m) * 4;
-			uint8_t *pixels = &tex.pixels[index];
-			int color = pixel(pixels[0], pixels[1] ,pixels[2], pixels[3]);
+			index = (n * tex.width + m) * 4;
+			pixels = &tex.pixels[index];
+			color = pixel(pixels[0], pixels[1], pixels[2], pixels[3]);
 			mlx_put_pixel(cube->image, n, m, color);
 			m++;
 		}
