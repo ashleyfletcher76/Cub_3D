@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:28:27 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:27:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:48:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static void	move_point_x(t_cube *cube, t_point *stack, t_point point, int *top)
 
 static void	fill_helper(t_cube *cube, t_point *stack, t_point point)
 {
-	if (point.x <= 0 || point.y <= 0 || point.x >= cube->max_width
-		|| point.y >= cube->max_height)
+	if (point.x <= 0 || point.y <= 0 || point.x >= cube->max_width - 1
+		|| point.y >= cube->max_height - 1)
 	{
 		printf("Flood exit\n");
 		free_print_exit_two(cube, stack, 1);

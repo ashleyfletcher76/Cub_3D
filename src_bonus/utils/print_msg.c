@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:07:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:06:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	print_error_exit(int flag)
 		perror("Failed to open map file");
 	else if (flag == 6)
 		ft_putendl_fd("You pressed escape cos your scared", 0);
+	else if (flag == 7)
+		ft_putendl_fd("Map dimnesions are too big", 0);
 	exit(EXIT_FAILURE);
 }
 
@@ -95,6 +97,11 @@ void	free_print_exit_three(t_cube *cube, int flag)
 	if (flag == 1)
 	{
 		ft_putendl_fd("You have disappeared to another dimension", 2);
+		final_free(cube);
+	}
+	if (flag == 2)
+	{
+		ft_putendl_fd("A gun png does not exist", 2);
 		final_free(cube);
 	}
 	exit(EXIT_FAILURE);

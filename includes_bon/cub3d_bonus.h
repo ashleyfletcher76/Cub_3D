@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:18:24 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:44:00 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@
 # define MOVESPEED 0.05
 # define STOP 5
 
-# define PATH1 "./images/our_guns/5.png"
-# define PATH2 "./images/our_guns/6.png"
-# define PATH3 "./images/our_guns/3.png"
+# define PATH1 "./images/guns/1.png"
+# define PATH2 "./images/guns/2.png"
 
 //check args
 t_cube	check_args(int argc, char **argv);

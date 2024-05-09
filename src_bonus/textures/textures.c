@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/08 14:53:43 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:33:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,18 @@
 void	init_guns(t_cube *cube)
 {
 	cube->gun.gun_t = mlx_load_png(PATH1);
+	if (!cube->gun.gun_t)
+		free_print_exit_three(cube, 2);
 	cube->gun.gun = mlx_texture_to_image(cube->mlx, cube->gun.gun_t);
+	if (!cube->gun.gun)
+		free_print_exit_three(cube, 2);
+	cube->gun.gun2_t = mlx_load_png(PATH2);
+	if (!cube->gun.gun2_t)
+		free_print_exit_three(cube, 2);
+	cube->gun.gun2 = mlx_texture_to_image(cube->mlx, cube->gun.gun2_t);
+	if (!cube->gun.gun2)
+		free_print_exit_three(cube, 2);
+	mlx_delete_texture(cube->gun.gun2_t);
 	mlx_image_to_window(cube->mlx, cube->gun.gun, 0, 0);
 }
 
@@ -37,7 +48,7 @@ void	init_textures(t_cube *cube)
 	if (!cube->texture.west)
 		free_print_exit_three(cube, 0);
 	cube->texture.west_tex = cube->texture.west->texture;
-	cube->texture.teleport = mlx_load_xpm42("./images/ready/teleport.xpm42");
+	cube->texture.teleport = mlx_load_xpm42("./images/teleport/teleport.xpm42");
 	if (!cube->texture.teleport)
 		free_print_exit_three(cube, 0);
 	cube->texture.teleport_tex = &cube->texture.teleport->texture;

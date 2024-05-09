@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:25:00 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:44:06 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct s_gun
 {
 	mlx_image_t		*gun;
 	mlx_texture_t	*gun_t;
+	mlx_image_t		*gun2;
+	mlx_texture_t	*gun2_t;
 }	t_gun;
 
 typedef struct s_texture

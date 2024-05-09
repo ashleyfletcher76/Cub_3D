@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 17:58:18 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:21:59 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,11 @@ void	check_map(char *map, t_cube *temp_cube)
 		check_invalid_chars(temp_cube, line);
 		find_map_width(line, temp_cube);
 		if (check_empty_line(temp_cube, line) != -1 && temp_cube->map_start)
+		{
 			temp_cube->max_height++;
+			if (temp_cube->max_height > 100)
+				print_error_exit(7);
+		}
 		free (line);
 		line = get_next_line(fd);
 	}
@@ -99,6 +103,8 @@ void	find_map_width(char *line, t_cube *temp_cube)
 		current_width++;
 		if (current_width > temp_cube->max_width)
 			temp_cube->max_width = current_width;
+		if (current_width > 100)
+			print_error_exit(7);
 		i++;
 	}
 }

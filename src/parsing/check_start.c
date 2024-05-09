@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:11:26 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:00:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:26:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	multiple_start_pos(t_cube *cube)
 		checker += check_multiple(cube->map->map[y]);
 	if (checker != 1)
 	{
-		printf("Multiple start pos\n");
+		printf("Multiple start pos or none\n");
 		free_print_exit(cube, 2, 0);
 	}
 }

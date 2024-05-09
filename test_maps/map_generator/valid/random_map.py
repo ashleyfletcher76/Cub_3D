@@ -11,8 +11,8 @@ def generate_random_shape_map(width, height, wall_probability=0.2):
 					line += '1' if random.random() < wall_probability else '0'
 			file.write(line + "\n")
 
-map_width = 50
-map_height = 50
+map_width = 100
+map_height = 100
 
 # Generate the random shaped map
 generate_random_shape_map(map_width, map_height)
