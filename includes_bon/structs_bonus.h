@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:11:22 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:25:00 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,7 @@ typedef struct s_ray
 	double	shade;
 	char	tex;
 	int		dist;
-	int		mx;
-	int		my;
+	int		flag;
 }	t_ray;
 
 typedef struct s_player

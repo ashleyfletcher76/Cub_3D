@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:25:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:18:24 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int		check_invalid_integers(char **rgb);
 void	draw_ray(t_cube *cube);
 void	dda(t_cube *cube, t_ray *ray);
 t_ray	init_ray(t_player player);
-void	set_ray(t_ray *ray, double px, double py);
+void	set_ray(t_ray *ray);
 int		is_done(t_cube *cube, int x, int y);
-int		is_done_bonus(t_cube *cube, t_ray *ray, int x, int y);
+int		is_done_bonus(t_cube *cube, int x, int y);
 double	find_dist(t_ray *ray, t_player player);
 
 //hooks

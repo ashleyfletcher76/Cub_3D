@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rays_helper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/08 15:22:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:41:32 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,45 +27,26 @@ t_ray	init_ray(t_player player)
 	ray.dist = 0;
 	ray.shade = 1;
 	ray.tex = '.';
+	ray.flag = 0;
 	ray.ra = fixang(player.pa - FPOV / 2);
-	ray.mx = (int)ray.rx;
-	ray.my = (int)ray.ry;
 	return (ray);
 }
 
-void	set_ray(t_ray *ray, double px, double py)
+void	set_ray(t_ray *ray)
 {
-	ray->rx = px;
-	ray->ry = py;
-	ray->mx = (int)ray->rx;
-	ray->my = ray->ry;
-	ray->dist = 0;
-	ray->disth = 0;
-	ray->distv = 0;
+	ray->shade = 1;
+	ray->tex = '.';
+	ray->disth = 10000;
+	ray->distv = 10000;
 }
 
-int	is_done_bonus(t_cube *cube, t_ray *ray, int x, int y)
+int	is_done_bonus(t_cube *cube, int x, int y)
 {
 	if (x < 0 || x >= cube->max_width)
 		return (false);
 	if (y < 0 || y >= cube->max_height)
 		return (false);
-	if (cube->map->map[y][x] == '1')
+	if (cube->map->map[y][x] != 'V')
 		return (false);
-	if (cube->map->map[y][x] == 'Z')
-	{
-		ray->tex = 'Z';
-		return (false);
-	}
 	return (true);
-}
-
-double	find_dist(t_ray *ray, t_player player)
-{
-	double	x;
-	double	y;
-
-	x = ray->rx - player.px;
-	y = ray->ry - player.py;
-	return (sqrt(x * x + y * y));
 }

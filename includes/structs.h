@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:08:42 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:09:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:34:58 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,8 @@ typedef struct s_ray
 	double	ty_step;
 	double	ty_off;
 	double	shade;
-	char	tex;
 	int		dist;
-	int		mx;
-	int		my;
+	int		flag;
 }	t_ray;
 
 typedef struct s_player
