@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:02:01 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:46:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,13 @@ typedef struct s_texture
 	xpm_t			*east;
 	xpm_t			*west;
 	xpm_t			*teleport;
+	xpm_t			*door;
 	mlx_texture_t	north_tex;
 	mlx_texture_t	south_tex;
 	mlx_texture_t	east_tex;
 	mlx_texture_t	west_tex;
 	mlx_texture_t	*teleport_tex;
+	mlx_texture_t	*door_tex;
 }	t_texture;
 
 typedef struct s_point

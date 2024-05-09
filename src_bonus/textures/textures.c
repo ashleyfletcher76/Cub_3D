@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:33:36 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:49:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ void	init_guns(t_cube *cube)
 		free_print_exit_three(cube, 2);
 	mlx_delete_texture(cube->gun.gun2_t);
 	mlx_image_to_window(cube->mlx, cube->gun.gun, 0, 0);
+}
+
+void	init_door(t_cube *cube)
+{
+	cube->texture.door = mlx_load_xpm42("./images/door/sci_fi_door.xpm42");
+	if (!cube->texture.door)
+		free_print_exit_three(cube, 0);
+	cube->texture.door_tex = cube->texture.door->texture;
 }
 
 void	init_textures(t_cube *cube)

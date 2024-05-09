@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:15:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:46:39 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static void	init_functions(t_cube *cube)
 	init_player(cube);
 	init_textures(cube);
 	init_guns(cube);
+	init_door(cube);
 }
 
 int	main(int argc, char **argv)
