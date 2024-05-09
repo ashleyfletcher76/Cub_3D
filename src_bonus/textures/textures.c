@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 14:02:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:03:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_door(t_cube *cube)
 	cube->texture.door = mlx_load_xpm42("./images/door/door2.xpm42");
 	if (!cube->texture.door)
 		free_print_exit_three(cube, 0);
-	cube->texture.door_tex = cube->texture.door->texture;
+	cube->texture.door_tex = &cube->texture.door->texture;
 }
 
 void	init_textures(t_cube *cube)

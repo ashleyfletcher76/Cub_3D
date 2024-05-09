@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:51:20 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:53:31 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	init_textures(t_cube *cube);
 void	draw_images_xpm42(t_cube *cube, mlx_texture_t tex);
 void	init_guns(t_cube *cube);
+void	init_door(t_cube *cube);
 
 //gameplay
 int		is_wall_collision(t_cube *cube, int x, int y);
