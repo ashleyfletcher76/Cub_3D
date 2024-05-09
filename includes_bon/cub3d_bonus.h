@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 14:43:09 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:56:07 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@
 # define PATH2 "./images/guns/2.png"
 
 //check args
-t_cube	check_args(int argc, char **argv);
-void	check_map(char *map, t_cube *temp_cube);
+t_check	check_args(int argc, char **argv);
+void	check_map(char *map, t_check *temp_cube);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
-int		check_empty_line(t_cube *cube, char *line);
+int		check_multiple_details(t_check *temp_cube);
+int		check_details(t_check *temp_cube, char *line);
 
 //get map details
-void	find_map_width(char *line, t_cube *temp_cube);
+void	find_map_width(char *line, t_check *temp_cube);
 void	convert_floor(t_cube *cube);
 void	convert_ceiling(t_cube *cube);
 int		count_double(char **rgb);
@@ -96,11 +97,11 @@ void	flood_fill(t_cube *cube, int x, int y);
 t_point	get_point(int x, int y);
 int		get_details(t_cube *cube, char *line);
 t_type	get_state(char *line);
-int		check_details(t_cube *temp_cube, char *line);
+int		check_empty_line_parse(t_cube *cube, char *line);
 
 //initialization
 int32_t	init_mlx(t_cube *cube);
-void	init_cube(t_cube **cube, t_cube temp_cube);
+void	init_cube(t_cube **cube, t_check temp_cube);
 void	init_map(t_cube *cube);
 void	init_player(t_cube *cube);
 void	init_textures(t_cube *cube);
@@ -128,7 +129,7 @@ void	init_door(t_cube *cube);
 int		is_wall_collision(t_cube *cube, int x, int y);
 
 //utils
-void	check_if_details(t_cube *temp_cube);
+void	check_if_details(t_check *temp_cube);
 void	print_map(t_cube *cube);
 double	degtorad(double a);
 double	fixang(double a);

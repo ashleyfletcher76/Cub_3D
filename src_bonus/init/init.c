@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:54:23 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:24:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	init_mouse(t_cube *cube)
 	cube->mouse.y = HEIGHT / 2;
 }
 
-void	init_cube(t_cube **cube, t_cube temp_cube)
+void	init_cube(t_cube **cube, t_check temp_cube)
 {
 	*cube = malloc(sizeof(t_cube));
 	if (!*cube)

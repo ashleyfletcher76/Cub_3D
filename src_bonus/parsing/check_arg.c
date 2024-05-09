@@ -6,22 +6,27 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 16:32:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 12:21:13 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:15:06 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-t_cube	check_args(int argc, char **argv)
+t_check	check_args(int argc, char **argv)
 {
-	t_cube	temp_cube;
+	t_check	temp_cube;
 
 	if (argc != 2 || ft_strnstr(argv[1], ".cub", ft_strlen(argv[1])) == NULL)
 		print_error_exit(0);
 	temp_cube.max_height = 0;
 	temp_cube.max_width = 0;
 	temp_cube.map_start = false;
-	temp_cube.details_found = 0;
+	temp_cube.north = 0;
+	temp_cube.south = 0;
+	temp_cube.east = 0;
+	temp_cube.west = 0;
+	temp_cube.floor = 0;
+	temp_cube.ceiling = 0;
 	check_map(argv[1], &temp_cube);
 	check_if_details(&temp_cube);
 	if (temp_cube.max_width > 100 || temp_cube.max_height > 100)
@@ -29,7 +34,7 @@ t_cube	check_args(int argc, char **argv)
 	return (temp_cube);
 }
 
-int	check_empty_line(t_cube *cube, char *line)
+static int	check_empty_line(t_check *cube, char *line)
 {
 	int		x;
 
@@ -48,7 +53,7 @@ int	check_empty_line(t_cube *cube, char *line)
 	return (-1);
 }
 
-static void	check_invalid_chars(t_cube *temp_cube, char *line)
+static void	check_invalid_chars(t_check *temp_cube, char *line)
 {
 	int		i;
 
@@ -64,7 +69,7 @@ static void	check_invalid_chars(t_cube *temp_cube, char *line)
 	}
 }
 
-void	check_map(char *map, t_cube *temp_cube)
+void	check_map(char *map, t_check *temp_cube)
 {
 	int		fd;
 	char	*line;
@@ -76,7 +81,7 @@ void	check_map(char *map, t_cube *temp_cube)
 	while (line != NULL)
 	{
 		if (check_details(temp_cube, line) == 0
-			&& temp_cube->details_found == 6)
+			&& check_multiple_details(temp_cube))
 			temp_cube->map_start = true;
 		check_invalid_chars(temp_cube, line);
 		find_map_width(line, temp_cube);
@@ -93,7 +98,7 @@ void	check_map(char *map, t_cube *temp_cube)
 	close (fd);
 }
 
-void	find_map_width(char *line, t_cube *temp_cube)
+void	find_map_width(char *line, t_check *temp_cube)
 {
 	int	i;
 	int	current_width;

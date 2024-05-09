@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:08:42 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:34:58 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:25:04 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,9 +157,22 @@ typedef struct s_cube
 	t_details		*details;
 	t_texture		texture;
 	bool			map_start;
-	int				details_found;
 	int				max_width;
 	int				max_height;
+	int				details_found;
 }	t_cube;
+
+typedef struct s_check
+{
+	int		max_width;
+	int		max_height;
+	int		north;
+	int		south;
+	int		west;
+	int		east;
+	int		floor;
+	int		ceiling;
+	bool	map_start;
+}	t_check;
 
 #endif
