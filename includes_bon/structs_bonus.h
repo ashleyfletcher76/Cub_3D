@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:11:22 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:02:01 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct s_gun
 {
 	mlx_image_t		*gun;
 	mlx_texture_t	*gun_t;
+	mlx_image_t		*gun2;
+	mlx_texture_t	*gun2_t;
 }	t_gun;
 
 typedef struct s_texture

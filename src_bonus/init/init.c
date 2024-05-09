@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:26:46 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:02:18 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ static void	init_texture_helper(t_cube *cube)
 	cube->texture.teleport_tex = NULL;
 	cube->gun.gun = NULL;
 	cube->gun.gun_t = NULL;
+	cube->gun.gun2 = NULL;
+	cube->gun.gun2_t = NULL;
 }
 
 void	init_mouse(t_cube *cube)

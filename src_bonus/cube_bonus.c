@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 14:58:25 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:15:42 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	t_cube	temp_cube;
 	t_cube	*cube;
 
-	atexit(leaks);
+	//atexit(leaks);
 	//check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);
