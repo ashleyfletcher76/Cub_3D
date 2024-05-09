@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:44:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 14:08:21 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:41:56 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	key_up(t_cube *cube)
 
 	newposx = cube->player.px;
 	newposy = cube->player.py;
-	newposx += cube->player.pdx * MOVESPEED;
-	newposy += cube->player.pdy * MOVESPEED;
+	newposx += cube->player.pdx * MOVESPEED * STOP;
+	newposy += cube->player.pdy * MOVESPEED * STOP;
 	if (is_wall_collision(cube, newposx, newposy))
 		return ;
 	cube->player.px += cube->player.pdx * MOVESPEED;
@@ -34,8 +34,8 @@ void	key_down(t_cube *cube)
 
 	newposx = cube->player.px;
 	newposy = cube->player.py;
-	newposx -= cube->player.pdx * MOVESPEED;
-	newposy -= cube->player.pdy * MOVESPEED;
+	newposx -= cube->player.pdx * MOVESPEED * STOP;
+	newposy -= cube->player.pdy * MOVESPEED * STOP;
 	if (is_wall_collision(cube, newposx, newposy))
 		return ;
 	cube->player.px -= cube->player.pdx * MOVESPEED;

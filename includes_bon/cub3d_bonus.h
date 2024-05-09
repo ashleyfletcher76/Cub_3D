@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:53:31 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:43:09 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 
 # define ROTATIONSPEED 3
 # define MOVESPEED 0.05
-# define STOP 5
+# define STOP 2
 
 # define PATH1 "./images/guns/1.png"
 # define PATH2 "./images/guns/2.png"
