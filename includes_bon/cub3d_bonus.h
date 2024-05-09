@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:12:52 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:33:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@
 # define MOVESPEED 0.05
 # define STOP 5
 
-# define PATH1 "./images/our_guns/5.png"
-# define PATH2 "./images/our_guns/6.png"
+# define PATH1 "./images/guns/1.png"
+# define PATH2 "./images/guns/2.png"
 
 //check args
 t_cube	check_args(int argc, char **argv);

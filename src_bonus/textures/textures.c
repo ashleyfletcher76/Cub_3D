@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:12:23 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:33:36 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	init_textures(t_cube *cube)
 	if (!cube->texture.west)
 		free_print_exit_three(cube, 0);
 	cube->texture.west_tex = cube->texture.west->texture;
-	cube->texture.teleport = mlx_load_xpm42("./images/ready/teleport.xpm42");
+	cube->texture.teleport = mlx_load_xpm42("./images/teleport/teleport.xpm42");
 	if (!cube->texture.teleport)
 		free_print_exit_three(cube, 0);
 	cube->texture.teleport_tex = &cube->texture.teleport->texture;
