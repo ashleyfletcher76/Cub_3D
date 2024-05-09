@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:07:51 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:26:14 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	leaks(void)
 
 int	main(int argc, char **argv)
 {
-	t_cube	temp_cube;
+	t_check	temp_cube;
 	t_cube	*cube;
 
 	atexit(leaks);
 	//check_defines();
 	temp_cube = check_args(argc, argv);
-	init_cube(&cube, &temp_cube);
+	init_cube(&cube, temp_cube);
 	init_map(cube);
 	parse_map(cube, argv[1]);
 	check_map_perimeter(cube);

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 17:09:40 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:17:46 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ typedef struct s_default
 	double	pdx;
 	double	pdy;
 	double	pa;
-	
+
 }	t_default;
 
 typedef struct s_line
@@ -181,5 +181,18 @@ typedef struct s_cube
 	int				max_width;
 	int				max_height;
 }	t_cube;
+
+typedef struct s_check
+{
+	int		max_width;
+	int		max_height;
+	int		north;
+	int		south;
+	int		west;
+	int		east;
+	int		floor;
+	int		ceiling;
+	bool	map_start;
+}	t_check;
 
 #endif

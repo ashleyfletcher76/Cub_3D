@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:06:00 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:45:50 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	print_error_exit(int flag)
 	else if (flag == 6)
 		ft_putendl_fd("You pressed escape cos your scared", 0);
 	else if (flag == 7)
-		ft_putendl_fd("Map dimnesions are too big", 0);
+		ft_putendl_fd("Map dimnesions are too big", 2);
+	else if (flag == 8)
+		ft_putendl_fd("Multiple map details", 2);
 	exit(EXIT_FAILURE);
 }
 

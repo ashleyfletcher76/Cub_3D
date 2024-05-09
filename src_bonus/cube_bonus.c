@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 15:00:34 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:18:18 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	init_functions(t_cube *cube)
 
 int	main(int argc, char **argv)
 {
-	t_cube	temp_cube;
+	t_check	temp_cube;
 	t_cube	*cube;
 
 	//atexit(leaks);

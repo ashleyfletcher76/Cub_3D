@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 15:35:48 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:18:14 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	init_mouse(t_cube *cube)
 	cube->mouse.y = HEIGHT / 2;
 }
 
-void	init_cube(t_cube **cube, t_cube temp_cube)
+void	init_cube(t_cube **cube, t_check temp_cube)
 {
 	*cube = malloc(sizeof(t_cube));
 	if (!*cube)

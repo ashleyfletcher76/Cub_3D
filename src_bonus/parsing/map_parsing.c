@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:05:00 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:51:22 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	add_map_conditions(t_cube *cube, char *line, int row)
 		free_print_exit_two(cube, NULL, 0);
 	if (get_details(cube, line) == 1)
 		return (-1);
-	if (check_empty_line(cube, line) == -1)
+	if (check_empty_line_parse(cube, line) == -1)
 		return (-1);
 	if (cube->details_found == 6)
 		cube->map_start = true;
