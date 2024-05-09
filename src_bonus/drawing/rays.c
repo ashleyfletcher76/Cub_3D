@@ -3,24 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   rays.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/07 18:03:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:24:14 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void	dda(t_cube *cube, t_ray *ray)
+void	dda_h(t_cube *cube, t_ray *ray)
 {
+	if (ray->flag == 1)
+		return ;
 	while (1)
 	{
-		ray->mx = (int)ray->rx;
-		ray->my = (int)ray->ry;
-		if (!is_done_bonus(cube, ray, ray->mx, ray->my))
+		if (!is_done_bonus(cube, (int)ray->rx, (int)ray->ry))
 		{
 			ray->disth = find_dist(ray, cube->player);
+			break ;
+		}
+		else
+		{
+			ray->rx += ray->xo;
+			ray->ry += ray->yo;
+		}
+	}
+}
+
+void	dda_v(t_cube *cube, t_ray *ray)
+{
+	if (ray->flag == 1)
+		return ;
+	while (1)
+	{
+		if (!is_done_bonus(cube, (int)ray->rx, (int)ray->ry))
+		{
+			ray->distv = find_dist(ray, cube->player);
 			break ;
 		}
 		else
@@ -39,6 +58,7 @@ void	draw_horizontal(t_cube *cube, t_ray *ray, double tanv)
 		ray->ry = (cube->player.px - ray->rx) * tanv + cube->player.py;
 		ray->xo = 1;
 		ray->yo = -ray->xo * tanv;
+		ray->flag = 0;
 	}
 	else if (cos(degtorad(ray->ra)) < -0.001)
 	{
@@ -46,16 +66,13 @@ void	draw_horizontal(t_cube *cube, t_ray *ray, double tanv)
 		ray->ry = (cube->player.px - ray->rx) * tanv + cube->player.py;
 		ray->xo = -1;
 		ray->yo = -ray->xo * tanv;
+		ray->flag = 0;
 	}
 	else
 	{
 		ray->rx = cube->player.px;
 		ray->ry = cube->player.py;
-		if (sin(degtorad(ray->ra)) > 0)
-			ray->yo = -1;
-		else
-			ray->yo = 1;
-		ray->xo = 0;
+		ray->flag = 1;
 	}
 }
 
@@ -67,6 +84,7 @@ void	draw_vertical(t_cube *cube, t_ray *ray, double tanv)
 		ray->rx = (cube->player.py - ray->ry) * tanv + cube->player.px;
 		ray->yo = -1;
 		ray->xo = -ray->yo * tanv;
+		ray->flag = 0;
 	}
 	else if (sin(degtorad(ray->ra)) < -0.001)
 	{
@@ -74,16 +92,13 @@ void	draw_vertical(t_cube *cube, t_ray *ray, double tanv)
 		ray->rx = (cube->player.py - ray->ry) * tanv + cube->player.px;
 		ray->yo = 1;
 		ray->xo = -ray->yo * tanv;
+		ray->flag = 0;
 	}
 	else
 	{
 		ray->rx = cube->player.px;
 		ray->ry = cube->player.py;
-		if (cos(degtorad(ray->ra)) > 0)
-			ray->xo = 1;
-		else
-			ray->xo = -1;
-		ray->yo = 0;
+		ray->flag = 1;
 	}
 }
 
@@ -96,20 +111,18 @@ void	draw_ray(t_cube *cube)
 	ray = init_ray(cube->player);
 	while (++i < WIDTH)
 	{
-		ray.shade = 1;
-		ray.tex = '.';
+		set_ray(&ray);
 		draw_horizontal(cube, &ray, tan(degtorad(ray.ra)));
-		dda(cube, &ray);
+		dda_h(cube, &ray);
 		ray.vx = ray.rx;
 		ray.vy = ray.ry;
-		ray.distv = ray.disth;
 		draw_vertical(cube, &ray, 1.0 / tan(degtorad(ray.ra)));
-		dda(cube, &ray);
-		if (ray.distv < ray.disth)
+		dda_v(cube, &ray);
+		if (ray.disth < ray.distv)
 		{
 			ray.rx = ray.vx;
 			ray.ry = ray.vy;
-			ray.disth = ray.distv;
+			ray.distv = ray.disth;
 			ray.shade = 0.5;
 		}
 		draw_3d(cube, ray, i);

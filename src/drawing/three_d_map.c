@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/08 15:15:23 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:33:53 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 
 	tex = find_facing(cube, ray);
 	ca = fixang(cube->player.pa - ray.ra);
-	ray.disth = ray.disth * cos(degtorad(ca));
-	ray.dist = (HEIGHT) / ray.disth;
+	ray.distv = ray.distv * cos(degtorad(ca));
+	ray.dist = (HEIGHT) / ray.distv;
 	ray.ty_step = tex.height / (double)ray.dist;
 	ray.ty_off = 0;
 	if (ray.dist > HEIGHT)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/08 15:22:28 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:20:56 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ mlx_texture_t	find_facing(t_cube *cube, t_ray ray)
 {
 	mlx_texture_t	tex;
 
-	if (ray.tex == 'Z')
-		return (*cube->texture.teleport_tex);
 	if (ray.shade == 1)
 	{
+		if (cube->map->map[(int)ray.ry][(int)ray.rx] == 'Z')
+			return (*cube->texture.teleport_tex);
 		if (ray.ra > 180)
 			tex = cube->texture.south_tex;
 		else
@@ -62,6 +62,8 @@ mlx_texture_t	find_facing(t_cube *cube, t_ray ray)
 	}
 	else
 	{
+		if (cube->map->map[(int)ray.ry][(int)ray.rx] == 'Z')
+			return (*cube->texture.teleport_tex);
 		if (ray.ra > 90 && ray.ra < 270)
 			tex = cube->texture.west_tex;
 		else
@@ -77,8 +79,8 @@ void	draw_3d(t_cube *cube, t_ray ray, int i)
 
 	tex = find_facing(cube, ray);
 	ca = fixang(cube->player.pa - ray.ra);
-	ray.disth = ray.disth * cos(degtorad(ca));
-	ray.dist = (HEIGHT) / ray.disth;
+	ray.distv = ray.distv * cos(degtorad(ca));
+	ray.dist = (HEIGHT) / ray.distv;
 	ray.ty_step = tex.height / (double)ray.dist;
 	ray.ty_off = 0;
 	if (ray.dist > HEIGHT)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/08 15:33:13 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:31:10 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ void	cursour_hook(double xpos, double ypos, void *param)
 	if (xpos < WIDTH && xpos > 0 && ypos < HEIGHT && ypos > 0)
 	{
 		if ((int)xpos > WIDTH / 2)
-			mouse_right(cube);
+			key_right(cube);
 		else if (xpos < WIDTH / 2)
-			mouse_left(cube);
+			key_left(cube);
 		cube->mouse.y = ypos;
 		cube->mouse.x = xpos;
 		mlx_set_mouse_pos(cube->mlx, WIDTH / 2, HEIGHT / 2);
