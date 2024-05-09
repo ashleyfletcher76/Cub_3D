@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 14:03:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:10:03 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,14 @@ void	init_guns(t_cube *cube)
 
 void	init_door(t_cube *cube)
 {
-	cube->texture.door = mlx_load_xpm42("./images/door/door2.xpm42");
-	if (!cube->texture.door)
+	cube->texture.door_close = mlx_load_xpm42("./images/door/11zon_1-1.xpm42");
+	if (!cube->texture.door_close)
 		free_print_exit_three(cube, 0);
-	cube->texture.door_tex = &cube->texture.door->texture;
+	cube->texture.door_close_tex = cube->texture.door_close->texture;
+	cube->texture.door_open = mlx_load_xpm42("./images/door/11zon_2.xpm42");
+	if (!cube->texture.door_open)
+		free_print_exit_three(cube, 0);
+	cube->texture.door_open_tex = cube->texture.door_open->texture;
 }
 
 void	init_textures(t_cube *cube)

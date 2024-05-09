@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 14:43:09 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:04:29 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	dda(t_cube *cube, t_ray *ray);
 t_ray	init_ray(t_player player);
 void	set_ray(t_ray *ray);
 int		is_done(t_cube *cube, int x, int y);
-int		is_done_bonus(t_cube *cube, int x, int y);
+int		is_done_bonus_v(t_cube *cube, t_ray *ray, int x, int y);
+int		is_done_bonus_h(t_cube *cube, t_ray *ray, int x, int y);
 double	find_dist(t_ray *ray, t_player player);
 
 //hooks

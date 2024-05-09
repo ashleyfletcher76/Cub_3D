@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:24:14 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:03:38 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	dda_h(t_cube *cube, t_ray *ray)
 		return ;
 	while (1)
 	{
-		if (!is_done_bonus(cube, (int)ray->rx, (int)ray->ry))
+		if (!is_done_bonus_h(cube, ray, (int)ray->rx, (int)ray->ry))
 		{
 			ray->disth = find_dist(ray, cube->player);
 			break ;
@@ -37,7 +37,7 @@ void	dda_v(t_cube *cube, t_ray *ray)
 		return ;
 	while (1)
 	{
-		if (!is_done_bonus(cube, (int)ray->rx, (int)ray->ry))
+		if (!is_done_bonus_v(cube, ray,  (int)ray->rx, (int)ray->ry))
 		{
 			ray->distv = find_dist(ray, cube->player);
 			break ;
@@ -125,6 +125,8 @@ void	draw_ray(t_cube *cube)
 			ray.distv = ray.disth;
 			ray.shade = 0.5;
 		}
+		if (ray.distdh < ray.distdv)
+			ray.distdv = ray.distdh;
 		draw_3d(cube, ray, i);
 		ray.ra = fixang(ray.ra + (double)FPOV / (double)WIDTH);
 	}

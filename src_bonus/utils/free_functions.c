@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 14:06:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:37:25 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void	free_png(t_cube *cube)
 		mlx_delete_texture(cube->gun.gun_t);
 	if (cube->texture.teleport_tex)
 		mlx_delete_texture(cube->texture.teleport_tex);
-	if (cube->texture.door_tex)
-		mlx_delete_texture(cube->texture.door_tex);
+	//if (cube->texture.door_tex[0])
+	//	mlx_delete_texture(cube->texture.door_tex);
 }
 
 static void	free_xpm(t_cube *cube)
