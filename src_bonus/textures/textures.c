@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:49:55 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:53:43 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_door(t_cube *cube)
 	cube->texture.door = mlx_load_xpm42("./images/door/sci_fi_door.xpm42");
 	if (!cube->texture.door)
 		free_print_exit_three(cube, 0);
-	cube->texture.door_tex = cube->texture.door->texture;
+	cube->texture.door_tex = &cube->texture.door->texture;
 }
 
 void	init_textures(t_cube *cube)

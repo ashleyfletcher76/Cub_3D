@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:20:56 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:52:23 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ mlx_texture_t	find_facing(t_cube *cube, t_ray ray)
 	{
 		if (cube->map->map[(int)ray.ry][(int)ray.rx] == 'Z')
 			return (*cube->texture.teleport_tex);
+		if (cube->map->map[(int)ray.ry][(int)ray.rx] == 'L')
+			return (*cube->texture.door_tex);
 		if (ray.ra > 180)
 			tex = cube->texture.south_tex;
 		else
@@ -64,6 +66,8 @@ mlx_texture_t	find_facing(t_cube *cube, t_ray ray)
 	{
 		if (cube->map->map[(int)ray.ry][(int)ray.rx] == 'Z')
 			return (*cube->texture.teleport_tex);
+		if (cube->map->map[(int)ray.ry][(int)ray.rx] == 'L')
+			return (*cube->texture.door_tex);
 		if (ray.ra > 90 && ray.ra < 270)
 			tex = cube->texture.west_tex;
 		else
