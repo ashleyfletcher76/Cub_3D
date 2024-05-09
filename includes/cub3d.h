@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:08:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:35:10 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:53:08 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 
 # define ROTATIONSPEED 3
 # define MOVESPEED 0.05
-# define STOP 5
+# define STOP 2
 
 //check args
 t_cube	check_args(int argc, char **argv);

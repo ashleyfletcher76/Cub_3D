@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:51:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:54:32 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ typedef struct s_default
 	double	pdx;
 	double	pdy;
 	double	pa;
+	
 }	t_default;
 
 typedef struct s_line
