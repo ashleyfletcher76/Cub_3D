@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:54:04 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 13:04:19 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:07:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	close_mini_map(t_cube *cube)
 void	handle_fire_two(t_cube *cube)
 {
 	mlx_delete_image(cube->mlx, cube->gun.gun);
-	cube->gun.gun_t = mlx_load_png(PATH1);
-	cube->gun.gun = mlx_texture_to_image(cube->mlx, cube->gun.gun_t);
-	mlx_image_to_window(cube->mlx, cube->gun.gun, 0, 0);
+	cube->gun.gun2_t = mlx_load_png(PATH1);
+	cube->gun.gun2 = mlx_texture_to_image(cube->mlx, cube->gun.gun2_t);
+	mlx_image_to_window(cube->mlx, cube->gun.gun2, 0, 0);
 }
 
 void	handle_fire(t_cube *cube)
@@ -36,4 +36,5 @@ void	handle_fire(t_cube *cube)
 	cube->gun.gun = mlx_texture_to_image(cube->mlx, cube->gun.gun_t);
 	mlx_image_to_window(cube->mlx, cube->gun.gun, 0, 0);
 	mlx_delete_texture(cube->gun.gun_t);
+	cube->gun.gun_t = NULL;
 }

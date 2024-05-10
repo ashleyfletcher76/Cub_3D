@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 15:37:25 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:11:51 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static void	free_png(t_cube *cube)
 		mlx_delete_texture(cube->gun.gun_t);
 	if (cube->texture.teleport_tex)
 		mlx_delete_texture(cube->texture.teleport_tex);
-	//if (cube->texture.door_tex[0])
-	//	mlx_delete_texture(cube->texture.door_tex);
 }
 
 static void	free_xpm(t_cube *cube)
@@ -32,6 +30,12 @@ static void	free_xpm(t_cube *cube)
 		mlx_delete_xpm42(cube->texture.east);
 	if (cube->texture.west)
 		mlx_delete_xpm42(cube->texture.west);
+	if (cube->texture.door_open)
+		mlx_delete_xpm42(cube->texture.door_open);
+	if (cube->texture.door_half)
+		mlx_delete_xpm42(cube->texture.door_half);
+	if (cube->texture.door_close)
+		mlx_delete_xpm42(cube->texture.door_close);
 }
 
 void	free_rgb(char **rgb)

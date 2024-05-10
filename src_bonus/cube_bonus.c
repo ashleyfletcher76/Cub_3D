@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 17:18:18 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:45:20 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int	main(int argc, char **argv)
 	t_check	temp_cube;
 	t_cube	*cube;
 
-	//atexit(leaks);
-	//check_defines();
+	atexit(leaks);
+	check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);
 	init_map(cube);
