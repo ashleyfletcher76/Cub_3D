@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:28:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:04:55 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:32:44 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 t_type	get_state(char *line)
 {
-	if (line[0] == 'N')
+	int	i;
+
+	i = 0;
+	while (whitespace_skip(line[i]))
+		i++;
+	if (line[i] == 'N')
 		return (NORTH);
-	else if (line[0] == 'S' && line[1] == 'O')
+	else if (line[i] == 'S' && line[i + 1] == 'O')
 		return (SOUTH);
-	else if (line[0] == 'E' && line[1] == 'A')
+	else if (line[i] == 'E' && line[i + 1] == 'A')
 		return (EAST);
-	else if (line[0] == 'W' && line[1] == 'E')
+	else if (line[i] == 'W' && line[i + 1] == 'E')
 		return (WEST);
-	else if (line[0] == 'F')
+	else if (line[i] == 'F')
 		return (FLOOR);
-	else if (line[0] == 'C')
+	else if (line[i] == 'C')
 		return (CEILING);
+	else if (line[i] == '\0' || line[i] == '\n')
+		return (NEWLINE);
 	return (END);
 }
 

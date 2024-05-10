@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 18:35:04 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 19:04:51 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef enum s_type
 	WEST,
 	FLOOR,
 	CEILING,
+	NEWLINE,
 	END
 }	t_type;
 
@@ -93,7 +94,6 @@ typedef struct s_default
 	double	pdx;
 	double	pdy;
 	double	pa;
-
 }	t_default;
 
 typedef struct s_line

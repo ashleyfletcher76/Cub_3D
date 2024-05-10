@@ -6,7 +6,7 @@
 #    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/10 14:05:08 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/10 18:46:53 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ CFLAGS = -Wall -Wextra -Werror -I./includes/ -g
 SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
 	hooks/hooks.c hooks/keys.c hooks/keys2.c hooks/close_minimap.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
-	parsing/check_arg.c parsing/check_map_details.c \
-	parsing/check_start.c parsing/remove_space.c \
+	parsing/check_arg.c parsing/check_map_details.c parsing/check_utils.c \
+	parsing/check_start.c parsing/remove_space.c parsing/check_arg_utils.c \
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \
@@ -39,8 +39,8 @@ SRCS_BON = cube_bonus.c init/init.c init/init_player.c init/init_2d_map.c \
 	init/init_instructions.c \
 	hooks/hooks.c hooks/keys.c hooks/keys2.c hooks/hook_functions.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
-	parsing/check_arg.c parsing/check_map_details.c \
-	parsing/check_start.c parsing/remove_space.c \
+	parsing/check_arg.c parsing/check_map_details.c  parsing/check_utils.c \
+	parsing/check_start.c parsing/remove_space.c parsing/check_arg_utils.c \
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \

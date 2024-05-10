@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:50:02 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 16:15:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:34:19 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,30 +61,32 @@ static int	check_details_helper(t_check *temp_cube, t_type type)
 		temp_cube->ceiling += 1;
 		return (1);
 	}
+	else if (type == NEWLINE)
+		return (1);
 	return (0);
 }
 
-int	check_details(t_check *temp_cube, char *line)
+void	check_details(t_check *temp_cube, char *line)
 {
 	t_type	type;
 
-	type = get_state(line);
+	type = get_state_begin(line);
 	if (type == NORTH)
 	{
 		temp_cube->north += 1;
-		return (1);
+		return ;
 	}
 	else if (type == SOUTH)
 	{
 		temp_cube->south += 1;
-		return (1);
+		return ;
 	}
 	else if (type == EAST)
 	{
 		temp_cube->east += 1;
-		return (1);
+		return ;
 	}
 	if (check_details_helper(temp_cube, type) == 1)
-		return (1);
-	return (0);
+		return ;
+	return ;
 }

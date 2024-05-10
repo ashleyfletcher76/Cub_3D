@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 15:45:50 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:31:02 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	print_error_exit(int flag)
 		ft_putendl_fd("Map dimnesions are too big", 2);
 	else if (flag == 8)
 		ft_putendl_fd("Multiple map details", 2);
+	else if (flag == 9)
+		ft_putendl_fd("Incorrect map detail argument", 2);
 	exit(EXIT_FAILURE);
 }
 
