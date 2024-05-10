@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 17:17:44 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:38:07 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int		check_invalid_integers(char **rgb);
 
 //rays
 void	draw_ray(t_cube *cube);
-void	dda(t_cube *cube, t_ray *ray);
 t_ray	init_ray(t_player player);
 void	set_ray(t_ray *ray);
+void	setup_ray(t_ray *ray);
 int		is_done(t_cube *cube, int x, int y);
 int		is_done_bonus_v(t_cube *cube, t_ray *ray, int x, int y);
 int		is_done_bonus_h(t_cube *cube, t_ray *ray, int x, int y);
@@ -117,6 +117,7 @@ void	draw_pixel(t_cube *cube);
 void	find_pl_pos(t_cube *cube);
 int		find_pos(t_cube *cube, char c);
 void	two_d_map(void *param);
+void	draw_door(t_cube *cube, t_ray ray, int i);
 void	draw_3d(t_cube *cube, t_ray ray, int i);
 int32_t	pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 17:03:38 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:38:25 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,15 +118,7 @@ void	draw_ray(t_cube *cube)
 		ray.vy = ray.ry;
 		draw_vertical(cube, &ray, 1.0 / tan(degtorad(ray.ra)));
 		dda_v(cube, &ray);
-		if (ray.disth < ray.distv)
-		{
-			ray.rx = ray.vx;
-			ray.ry = ray.vy;
-			ray.distv = ray.disth;
-			ray.shade = 0.5;
-		}
-		if (ray.distdh < ray.distdv)
-			ray.distdv = ray.distdh;
+		setup_ray(&ray);
 		draw_3d(cube, ray, i);
 		ray.ra = fixang(ray.ra + (double)FPOV / (double)WIDTH);
 	}

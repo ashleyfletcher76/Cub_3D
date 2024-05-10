@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/08 15:25:38 by asfletch         ###   ########.fr        #
+#    Updated: 2024/05/10 10:23:34 by muhakose         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS_BON = cube_bonus.c init/init.c init/init_player.c init/init_2d_map.c \
 	parsing/flood_fill.c parsing/convert_compare.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \
-	drawing/three_d_map.c drawing/rays_helper.c\
+	drawing/three_d_map.c drawing/rays_helper.c drawing/draw_door.c\
 	gameplay/prevent_collision.c \
 	textures/textures.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
