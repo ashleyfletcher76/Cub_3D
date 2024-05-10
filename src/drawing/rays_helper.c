@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:34:50 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:39:17 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	is_done(t_cube *cube, int x, int y)
 		return (false);
 	if (y < 0 || y >= cube->max_height)
 		return (false);
-	if (cube->map->map[y][x] == '1')
+	if (cube->map->map[y][x] != 'V')
 		return (false);
 	return (true);
 }

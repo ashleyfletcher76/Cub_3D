@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 14:10:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:57:45 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 
 # define PI 3.1415926535
-# define PIDIR 0.78539816337
-# define DR 0.06111111111
-
 # define WIDTH 1920
 # define HEIGHT 1080
 # define MIN_MAP_SIZE 300

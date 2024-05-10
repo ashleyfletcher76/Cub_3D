@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 11:37:47 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:40:53 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	is_done_bonus_h(t_cube *cube, t_ray *ray, int x, int y)
 		ray->dhy = ray->ry;
 		ray->distdh = find_dist(ray, cube->player);
 	}
-	if (cube->map->map[y][x] == '1' || cube->map->map[y][x] == 'Z')
+	if (cube->map->map[y][x] != 'V' && cube->map->map[y][x] != 'L')
 		return (false);
 	return (true);
 }
@@ -86,7 +86,7 @@ int	is_done_bonus_v(t_cube *cube, t_ray *ray, int x, int y)
 		ray->dvy = ray->ry;
 		ray->distdv = find_dist(ray, cube->player);
 	}
-	if (cube->map->map[y][x] == '1' || cube->map->map[y][x] == 'Z')
+	if (cube->map->map[y][x] != 'V' && cube->map->map[y][x] != 'L')
 		return (false);
 	return (true);
 }
