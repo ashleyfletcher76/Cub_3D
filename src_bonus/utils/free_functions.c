@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 14:31:19 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:37:13 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ static void	free_xpm(t_cube *cube)
 		mlx_delete_xpm42(cube->texture.east);
 	if (cube->texture.west)
 		mlx_delete_xpm42(cube->texture.west);
+	if (cube->texture.mas)
+		mlx_delete_xpm42(cube->texture.mas);
+	if (cube->texture.ash)
+		mlx_delete_xpm42(cube->texture.ash);
 	if (cube->texture.door_open)
 		mlx_delete_xpm42(cube->texture.door_open);
 	if (cube->texture.door_half)

@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 15:51:21 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:19:08 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	draw_ray(t_cube *cube)
 {
 	t_ray	ray;
 	int		i;
+	t_line	line;
 
 	i = -1;
 	ray = init_ray(cube->player);
@@ -120,6 +121,8 @@ void	draw_ray(t_cube *cube)
 		dda_v(cube, &ray);
 		setup_ray(&ray);
 		draw_3d(cube, ray, i);
+		line = init_line(cube->player.px * cube->map->scale, cube->player.py * cube->map->scale, ray.rx * cube->map->scale, ray.ry * cube->map->scale);
+		draw_line(cube->image, line, pixel(255,0,0,255));
 		ray.ra = fixang(ray.ra + (double)FPOV / (double)WIDTH);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 18:28:27 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 12:48:36 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:43:08 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ static void	fill_condition_helper(t_cube *cube, t_point point)
 		cube->map->map[point.y][point.x] = 'L';
 	else if (cube->map->map[point.y][point.x] == 'X')
 		cube->map->map[point.y][point.x] = 'Z';
+	else if (cube->map->map[point.y][point.x] == '2')
+		cube->map->map[point.y][point.x] = '2';
+	else if (cube->map->map[point.y][point.x] == '3')
+		cube->map->map[point.y][point.x] = '3';
 	else
 		cube->map->map[point.y][point.x] = 'V';
 }
@@ -90,7 +94,7 @@ void	flood_fill(t_cube *cube, int x, int y)
 	{
 		point = stack[--top];
 		fill_helper(cube, stack, point);
-		if (cube->map->map[point.y][point.x] == '1'
+		if (cube->map->map[point.y][point.x] == '1' || cube->map->map[point.y][point.x] == '2' || cube->map->map[point.y][point.x] == '3'
 			|| cube->map->map[point.y][point.x] == 'V')
 			continue ;
 		fill_condition_helper(cube, point);

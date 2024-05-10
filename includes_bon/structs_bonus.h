@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 13:55:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:35:04 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ typedef struct s_texture
 	xpm_t			*door_open;
 	xpm_t			*door_half;
 	xpm_t			*door_close;
+	xpm_t			*ash;
+	xpm_t			*mas;
+	mlx_texture_t	mas_tex;
+	mlx_texture_t	ash_tex;
 	mlx_texture_t	north_tex;
 	mlx_texture_t	south_tex;
 	mlx_texture_t	east_tex;
