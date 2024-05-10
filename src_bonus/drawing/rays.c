@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:53:18 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 11:38:25 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:51:21 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	dda_v(t_cube *cube, t_ray *ray)
 		return ;
 	while (1)
 	{
-		if (!is_done_bonus_v(cube, ray,  (int)ray->rx, (int)ray->ry))
+		if (!is_done_bonus_v(cube, ray, (int)ray->rx, (int)ray->ry))
 		{
 			ray->distv = find_dist(ray, cube->player);
 			break ;
