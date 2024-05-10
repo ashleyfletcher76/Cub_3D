@@ -1,0 +1,16 @@
+NO ./images/walls/wall3.xpm42
+SO ./images/walls/wall2.xpm42
+EA ./images/walls/wall1.xpm42
+WE ./images/walls/wall4.xpm42
+
+F 0,0,255
+C 0,255, 0
+
+11111111111
+11110001111
+10000000001
+1111000E001
+11 10001111
+   101111
+   100001
+   111111

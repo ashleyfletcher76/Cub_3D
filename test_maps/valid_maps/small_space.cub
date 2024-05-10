@@ -1,0 +1,12 @@
+NO ./images/walls/wall3.xpm42
+SO ./images/walls/wall2.xpm42
+EA ./images/walls/wall1.xpm42
+WE ./images/walls/wall4.xpm42
+
+F 125,125,125
+C 0,150,255
+
+1 1 1 1
+1 E 0 1
+1 0 0 1
+1 1 1 1
