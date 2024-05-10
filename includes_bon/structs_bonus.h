@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 17:17:46 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:30:19 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,10 @@ typedef struct s_ray
 	double	yo;
 	double	vx;
 	double	vy;
+	double	dhx;
+	double	dhy;
+	double	dvx;
+	double	dvy;
 	double	disth;
 	double	distv;
 	double	distdv;
@@ -115,7 +119,7 @@ typedef struct s_ray
 	double	ty_step;
 	double	ty_off;
 	double	shade;
-	char	tex;
+	double	door_shade;
 	int		dist;
 	int		flag;
 }	t_ray;
