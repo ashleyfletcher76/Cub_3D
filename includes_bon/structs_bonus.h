@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 11:30:19 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:37:21 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_texture
 	xpm_t			*west;
 	xpm_t			*teleport;
 	xpm_t			*door_open;
+	xpm_t			*door_half;
 	xpm_t			*door_close;
 	mlx_texture_t	north_tex;
 	mlx_texture_t	south_tex;
@@ -65,6 +66,7 @@ typedef struct s_texture
 	mlx_texture_t	west_tex;
 	mlx_texture_t	*teleport_tex;
 	mlx_texture_t	door_open_tex;
+	mlx_texture_t	door_half_tex;
 	mlx_texture_t	door_close_tex;
 }	t_texture;
 

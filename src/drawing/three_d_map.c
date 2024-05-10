@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:33:53 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:35:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 		tx = (ray.ry - (int)ray.ry) * tex.width;
 	while (y < ray.dist)
 	{
-		index = ((int)tx * tex.height + (int)ty) * 4;
+		index = ((int)tx * tex.width + (int)ty) * 4;
 		pixels = &tex.pixels[index];
 		mlx_put_pixel(cube->image, i, y + ray.lineoff,
 			pixel(pixels[0], pixels[1], pixels[2], pixels[3]));

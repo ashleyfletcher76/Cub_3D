@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_door.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:22:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 11:30:38 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:39:46 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	draw_door_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 		tx = (ray.dhy - (int)ray.dhy) * tex.width;
 	while (y < ray.dist)
 	{
-		index = ((int)ty * tex.height + (int)tx) * 4;
+		index = ((int)ty * tex.width + (int)tx) * 4;
 		pixels = &tex.pixels[index];
 		if (pixels[0] != 0 && pixels[1] != 0 && pixels[2] != 0 && pixels[3] != 0)
 			mlx_put_pixel(cube->image, i, y + ray.lineoff,
@@ -43,10 +43,12 @@ mlx_texture_t	find_door_dist(t_cube *cube, t_ray ray)
 {
 	mlx_texture_t tex;
 
-	if (ray.distdv < 2)
-		tex = cube->texture.door_open_tex;
-	else
+	if (ray.distdv > 2)
 		tex = cube->texture.door_close_tex;
+	else if (ray.distdv > 1)
+		tex = cube->texture.door_half_tex;
+	else
+		tex = cube->texture.door_open_tex;
 	return (tex);
 }
 
