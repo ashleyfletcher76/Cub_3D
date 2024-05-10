@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 14:14:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:22:58 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	leaks(void)
 
 static void	init_mlx_functions(t_cube *cube)
 {
-	//put_instructions(cube);
+	put_instructions(cube);
 	mlx_set_cursor_mode(cube->mlx, MLX_MOUSE_HIDDEN);
 	mlx_key_hook(cube->mlx, user_input, cube);
 	mlx_mouse_hook(cube->mlx, mouse_hook, cube);
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	t_cube	*cube;
 
 	atexit(leaks);
-	//check_defines();
+	check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);
 	init_map(cube);

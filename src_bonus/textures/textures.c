@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:55:02 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 12:38:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:30:41 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	init_guns(t_cube *cube)
 	cube->gun.gun2 = mlx_texture_to_image(cube->mlx, cube->gun.gun2_t);
 	if (!cube->gun.gun2)
 		free_print_exit_three(cube, 2);
-	mlx_delete_texture(cube->gun.gun2_t);
 	mlx_image_to_window(cube->mlx, cube->gun.gun, 0, 0);
 }
 
