@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_d_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:35:33 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 12:34:50 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:19:38 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	draw_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 		index = ((int)ty * tex.width + (int)tx) * 4;
 		pixels = &tex.pixels[index];
 		mlx_put_pixel(cube->image, i, y + ray.lineoff,
-			pixel(pixels[0], pixels[1], pixels[2], pixels[3]));
+			pixel(pixels[0], pixels[1], pixels[2], pixels[3] * cube->pause));
 		ty += ray.ty_step;
 		y++;
 	}
@@ -42,9 +42,9 @@ void	draw_floor_ceiling(t_cube *cube, t_ray ray, int i)
 	t_line	line;
 
 	line = init_line(i, ray.dist + ray.lineoff, i, HEIGHT);
-	draw_line(cube->image, line, cube->details->floor_rgb);
+	draw_line(cube->image, line, cube->details->floor_rgb * cube->pause);
 	line = init_line(i, 0, i, ray.lineoff);
-	draw_line(cube->image, line, cube->details->ceiling_rgb);
+	draw_line(cube->image, line, cube->details->ceiling_rgb * cube->pause);
 }
 
 mlx_texture_t	find_facing(t_cube *cube, t_ray ray)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_door.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:22:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 12:39:46 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:18:31 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	draw_door_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 		pixels = &tex.pixels[index];
 		if (pixels[0] != 0 && pixels[1] != 0 && pixels[2] != 0 && pixels[3] != 0)
 			mlx_put_pixel(cube->image, i, y + ray.lineoff,
-				pixel(pixels[0], pixels[1], pixels[2], pixels[3]));
+				pixel(pixels[0], pixels[1], pixels[2], pixels[3] * cube->pause));
 		ty += ray.ty_step;
 		y++;
 	}

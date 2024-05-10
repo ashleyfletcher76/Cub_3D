@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 11:38:07 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:03:25 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,7 @@ void	key_left(t_cube *cube);
 void	key_right(t_cube *cube);
 void	key_a(t_cube *cube);
 void	key_d(t_cube *cube);
-void	mouse_left(t_cube *cube);
-void	mouse_right(t_cube *cube);
+void	key_pause(t_cube *cube);
 void	close_mini_map(t_cube *cube);
 void	handle_fire(t_cube *cube);
 void	handle_fire_two(t_cube *cube);

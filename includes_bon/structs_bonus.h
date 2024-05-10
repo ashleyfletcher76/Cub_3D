@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 12:37:21 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:28:06 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,7 @@ typedef struct s_cube
 	mlx_t			*mlx;
 	mlx_image_t		*image;
 	mlx_image_t		*mini;
+	mlx_image_t		*str;
 	xpm_t			*wall_xpm;
 	mlx_texture_t	wall_tex;
 	t_map			*map;
@@ -183,6 +184,7 @@ typedef struct s_cube
 	t_gun			gun;
 	t_mouse			mouse;
 	bool			map_start;
+	double			pause;
 	int				details_found;
 	int				max_width;
 	int				max_height;

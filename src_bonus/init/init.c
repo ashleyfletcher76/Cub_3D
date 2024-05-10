@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 12:49:08 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:32:57 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ static void	init_texture_helper(t_cube *cube)
 	cube->gun.gun_t = NULL;
 	cube->gun.gun2 = NULL;
 	cube->gun.gun2_t = NULL;
+	cube->str = NULL;
 }
 
 void	init_mouse(t_cube *cube)
@@ -92,6 +93,7 @@ void	init_cube(t_cube **cube, t_check temp_cube)
 	(*cube)->max_height = temp_cube.max_height;
 	(*cube)->max_width = temp_cube.max_width;
 	(*cube)->map = NULL;
+	(*cube)->pause = 1;
 	(*cube)->details = malloc(sizeof(t_details));
 	if (!(*cube)->details)
 		print_error_exit(2);
