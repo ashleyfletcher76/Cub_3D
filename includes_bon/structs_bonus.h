@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 15:36:59 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:17:46 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,15 @@ typedef struct s_texture
 	xpm_t			*east;
 	xpm_t			*west;
 	xpm_t			*teleport;
-	xpm_t			*door;
+	xpm_t			*door_open;
+	xpm_t			*door_close;
 	mlx_texture_t	north_tex;
 	mlx_texture_t	south_tex;
 	mlx_texture_t	east_tex;
 	mlx_texture_t	west_tex;
 	mlx_texture_t	*teleport_tex;
-	mlx_texture_t	*door_tex;
+	mlx_texture_t	door_open_tex;
+	mlx_texture_t	door_close_tex;
 }	t_texture;
 
 typedef struct s_point
@@ -107,6 +109,8 @@ typedef struct s_ray
 	double	vy;
 	double	disth;
 	double	distv;
+	double	distdv;
+	double	distdh;
 	double	lineoff;
 	double	ty_step;
 	double	ty_off;

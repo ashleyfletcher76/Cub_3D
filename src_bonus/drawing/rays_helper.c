@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 12:08:25 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/09 13:41:32 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:00:15 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,32 @@ void	set_ray(t_ray *ray)
 	ray->tex = '.';
 	ray->disth = 10000;
 	ray->distv = 10000;
+	ray->distdv = 10000;
+	ray->distdh = 10000;
 }
 
-int	is_done_bonus(t_cube *cube, int x, int y)
+int	is_done_bonus_v(t_cube *cube, t_ray *ray, int x, int y)
 {
 	if (x < 0 || x >= cube->max_width)
 		return (false);
 	if (y < 0 || y >= cube->max_height)
 		return (false);
-	if (cube->map->map[y][x] != 'V')
+	if (cube->map->map[y][x] == 'L')
+		ray->distdv = find_dist(ray, cube->player);
+	if (cube->map->map[y][x] == '1' || cube->map->map[y][x] == 'Z')
+		return (false);
+	return (true);
+}
+
+int	is_done_bonus_h(t_cube *cube, t_ray *ray, int x, int y)
+{
+	if (x < 0 || x >= cube->max_width)
+		return (false);
+	if (y < 0 || y >= cube->max_height)
+		return (false);
+	if (cube->map->map[y][x] == 'L')
+		ray->distdh = find_dist(ray, cube->player);
+	if (cube->map->map[y][x] == '1' || cube->map->map[y][x] == 'Z')
 		return (false);
 	return (true);
 }
