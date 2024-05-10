@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 13:34:57 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 14:02:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:37:39 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ void	put_instructions(t_cube *cube)
 	cube->instructs.directions2 = mlx_put_string(cube->mlx,
 		"To shoot = 'Left click mouse'", 500, 750);
 	resize(cube->instructs.directions2);
+	cube->instructs.map = mlx_put_string(cube->mlx,
+		"To view map = Press 'M'", 500, 800);
+	resize(cube->instructs.map);
 }
