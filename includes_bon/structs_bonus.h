@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 13:28:06 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:55:42 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,12 +167,22 @@ typedef struct s_map
 	bool	show_map;
 }	t_map;
 
+typedef struct s_instructs
+{
+	mlx_image_t	*welcome;
+	mlx_image_t	*start;
+	mlx_image_t	*directions;
+	mlx_image_t	*directions1;
+	mlx_image_t	*directions2;
+	mlx_image_t	*map;
+}	t_instructs;
+
 typedef struct s_cube
 {
 	mlx_t			*mlx;
 	mlx_image_t		*image;
 	mlx_image_t		*mini;
-	mlx_image_t		*str;
+	t_instructs		instructs;
 	xpm_t			*wall_xpm;
 	mlx_texture_t	wall_tex;
 	t_map			*map;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+         #
+#    By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 07:56:38 by asfletch          #+#    #+#              #
-#    Updated: 2024/05/10 10:23:34 by muhakose         ###   ########.fr        #
+#    Updated: 2024/05/10 14:05:08 by asfletch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS = cube.c init/init.c init/init_player.c init/init_2d_map.c \
 	utils/check_chars.c utils/utils.c /utils/maths.c utils/utils2.c
 
 SRCS_BON = cube_bonus.c init/init.c init/init_player.c init/init_2d_map.c \
+	init/init_instructions.c \
 	hooks/hooks.c hooks/keys.c hooks/keys2.c hooks/hook_functions.c \
 	parsing/map_parsing.c parsing/map_validity.c parsing/convert_utils.c \
 	parsing/check_arg.c parsing/check_map_details.c \
@@ -44,7 +45,7 @@ SRCS_BON = cube_bonus.c init/init.c init/init_player.c init/init_2d_map.c \
 	parsing/map_details.c parsing/get_details.c \
 	drawing/draw_player.c drawing/reset_player.c drawing/rays.c drawing/two_d_map.c \
 	drawing/three_d_map.c drawing/rays_helper.c drawing/draw_door.c\
-	gameplay/prevent_collision.c \
+	gameplay/prevent_collision.c gameplay/instructions.c \
 	textures/textures.c \
 	utils/print_msg.c utils/free_functions.c utils/print_map.c \
 	utils/check_chars.c utils/utils.c /utils/maths.c utils/utils2.c

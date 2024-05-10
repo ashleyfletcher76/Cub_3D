@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 13:33:26 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:14:03 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	leaks(void)
 
 static void	init_mlx_functions(t_cube *cube)
 {
+	//put_instructions(cube);
 	mlx_set_cursor_mode(cube->mlx, MLX_MOUSE_HIDDEN);
 	mlx_key_hook(cube->mlx, user_input, cube);
 	mlx_mouse_hook(cube->mlx, mouse_hook, cube);
@@ -33,6 +34,7 @@ static void	init_functions(t_cube *cube)
 	init_textures(cube);
 	init_guns(cube);
 	init_door(cube);
+	init_instructions(cube);
 }
 
 int	main(int argc, char **argv)

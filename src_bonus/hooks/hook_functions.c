@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:54:04 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 13:32:45 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:13:59 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,18 @@ void	handle_fire(t_cube *cube)
 	cube->gun.gun_t = NULL;
 }
 
-void	put_instructions(t_cube *cube)
-{
-	cube->str = mlx_put_string(cube->mlx, "message", 0,0);
-}
-
 void	key_pause(t_cube *cube)
 {
 	if (cube->pause == 0.5)
 	{
 		cube->pause = 1;
 		mlx_set_cursor_mode(cube->mlx, MLX_MOUSE_HIDDEN);
-		mlx_delete_image(cube->mlx, cube->str);
-		cube->str = NULL;
+		//delete_instructs_images(cube);
 	}
 	else
 	{
 		cube->pause = 0.5;
 		mlx_set_cursor_mode(cube->mlx, MLX_MOUSE_NORMAL);
-		put_instructions(cube);
+		//put_instructions(cube);
 	}
 }

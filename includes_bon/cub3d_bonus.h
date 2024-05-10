@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:09:41 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 13:03:25 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:10:17 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ t_line	init_line(double beginx, double beginy, double endx, double endy);
 void	init_default_player(t_cube *cube);
 void	reset_players_values(t_cube *cube);
 int32_t	init_2d_map(t_cube *cube);
+void	delete_instructs_images(t_cube *cube);
+void	init_instructions(t_cube *cube);
 
 //drawing processes
 int		draw_line(mlx_image_t *image, t_line line, int color);
@@ -128,6 +130,7 @@ void	init_door(t_cube *cube);
 
 //gameplay
 int		is_wall_collision(t_cube *cube, int x, int y);
+void	put_instructions(t_cube *cube);
 
 //utils
 void	check_if_details(t_check *temp_cube);
