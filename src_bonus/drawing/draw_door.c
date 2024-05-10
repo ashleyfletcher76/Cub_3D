@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   draw_door.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 10:22:12 by muhakose          #+#    #+#             */
-/*   Updated: 2024/05/10 14:49:19 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:18:31 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
+
 
 void	draw_door_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 {
@@ -30,11 +31,9 @@ void	draw_door_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 	{
 		index = ((int)ty * tex.width + (int)tx) * 4;
 		pixels = &tex.pixels[index];
-		if (pixels[0] != 0 && pixels[1] != 0 && pixels[2] != 0
-			&& pixels[3] != 0)
+		if (pixels[0] != 0 && pixels[1] != 0 && pixels[2] != 0 && pixels[3] != 0)
 			mlx_put_pixel(cube->image, i, y + ray.lineoff,
-				pixel(pixels[0], pixels[1], pixels[2],
-					pixels[3] * cube->pause));
+				pixel(pixels[0], pixels[1], pixels[2], pixels[3] * cube->pause));
 		ty += ray.ty_step;
 		y++;
 	}
@@ -42,7 +41,7 @@ void	draw_door_textures(t_cube *cube, t_ray ray, int i, mlx_texture_t tex)
 
 mlx_texture_t	find_door_dist(t_cube *cube, t_ray ray)
 {
-	mlx_texture_t	tex;
+	mlx_texture_t tex;
 
 	if (ray.distdv > 2)
 		tex = cube->texture.door_close_tex;
@@ -59,6 +58,7 @@ void	draw_door(t_cube *cube, t_ray ray, int i)
 	mlx_texture_t	tex;
 
 	tex = find_door_dist(cube, ray);
+
 	ca = fixang(cube->player.pa - ray.ra);
 	ray.distdv = ray.distdv * cos(degtorad(ca));
 	ray.dist = (HEIGHT) / ray.distdv;
