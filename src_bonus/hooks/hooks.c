@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 12:31:10 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:17:06 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ void	user_input(mlx_key_data_t keys, void *param)
 	{
 		if (keys.key == KEY_M)
 			close_mini_map(cube);
+		if (keys.key == KEY_P)
+			key_pause(cube);
+		if (keys.key == MLX_KEY_ESCAPE)
+		{
+			print_error_exit(6);
+			mlx_close_window(cube->mlx);
+		}
 	}
 }
 
@@ -29,7 +36,8 @@ void	user_input_two(void *param)
 	t_cube	*cube;
 
 	cube = (t_cube *)param;
-	read_keys(cube);
+	if (cube->pause == 1)
+		read_keys(cube);
 	draw_ray(cube);
 	if (cube->map->show_map == true)
 	{
@@ -44,15 +52,18 @@ void	mouse_hook(mouse_key_t button, action_t action,
 	t_cube	*cube;
 
 	cube = (t_cube *)param;
-	if (action == MLX_PRESS)
+	if (cube->pause == 1)
 	{
-		if (button == MLX_MOUSE_BUTTON_LEFT)
-			handle_fire(cube);
-	}
-	if (action == MLX_RELEASE)
-	{
-		if (button == MLX_MOUSE_BUTTON_LEFT)
-			handle_fire_two(cube);
+		if (action == MLX_PRESS)
+		{
+			if (button == MLX_MOUSE_BUTTON_LEFT)
+				handle_fire(cube);
+		}
+		if (action == MLX_RELEASE)
+		{
+			if (button == MLX_MOUSE_BUTTON_LEFT)
+				handle_fire_two(cube);
+		}
 	}
 	(void)action;
 	(void)mods;
@@ -63,15 +74,18 @@ void	cursour_hook(double xpos, double ypos, void *param)
 	t_cube	*cube;
 
 	cube = (t_cube *)param;
-	if (xpos < WIDTH && xpos > 0 && ypos < HEIGHT && ypos > 0)
+	if (cube->pause == 1)
 	{
-		if ((int)xpos > WIDTH / 2)
-			key_right(cube);
-		else if (xpos < WIDTH / 2)
-			key_left(cube);
-		cube->mouse.y = ypos;
-		cube->mouse.x = xpos;
-		mlx_set_mouse_pos(cube->mlx, WIDTH / 2, HEIGHT / 2);
+		if (xpos < WIDTH && xpos > 0 && ypos < HEIGHT && ypos > 0)
+		{
+			if ((int)xpos > WIDTH / 2)
+				key_right(cube);
+			else if (xpos < WIDTH / 2)
+				key_left(cube);
+			cube->mouse.y = ypos;
+			cube->mouse.x = xpos;
+			mlx_set_mouse_pos(cube->mlx, WIDTH / 2, HEIGHT / 2);
+		}
 	}
 }
 
@@ -91,11 +105,6 @@ void	read_keys(t_cube *cube)
 	if (mlx_is_key_down(cube->mlx, MLX_KEY_DOWN)
 		|| mlx_is_key_down(cube->mlx, MLX_KEY_S))
 		key_down(cube);
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_P))
+	if (mlx_is_key_down(cube->mlx, MLX_KEY_R))
 		reset_players_values(cube);
-	if (mlx_is_key_down(cube->mlx, MLX_KEY_ESCAPE))
-	{
-		print_error_exit(6);
-		mlx_close_window(cube->mlx);
-	}
 }

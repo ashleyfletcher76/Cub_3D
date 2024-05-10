@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 15:37:25 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:30:03 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void	free_png(t_cube *cube)
 		mlx_delete_texture(cube->gun.gun_t);
 	if (cube->texture.teleport_tex)
 		mlx_delete_texture(cube->texture.teleport_tex);
+	if (cube->str)
+		mlx_delete_image(cube->mlx, cube->str);
 	//if (cube->texture.door_tex[0])
 	//	mlx_delete_texture(cube->texture.door_tex);
 }
