@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:08:42 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 16:25:04 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:29:18 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef enum s_type
 	WEST,
 	FLOOR,
 	CEILING,
+	NEWLINE,
 	END
 }	t_type;
 

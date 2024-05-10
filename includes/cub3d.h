@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:08:32 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 16:24:37 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:48:53 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,11 @@ void	check_map(char *map, t_check *temp_cube);
 void	check_map_perimeter(t_cube *cube);
 void	multiple_start_pos(t_cube *cube);
 int		check_multiple_details(t_check *temp_cube);
-int		check_details(t_check *temp_cube, char *line);
+void	check_details(t_check *temp_cube, char *line);
+void	check_correct_detail_arg(char *line, int i);
+t_type	get_state_begin(char *line);
+int		check_empty_line(t_check *cube, char *line);
+void	check_invalid_chars(t_check *temp_cube, char *line);
 
 //get map details
 void	find_map_width(char *line, t_check *temp_cube);
@@ -120,6 +124,7 @@ void	print_map(t_cube *cube);
 double	degtorad(double a);
 double	fixang(double a);
 void	check_defines(void);
+int		whitespace_skip(char c);
 
 //free and messages
 void	print_error_exit(int flag);

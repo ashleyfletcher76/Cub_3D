@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:10:38 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 13:55:42 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:33:11 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef enum s_type
 	WEST,
 	FLOOR,
 	CEILING,
+	NEWLINE,
 	END
 }	t_type;
 
@@ -89,7 +90,6 @@ typedef struct s_default
 	double	pdx;
 	double	pdy;
 	double	pa;
-
 }	t_default;
 
 typedef struct s_line

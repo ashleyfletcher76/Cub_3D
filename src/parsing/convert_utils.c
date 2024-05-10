@@ -6,13 +6,13 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 12:48:42 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/07 18:00:15 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:42:55 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int	whitespace_skip(char c)
+int	whitespace_skip(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\f' || c == '\v' || c == '\r')
 		return (true);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_details.c                                      :+:      :+:    :+:   */
+/*   check_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 16:28:11 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 18:21:24 by asfletch         ###   ########.fr       */
+/*   Created: 2024/05/10 17:33:35 by asfletch          #+#    #+#             */
+/*   Updated: 2024/05/10 18:44:24 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_type	get_state(char *line)
+t_type	get_state_begin(char *line)
 {
 	int	i;
 
@@ -33,56 +33,44 @@ t_type	get_state(char *line)
 		return (CEILING);
 	else if (line[i] == '\0' || line[i] == '\n')
 		return (NEWLINE);
+	else
+		check_correct_detail_arg(line, i);
 	return (END);
 }
 
-static int	get_details_helper(t_cube *cube, char *line, t_type type)
+static void	check_following_char(char *line, char c, int i)
 {
-	if (type == WEST)
-	{
-		get_west_east(cube, line, 1);
-		cube->details_found += 1;
-		return (1);
-	}
-	else if (type == FLOOR)
-	{
-		get_floor_ceiling(cube, line, 0);
-		cube->details_found += 1;
-		return (1);
-	}
-	else if (type == CEILING)
-	{
-		get_floor_ceiling(cube, line, 1);
-		cube->details_found += 1;
-		return (1);
-	}
-	return (0);
+	if (c == 'N' && line[i + 1] != 'O' && (line [i + 1] != '\0'
+		|| line[i + 1] != '\n'))
+		print_error_exit(9);
+	else if (c == 'S' && line[i + 1] != 'O' && (line [i + 1] != '\0'
+		|| line[i + 1] != '\n'))
+		print_error_exit(9);
+	else if (c == 'E' && line[i + 1] != 'A' && (line [i + 1] != '\0'
+		|| line[i + 1] != '\n'))
+		print_error_exit(9);
+	else if (c == 'W' && line[i + 1] != 'E' && (line [i + 1] != '\0'
+		|| line[i + 1] != '\n'))
+		print_error_exit(9);
 }
 
-int	get_details(t_cube *cube, char *line)
+void	check_correct_detail_arg(char *line, int i)
 {
-	t_type	type;
+	int		j;
+	char	*str;
 
-	type = get_state(line);
-	if (type == NORTH)
+	str = "NSWEFC";
+	while (line[i])
 	{
-		get_north_south(cube, line, 0);
-		cube->details_found += 1;
-		return (1);
+		j = 0;
+		while (str[j])
+		{
+			if (line[i] != str[j])
+				print_error_exit(9);
+			else if (line[i] == str[j])
+				check_following_char(line, str[j], i);
+			j++;
+		}
+		i++;
 	}
-	else if (type == SOUTH)
-	{
-		get_north_south(cube, line, 1);
-		cube->details_found += 1;
-		return (1);
-	}
-	else if (type == EAST)
-	{
-		get_west_east(cube, line, 0);
-		cube->details_found += 1;
-		return (1);
-	}
-	if (get_details_helper(cube, line, type) == 1)
-		return (1);
-	return (0);
 }
