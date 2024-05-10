@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 12:50:02 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/09 16:22:14 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/10 11:03:00 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	check_multiple_details(t_check *temp_cube)
 	if (temp_cube->north > 1 || temp_cube->south > 1
 		|| temp_cube->east > 1 || temp_cube->west > 1
 		|| temp_cube->floor > 1 || temp_cube->ceiling > 1)
-		print_error_exit(8);
+			print_error_exit(8);
 	return (0);
 }
 
