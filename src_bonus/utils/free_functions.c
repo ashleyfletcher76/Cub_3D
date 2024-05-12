@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:31:23 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 18:37:13 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/12 14:18:58 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,10 @@ void	final_free(t_cube *cube)
 		}
 		free (cube->map->map);
 	}
+	delete_instructs_images(cube);
 	free_details(cube);
 	free_xpm(cube);
 	free_png(cube);
-	delete_instructs_images(cube);
 	free (cube->map);
 	free (cube);
 }
