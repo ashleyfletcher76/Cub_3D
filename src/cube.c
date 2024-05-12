@@ -6,23 +6,17 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/12 08:44:46 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/12 10:02:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	leaks(void)
-{
-	system("leaks cub3D");
-}
 
 int	main(int argc, char **argv)
 {
 	t_check	temp_cube;
 	t_cube	*cube;
 
-	//atexit(leaks);
 	check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);

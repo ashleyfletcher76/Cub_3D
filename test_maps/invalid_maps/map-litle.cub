@@ -1,11 +1,10 @@
-NO ./cub3d-tester/textures/wall.xpm42
-SO ./cub3d-tester/textures/bricks.xpm42
-WE ./cub3d-tester/textures/gold.xpm42
-EA ./cub3d-tester/textures/wood.xpm42
-
+NO ./images/walls/wall.xpm42
+SO ./images/walls/bricks.xpm42
+WE ./images/walls/gold.xpm42
+EA ./images/walls/wood.xpm42
 
 F 220,111,119
-C 225,111,200
+C 225,111,255
 
 
  1
