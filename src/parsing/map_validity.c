@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:43:54 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 18:27:10 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/12 09:01:27 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ static void	check_rows_right(t_cube *cube, int row)
 		current = cube->map->map[row][x];
 		if (map_valid_chars(current) && edge_conditions(current))
 			c = current;
+	}
+	if (c != '1' && row != cube->max_height - 1)
+	{
+		printf("Rows right\n");
+		free_print_exit(cube, 2, 0);
 	}
 }
 
@@ -59,6 +64,11 @@ static void	check_rows_left(t_cube *cube, int row)
 		current = cube->map->map[row][x];
 		if (map_valid_chars(current) && edge_conditions(current))
 			c = current;
+	}
+	if (c != '1' && row != cube->max_height - 1)
+	{
+		printf("Rows left\n");
+		free_print_exit(cube, 2, 0);
 	}
 }
 

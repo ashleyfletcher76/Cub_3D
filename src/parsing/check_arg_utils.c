@@ -6,7 +6,7 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:47:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 18:49:06 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/12 08:28:12 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	check_invalid_chars(t_check *temp_cube, char *line)
 	{
 		if (correct_chars(line[i]) == -1 && temp_cube->map_start)
 		{
-			printf("invalid chars\n");
+			printf("Invalid chars\n");
 			free (line);
 			print_error_exit(1);
 		}
