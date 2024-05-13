@@ -2,8 +2,10 @@ NO ./images/walls/wall.xpm42
 SO ./images/walls/bricks.xpm42
 WE ./images/walls/gold.xpm42
 EA ./images/walls/wood.xpm42
-F 220,111,119
-C 225,111,200
+
+
+F 255,255,255
+C 0,0,0
 
 
 
