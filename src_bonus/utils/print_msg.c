@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:33:10 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 18:31:02 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:08:51 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void	print_error_exit(int flag)
 	else if (flag == 5)
 		perror("Failed to open map file");
 	else if (flag == 6)
+	{
 		ft_putendl_fd("You pressed escape cos your scared", 0);
+		exit(EXIT_SUCCESS);
+	}
 	else if (flag == 7)
 		ft_putendl_fd("Map dimnesions are too big", 2);
 	else if (flag == 8)

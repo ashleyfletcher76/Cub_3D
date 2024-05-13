@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:38:44 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/13 13:00:41 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:07:07 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ void	user_input(mlx_key_data_t keys, void *param)
 			key_pause(cube);
 		if (keys.key == MLX_KEY_ESCAPE)
 		{
+			mlx_terminate(cube->mlx);
+			final_free(cube);
 			print_error_exit(6);
-			mlx_close_window(cube->mlx);
 		}
 	}
 }
