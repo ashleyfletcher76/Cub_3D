@@ -6,16 +6,11 @@
 /*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/12 08:45:03 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/12 10:02:17 by asfletch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
-
-void	leaks(void)
-{
-	system("leaks Bonus");
-}
 
 static void	init_mlx_functions(t_cube *cube)
 {
@@ -42,14 +37,12 @@ int	main(int argc, char **argv)
 	t_check	temp_cube;
 	t_cube	*cube;
 
-	//atexit(leaks);
-	//check_defines();
+	check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);
 	init_map(cube);
 	parse_map(cube, argv[1]);
 	check_map_perimeter(cube);
-	print_map(cube);
 	init_mlx(cube);
 	init_functions(cube);
 	init_mlx_functions(cube);
