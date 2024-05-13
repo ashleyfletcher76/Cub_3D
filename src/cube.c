@@ -6,7 +6,7 @@
 /*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/13 10:38:16 by muhakose         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:52:39 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	leaks(void)
 {
 	system("leaks cub3D");
-}a
+}
 
 int	main(int argc, char **argv)
 {
