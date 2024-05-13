@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:09:58 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/10 14:05:53 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:55:05 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ static void	init_texture_helper(t_cube *cube)
 	cube->texture.east = NULL;
 	cube->texture.west = NULL;
 	cube->texture.teleport = NULL;
+	cube->texture.mas = NULL;
+	cube->texture.ash = NULL;
 	cube->texture.teleport_tex = NULL;
 	cube->texture.door_open = NULL;
 	cube->texture.door_half = NULL;

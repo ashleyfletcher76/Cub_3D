@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asfletch <asfletch@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: muhakose <muhakose@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:21:46 by asfletch          #+#    #+#             */
-/*   Updated: 2024/05/12 10:02:17 by asfletch         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:58:30 by muhakose         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,17 @@ static void	init_functions(t_cube *cube)
 	init_instructions(cube);
 }
 
+void	leaks(void)
+{
+	system("leaks Bonus");
+}
+
 int	main(int argc, char **argv)
 {
 	t_check	temp_cube;
 	t_cube	*cube;
 
+	//atexit(leaks);
 	check_defines();
 	temp_cube = check_args(argc, argv);
 	init_cube(&cube, temp_cube);
