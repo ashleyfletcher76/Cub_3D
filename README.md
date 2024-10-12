@@ -7,6 +7,7 @@ Cue3D is a **C** project inspired by **Wolfenstein 3D**, developed as part of th
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Authors](#authors)
 - [In Game Graphics](#in-game-graphics)
 
 ## Project Description
@@ -34,7 +35,9 @@ make
 ./cub3d maps/[sample_map.cub]
 
 ## Authors
-Ashley Fletcher - Developer 
+
+- **Ashley Fletcher** - *Developer* - [GitHub Profile](https://github.com/ashleyfletcher76)
+- **Muhammet Köse** - *Developer* - [GitHub Profile](https://github.com/ashleyfletcher76)
 
 ## In Game Graphics
 
