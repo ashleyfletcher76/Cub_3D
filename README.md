@@ -32,7 +32,12 @@ make
 ```
 
 ## Usage
-./cub3d test_maps/[sample_map.cub]
+
+Here is one of the maps in our catelogue. Feel free to search inside test_maps/valid_maps for another map of your choice.
+
+```bash
+./cub3d test_maps/valid_maps/3DSage.cub
+```
 
 ## Authors
 
