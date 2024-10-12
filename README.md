@@ -1,6 +1,38 @@
-* In this project we are tasked to design a game using teh RayCasting princicples made famous by Wolfenstein 3D --------
+# Cube3D
 
-* We must work as a 2 person team, bringing together ideas and learning from each others different coding methods/techniques.
+Cube3D is a **C** project inspired by **Wolfenstein 3D**, developed as part of the **42 School curriculum**. The goal is to create a basic 3D game engine with raycasting to simulate 3D environments in real-time, allowing the player to navigate a maze.
+
+## Table of Contents
+- [Project Description](#project-description)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Authors](#authors)
+
+## Project Description
+
+Cube3D is a raycasting-based game engine where the player can navigate through a 3D maze. The project introduces 3D rendering techniques, raycasting, texture mapping, and game logic. It is a simple, but effective example of how 3D environments can be created using 2D maps and raycasting.
+
+## Features
+
+- Real-time 3D rendering using raycasting.
+- Player movement within a 3D maze.
+- Textured walls and interactive environment.
+- Basic game mechanics (collision detection, movement, etc.).
+
+## Installation
+
+Clone the repository and compile the project:
+
+```bash
+git clone https://github.com/username/cube3d.git
+cd cube3d
+make
+```
+
+## Usage
+./cube3d maps/[sample_map.cub]
 
 Actuall in game graphics:
 
