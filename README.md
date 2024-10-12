@@ -37,7 +37,7 @@ make
 ## Authors
 
 - **Ashley Fletcher** - *Developer* - [GitHub Profile](https://github.com/ashleyfletcher76)
-- **Muhammet Köse** - *Developer* - [GitHub Profile](https://github.com/ashleyfletcher76)
+- **Muhammet Köse** - *Developer* - [GitHub Profile]((https://github.com/masummmm54)
 
 ## In Game Graphics
 
