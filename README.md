@@ -7,8 +7,7 @@ Cube3D is a **C** project inspired by **Wolfenstein 3D**, developed as part of t
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
-- [Authors](#authors)
+- [In Game Graphics](#in-game-graphics)
 
 ## Project Description
 
@@ -34,7 +33,7 @@ make
 ## Usage
 ./cube3d maps/[sample_map.cub]
 
-Actuall in game graphics:
+## In Game Graphics
 
 <img width="1920" alt="Screenshot 2024-05-13 at 10 42 13" src="https://github.com/ashleyfletcher76/Cub_3D/assets/143432696/e14bec35-e9eb-4f3c-80d0-dd1745876f88">
 
