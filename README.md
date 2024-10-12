@@ -26,13 +26,13 @@ Cub3D is a raycasting-based game engine where the player can navigate through a 
 Clone the repository and compile the project:
 
 ```bash
-git clone git@github.com:ashleyfletcher76/Cub_3D.git
+git clone https://github.com/ashleyfletcher76/Cub_3D.git
 cd cub3d
 make
 ```
 
 ## Usage
-./cub3d maps/[sample_map.cub]
+./cub3d test_maps/[sample_map.cub]
 
 ## Authors
 
